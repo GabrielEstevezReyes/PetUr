@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundGravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/ic_patron"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="updateGroup"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/imageView4"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:foregroundGravity="center"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/nombrePrincipal"
+                        android:layout_width="260dp"
+                        android:layout_height="match_parent"
+                        android:drawableRight="@drawable/ic_conf2"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Giovanni"
+                        android:textAllCaps="false"
+                        android:textColor="@color/TextColor"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_baseline_notifications_24"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/scrollPets"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
+                android:shadowColor="@color/TextColor"
+                android:text="@string/advertising"
+                android:textAllCaps="true"
+                android:textSize="8sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="20dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="linker"
+                        app:cardCornerRadius="15dp">
+
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/sss" />
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        app:cardCornerRadius="15dp">
+
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/dog2" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_marginLeft="20dp"
+                        app:cardCornerRadius="15dp">
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/s2" />
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <!--<androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:elevation="16dp"
+                        app:cardCornerRadius="10dp"
+                        android:onClick="lis_mas"
+                        android:background="#000"
+                        >
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:background="@drawable/menu_mascotas"
+                            android:drawableRight="@drawable/ic_mascotas_menu"
+                            android:text="Mascotas"
+                            android:gravity="left|center"
+                            android:onClick="lis_mas"
+                            android:paddingLeft="20dp"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:textAllCaps="false"
+                            android:textColor="#FFF"
+                            android:textSize="18dp"
+                            />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:elevation="16dp"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginTop="15dp"
+                        android:onClick="lis_cuidad"
+                        android:background="#000"
+                        >
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:background="@drawable/menu_mascotas"
+                            android:drawableRight="@drawable/ic_salud_menu"
+                            android:text="Cuidados"
+                            android:gravity="left|center"
+                            android:paddingLeft="20dp"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:textAllCaps="false"
+                            android:textColor="#FFF"
+                            android:textSize="18dp"
+                            />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:elevation="15dp"
+                        android:layout_marginTop="15dp"
+                        app:cardCornerRadius="10dp"
+                        android:onClick="lis_cuidad"
+                        android:background="#000"
+                        >
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:background="@drawable/menu_mascotas"
+                            android:drawableRight="@drawable/ic_sitios_menu"
+                            android:text="Sitios"
+                            android:gravity="left|center"
+                            android:paddingLeft="20dp"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:textAllCaps="false"
+                            android:textColor="#FFF"
+                            android:textSize="18dp"
+                            />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        app:cardCornerRadius="10dp"
+                        android:elevation="16dp"
+                        android:layout_marginTop="15dp"
+                        android:onClick="lis_grupos"
+                        android:background="#000"
+                        >
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:background="@drawable/menu_mascotas"
+                            android:drawableRight="@drawable/ic_grupos_menu"
+                            android:text="Grupos"
+                            android:gravity="left|center"
+                            android:paddingLeft="20dp"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:textAllCaps="false"
+                            android:textColor="#FFF"
+                            android:textSize="18dp"
+                            />
+                    </androidx.cardview.widget.CardView>-->
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        app:cardCornerRadius="10dp"
+                        android:onClick="lis_grupos"
+                        android:elevation="16dp"
+                        android:background="#000"
+                        >
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/menu_mascotas"
+                            android:drawableRight="@drawable/ic_sos_menu"
+                            android:text="S.O.S"
+                            android:gravity="left|center"
+                            android:paddingLeft="20dp"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:textAllCaps="false"
+                            android:textColor="#FFF"
+                            android:textSize="18dp"
+                            />
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

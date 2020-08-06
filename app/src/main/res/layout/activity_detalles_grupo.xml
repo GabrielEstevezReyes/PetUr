@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_patron"
+    android:padding="25dp"
+    tools:context=".DetallesGrupo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:gravity="center"
+            android:text="EDITAR GRUPO"
+            android:textAllCaps="true"
+            android:textColor="@color/TextColor"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="5dp"
+            android:background="#DADADA" />
+
+        <EditText
+            android:id="@+id/nameEditGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/sf_regular"
+            android:textAllCaps="true"
+            android:textColor="#242B3C"
+            android:textColorHint="@color/TextColorSecundary"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/descriptionEditGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/TextColorSecundary"
+            android:fontFamily="@font/sf_light"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/TextColor"
+            android:textColorHint="@color/TextColorSecundary"
+            android:textColorLink="#FFF"
+            android:textSize="14sp" />
+
+
+        <CheckBox
+            android:id="@+id/closedGroupCreate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/sf_regular"
+            android:text="Grupo cerrado"
+            android:textAllCaps="false"
+            android:textColor="@color/TextColorSecundary"
+            android:textColorHint="@color/TextColorSecundary"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/btn"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:shadowColor="#00FFFFFF"
+            android:text="Guardar y volver"
+            android:textAllCaps="true"
+            android:textColor="#FFF"
+            android:textSize="12sp"
+            android:onClick="updateGroup"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center|left">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:gravity="center|left"
+                android:text="Solicitudes de unión"
+                android:textAllCaps="true"
+                android:textColor="@color/TextColor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/numberRequests"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/sf_regular"
+                android:textColor="@color/TextColor"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="5dp"
+            android:background="#DADADA" />
+
+        <ScrollView
+            android:id="@+id/scrollEditGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:id="@+id/solicitudesGrupo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints"></LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

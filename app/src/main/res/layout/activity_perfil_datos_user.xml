@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".PerfilDatosUser">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:gravity="center"
+        android:text="Editar cuenta"
+        android:textAllCaps="true"
+        android:textColor="@color/TextColor"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="5dp"
+        android:background="#DADADA" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_bold"
+                android:text="Nombre"
+                android:textAllCaps="true"
+                android:textColor="@color/TextColorSecundary"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/fullNameInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/sf_light"
+                android:text=""
+                android:textColor="@color/TextColor"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_bold"
+                android:text="Número de teléfono"
+                android:textAllCaps="true"
+                android:textColor="@color/TextColorSecundary"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/cellphoneInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/sf_light"
+                android:text=""
+                android:textColor="@color/TextColor"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_bold"
+                android:text="Correo electrónico"
+                android:textAllCaps="true"
+                android:textColor="@color/TextColorSecundary"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/mailInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/sf_light"
+                android:text=""
+                android:textColor="@color/TextColor"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_bold"
+                android:shadowColor="#58676A"
+                android:text="Dirección"
+                android:textAllCaps="true"
+                android:textColor="@color/TextColorSecundary"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/addressInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif"
+                android:hint="Edita tus datos para agregar tu dirección"
+                android:textColor="@color/TextColor"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:onClick="updateGroup"
+            android:text="Editar"
+            android:textAllCaps="true"
+            android:textColor="#FFF"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:onClick="btn_sig2"
+            android:background="#FFFFFF"
+            android:text="Cerrar sesión"
+            android:padding="10dp"
+            android:gravity="left|center"
+            android:drawableRight="@drawable/ic_baseline_exit_to_app_24"
+            android:textAllCaps="true"
+            android:textColor="@color/TextColorSecundary"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

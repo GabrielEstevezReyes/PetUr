@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_patron"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".Grupos">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:padding="0dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:gravity="center"
+            android:text="Grupos"
+            android:textAllCaps="true"
+            android:textColor="@color/TextColor"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="5dp"
+            android:background="#DADADA" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:onClick="updateGroup"
+            android:text="Crear grupo"
+            android:textAllCaps="true"
+            android:textColor="#FFF"
+            android:textSize="12sp" />
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="0dp">
+
+        <TextView
+            android:layout_width="85dp"
+            android:layout_height="33dp"
+            android:background="@drawable/camp2"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:onClick="btn_All"
+            android:paddingLeft="5dp"
+            android:paddingTop="2dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="2dp"
+            android:text="Todos"
+            android:textAllCaps="false"
+            android:textColor="#85858A"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="85dp"
+            android:layout_height="33dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/camp2"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:onClick="btn_User"
+            android:paddingLeft="5dp"
+            android:paddingTop="2dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="2dp"
+            android:text="Mis grupos"
+            android:textAllCaps="false"
+            android:textColor="#85858A"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="85dp"
+            android:layout_height="33dp"
+            android:background="@drawable/camp2"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:onClick="btn_Belong"
+            android:paddingLeft="5dp"
+            android:paddingTop="2dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="2dp"
+            android:text="Unidos"
+            android:textAllCaps="false"
+            android:textColor="#85858A"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:id="@+id/ListaGruposScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints"></LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_patron"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".CreatePost">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:gravity="center"
+        android:text="CREAR POST"
+        android:textAllCaps="true"
+        android:textColor="@color/TextColor"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="5dp"
+        android:background="#DADADA" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_regular"
+            android:gravity="center"
+            android:text="Imagen:"
+
+            android:textAllCaps="true"
+            android:textColor="#193247"
+            android:textSize="12sp" />
+
+        <ImageButton
+            android:id="@+id/imgePostCreate"
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            android:layout_marginTop="20dp"
+            android:background="#ECECEC"
+            android:onClick="updateImage"
+            android:src="@drawable/ic_photo_camera_black_36dp"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/namePostCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/TextColorSecundary"
+            android:fontFamily="@font/sf_regular"
+            android:hint="Título"
+            android:includeFontPadding="false"
+            android:textColor="@color/TextColor"
+            android:textColorHint="@color/TextColorSecundary"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/descriptionPostCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/sf_regular"
+            android:hint="Descripción"
+            android:textColor="@color/TextColor"
+            android:textColorHint="@color/TextColorSecundary"
+            android:textSize="14sp" />
+
+        <CheckBox
+            android:id="@+id/saledPstCreate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/sf_regular"
+            android:onClick="showPrice"
+            android:text="En venta"
+            android:textColor="@color/TextColorSecundary"
+            android:textColorHint="@color/TextColorSecundary"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/pricePostCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableRight="@drawable/ic_baseline_monetization_on_24"
+            android:fontFamily="@font/sf_regular"
+            android:hint="Precio"
+            android:inputType="numberDecimal"
+            android:textColor="@color/TextColor"
+            android:textColorHint="@color/TextColorSecundary"
+            android:textSize="14sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:onClick="post"
+            android:text="Postear"
+            android:textColor="#FFF"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+</LinearLayout>

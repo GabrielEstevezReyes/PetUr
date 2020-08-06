@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:padding="20dp"
+    android:orientation="vertical"
+    tools:context=".RegistroMascota">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:gravity="center"
+        android:text="Registrar Mascota"
+        android:textAllCaps="true"
+        android:textColor="@color/TextColor"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="5dp"
+        android:background="#DADADA" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_bold"
+                android:text="Nombre"
+                android:textAllCaps="true"
+                android:textColor="@color/TextColorSecundary"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/nombreMascotaIF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/TextColorSecundary"
+                android:fontFamily="@font/sf_light"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/TextColor"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textColorLink="#FFF"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/sf_bold"
+                android:text="Tipo"
+                android:textAllCaps="true"
+                android:textColor="@color/TextColorSecundary"
+                android:textSize="12sp" />
+
+            <Spinner
+                android:id="@+id/SpinnerCate"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_height="40dp"
+                android:entries="@array/catmascotas"
+                />
+
+
+            <!--<EditText
+                android:id="@+id/tipoMascotaIF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ej. Perro, Gato, Pez, Ave..."
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/TextColorSecundary"
+                android:fontFamily="@font/sf_light"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/TextColor"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textColorLink="#FFF"
+                android:textSize="14sp" />-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/sf_bold"
+                android:text="Raza"
+                android:textAllCaps="true"
+                android:textColor="@color/TextColorSecundary"
+                android:textSize="12sp" />
+
+            <Spinner
+                android:id="@+id/SpinnerRaza"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_height="40dp"
+                android:entries="@array/raza"
+                />
+
+            <!--<EditText
+                android:id="@+id/razaMascotaIF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/TextColorSecundary"
+                android:fontFamily="@font/sf_light"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/TextColor"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textColorLink="#FFF"
+                android:textSize="14sp" />-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/sf_bold"
+                android:text="Color"
+                android:textAllCaps="true"
+                android:textColor="@color/TextColorSecundary"
+                android:textSize="12sp" />
+
+
+            <EditText
+                android:id="@+id/colorMascotaIF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/TextColorSecundary"
+                android:fontFamily="@font/sf_light"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/TextColor"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textColorLink="#FFF"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/sf_bold"
+                android:text="Fecha de nacimiento"
+                android:textAllCaps="true"
+                android:textColor="@color/TextColorSecundary"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/edadMascotaIF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/TextColorSecundary"
+                android:fontFamily="@font/sf_light"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/TextColor"
+                android:drawableRight="@drawable/ic_baseline_calendar_today_24"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textColorLink="#FFF"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/sf_bold"
+                android:text="Descripción"
+                android:textAllCaps="true"
+                android:textColor="@color/TextColorSecundary"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/descripcionMascotaIF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/TextColorSecundary"
+                android:fontFamily="@font/sf_light"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/TextColor"
+                android:textColorHint="@color/TextColorSecundary"
+                android:textColorLink="#FFF"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/botonRegistrarMascota"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/btn"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:onClick="myOnClick"
+                android:text="Registrar"
+                android:elevation="15dp"
+                android:textAllCaps="true"
+                android:textColor="#FFF"
+                android:textColorHighlight="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textColorLink="@color/colorAccent"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

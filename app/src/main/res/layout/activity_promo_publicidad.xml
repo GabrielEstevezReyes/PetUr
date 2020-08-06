@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".PromoPublicidad">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:background="#FFF"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:gravity="center"
+            android:text="Dejanos ayudarte"
+            android:textColor="@color/TextColor"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/allCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Recibir promociones y publicidad"
+            android:textColor="@color/TextColor"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="25dp">
+
+            <CheckBox
+                android:id="@+id/vetCheckbox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Veterinarios"
+                android:textColor="@color/TextColor"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/storesCheckbox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Tiendas para mascotas"
+                android:textColor="@color/TextColor"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/foodCheckbox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Alimentos"
+                android:textColor="@color/TextColor"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/nearbyCheckbox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Mascotas cercanas"
+                android:textColor="@color/TextColor"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/eventsCheckbox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Eventos"
+                android:textColor="@color/TextColor"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/tipsCheckbox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Tips"
+                android:textColor="@color/TextColor"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/btn"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:gravity="center"
+            android:onClick="updateGroup"
+            android:text="Aceptar"
+            android:textAllCaps="true"
+            android:textColor="#FFF"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

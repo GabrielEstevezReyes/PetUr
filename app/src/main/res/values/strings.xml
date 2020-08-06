@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Urpet [Dev]</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="pick_image_intent_text">Selecciona tu Imagen</string>
+    <string name="b_sequeda_de_grupos">Busequeda de grupos</string>
+    <string name="title_activity_places">Map</string>
+    <string name="google_maps_key">AIzaSyA70EDPFQOQ0kFgwytc1tQj6WJe9qR20iU</string>
+    <string name="facebook_app_id">239538950814156</string>
+    <string name="fb_login_protocol_scheme">fb5745e4891f72f93a3b8939a5d921d1</string>
+    <string name="advertising">Advertising</string>
+
+    <string-array name="catmascotas">
+        <item>Perro</item>
+        <item>Gato</item>
+    </string-array>
+
+
+    <string-array name="raza">
+        <item>Akita</item>
+        <item>Beagle</item>
+        <item>Dálmata</item>
+        <item>Beagle</item>
+        <item>Boxer</item>
+        <item>Basset</item>
+        <item>Chihuaha</item>
+        <item>Terrier</item>
+        <item>Whippet</item>
+        <item>Xoloitzcuintle</item>
+
+    </string-array>
+
+</resources>

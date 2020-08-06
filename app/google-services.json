@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "37432631902",
+    "firebase_url": "https://andurpet.firebaseio.com",
+    "project_id": "andurpet",
+    "storage_bucket": "andurpet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37432631902:android:b0e81dbcfc0fa25a9fcacf",
+        "android_client_info": {
+          "package_name": "com.example.urpet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37432631902-u8hjd73acfl8hbg3605g10j2d9m33s9j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.urpet",
+            "certificate_hash": "50e05fae477d18cc42e314a522b8b92042108a01"
+          }
+        },
+        {
+          "client_id": "37432631902-od2mk77761bb1o3dbl6lt1cmecp1uhc3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVdgBgNX7HZrauECpISVrN_Q3YAQV7ZnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37432631902-4r7icouo19sqqp8us1fvqdj0ddhen736.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

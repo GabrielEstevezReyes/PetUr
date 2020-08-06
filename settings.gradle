@@ -1,0 +1,2 @@
+rootProject.name='urpet'
+include ':app'
