@@ -1,4 +1,4 @@
-package com.example.urpet;
+package com.example.urpet.home.mascota;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,26 +6,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.urpet.R;
 import com.example.urpet.home.medico.MenuCuidados;
 import com.example.urpet.home.perfil.InfoCardPet;
 
-public class Vacunas extends AppCompatActivity {
+public class HistorialRecorridos extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vacunas);
-
+        setContentView(R.layout.activity_historial_recorridos);
     }
+
     public void btn_sig(View view){
-        Intent siguiente = new Intent(Vacunas.this, MenuCuidados.class);
+        Intent siguiente = new Intent(HistorialRecorridos.this, MenuCuidados.class);
         startActivity (siguiente);
         finish();
     }
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(Vacunas.this, InfoCardPet.class);
+        Intent siguiente = new Intent(HistorialRecorridos.this, InfoCardPet.class);
         startActivity (siguiente);
         finish();
     }

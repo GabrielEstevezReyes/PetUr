@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.urpet.home.MainActivity;
+import com.example.urpet.home.perfil.EditPerfilUserData;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class PerfilDatosUser extends AppCompatActivity {
@@ -40,7 +42,7 @@ public class PerfilDatosUser extends AppCompatActivity {
 
     public void btn_sig2(View view){
         mAuth.signOut();
-        Intent siguiente = new Intent(PerfilDatosUser.this, InicioSesion.class);
+        Intent siguiente = new Intent(PerfilDatosUser.this, LoginActivity.class);
         startActivity (siguiente);
         finish();
     }

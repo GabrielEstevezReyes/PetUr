@@ -1,4 +1,4 @@
-package com.example.urpet;
+package com.example.urpet.home.mascota;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +17,10 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.PromoPublicidad;
+import com.example.urpet.R;
 import com.example.urpet.connections.Pet;
 import com.example.urpet.connections.PetRace;
 import com.example.urpet.connections.PetType;
@@ -63,6 +67,16 @@ public class RegistroMascota extends AppCompatActivity {
         });
         descriptionInput = findViewById(R.id.descripcionMascotaIF);
         registerButton = findViewById(R.id.botonRegistrarMascota);
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    RegistroMascota.this.myOnClick();
+                } catch (JSONException | ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
         PetType tipos = new PetType();
         try {
@@ -162,9 +176,9 @@ public class RegistroMascota extends AppCompatActivity {
             !descriptionInput.getText().toString().isEmpty();
     }
 
-    @SuppressLint("NewApi")
-    public void myOnClick(View view) throws JSONException, ParseException {
-        Log.d("DEBUG", "CLICKED " + view.getId());
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void myOnClick() throws JSONException, ParseException {
         Log.println(Log.INFO, "kek", "Voy a guardar mascotas");
         if(allFieldsClean()){
             Pet llenar = new Pet();

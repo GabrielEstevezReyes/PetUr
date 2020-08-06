@@ -1,4 +1,4 @@
-package com.example.urpet;
+package com.example.urpet.home.perfil;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -18,6 +18,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.urpet.home.mascota.ListaMascotas;
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.R;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

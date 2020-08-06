@@ -7,7 +7,7 @@
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".EditPerfilPet">
+    tools:context=".home.perfil.EditPerfilPet">
 
     <TextView
         android:layout_width="match_parent"

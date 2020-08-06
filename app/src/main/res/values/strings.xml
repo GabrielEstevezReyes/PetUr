@@ -8,6 +8,7 @@
     <string name="facebook_app_id">239538950814156</string>
     <string name="fb_login_protocol_scheme">fb5745e4891f72f93a3b8939a5d921d1</string>
     <string name="advertising">Advertising</string>
+    <string name="fingerprint">Inicia sesión con tu huella digital</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>

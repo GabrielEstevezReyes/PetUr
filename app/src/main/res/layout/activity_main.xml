@@ -7,7 +7,7 @@
     android:foregroundGravity="center"
     android:orientation="vertical"
     android:background="@drawable/ic_patron"
-    tools:context=".MainActivity">
+    tools:context=".home.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,12 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:onClick="updateGroup"
             android:orientation="horizontal"
             tools:ignore="MissingConstraints">
 
             <com.mikhaellopez.circularimageview.CircularImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/home_activity_foto_perfil_civ"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:foregroundGravity="center"

@@ -1,4 +1,4 @@
-package com.example.urpet;
+package com.example.urpet.home.mascota;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +16,12 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.R;
 import com.example.urpet.connections.Pet;
+import com.example.urpet.home.MainActivity;
+import com.example.urpet.home.medico.Carnet;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;

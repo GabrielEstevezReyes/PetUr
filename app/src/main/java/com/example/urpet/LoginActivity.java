@@ -3,19 +3,28 @@ package com.example.urpet;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Rect;
+import androidx.biometric.BiometricPrompt;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.urpet.connections.User;
 
+import com.example.urpet.home.MainActivity;
+import com.example.urpet.registro.RegistroUsuario;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -38,34 +47,39 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 import org.json.JSONException;
 
-public class InicioSesion extends AppCompatActivity {
+import java.util.concurrent.Executor;
+
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private int selectedLogin = 0;
     private static final int RC_SIGN_IN = 0;
     public TextView error = null;
-    public EditText mailInput =  null;
-    public EditText passwordInput =  null;
+    private Button mLoginBtn;
+    private Button mFingerPrintBtn;
+    public EditText mCorreoET =  null;
+    public EditText mPasswordET =  null;
     private FirebaseAuth mAuth;
     private CallbackManager mCallbackManager;
     GoogleSignInClient mGoogleSignInClient;
+
+    private BiometricPrompt biometricPrompt;
+    private BiometricPrompt.PromptInfo promptInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_sesion);
+        bindviews();
+        configureViews();
+        configureBiometrics();
         try {
-            if (ActivityCompat.checkSelfPermission(InicioSesion.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(InicioSesion.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            if (ActivityCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(LoginActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         error = findViewById(R.id.errorMessage);
-        mailInput = findViewById(R.id.mailIF);
-        passwordInput = findViewById(R.id.passwordIF);
-        error = findViewById(R.id.errorMessage);
-        mailInput = findViewById(R.id.mailIF);
-        passwordInput = findViewById(R.id.passwordIF);
         error.setVisibility(View.INVISIBLE);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken("37432631902-4r7icouo19sqqp8us1fvqdj0ddhen736.apps.googleusercontent.com")
@@ -92,10 +106,22 @@ public class InicioSesion extends AppCompatActivity {
         }
     }
 
+    private void bindviews(){
+        mCorreoET = findViewById(R.id.login_activity_correo_et);
+        mLoginBtn = findViewById(R.id.login_activity_login_btn);
+        mPasswordET = findViewById(R.id.login_activity_password_et);
+        mFingerPrintBtn = findViewById(R.id.login_activity_fingerprint_btn);
+    }
+
+    private void configureViews(){
+        mLoginBtn.setOnClickListener(this);
+        mFingerPrintBtn.setOnClickListener(this);
+    }
+
     public void btn_sig(View view) {
         error.setVisibility(View.INVISIBLE);
-        String mail = mailInput.getText().toString();
-        String pass = passwordInput.getText().toString();
+        String mail = mCorreoET.getText().toString();
+        String pass = mPasswordET.getText().toString();
         if(!mail.isEmpty() && !pass.isEmpty()) {
             signIn(mail, pass);
         }
@@ -106,7 +132,7 @@ public class InicioSesion extends AppCompatActivity {
     }
 
     public void btn_ccuenta(View view){
-        Intent siguiente = new Intent(InicioSesion.this, RegistroUsuario.class);
+        Intent siguiente = new Intent(LoginActivity.this, RegistroUsuario.class);
         startActivity (siguiente);
         finish();
     }
@@ -123,7 +149,7 @@ public class InicioSesion extends AppCompatActivity {
         Log.println(Log.DEBUG, "login", current.toString());
         PersonalInfo.currentUser = current;
         error.setVisibility(View.INVISIBLE);
-        Intent siguiente = new Intent(InicioSesion.this, MainActivity.class);
+        Intent siguiente = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(siguiente);
         finish();
     }
@@ -139,12 +165,12 @@ public class InicioSesion extends AppCompatActivity {
         Log.println(Log.DEBUG, "login", current.toString());
         PersonalInfo.currentUser = current;
         error.setVisibility(View.INVISIBLE);
-        Intent siguiente = new Intent(InicioSesion.this, MainActivity.class);
+        Intent siguiente = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(siguiente);
         finish();
     }
 
-    private void signIn(String email, String password) {
+    public void signIn(String email, String password) {
         Log.println(Log.DEBUG, "login", "signIn:" + email);
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -152,18 +178,18 @@ public class InicioSesion extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.println(Log.DEBUG, "login", "signInWithEmail:success");
-                            User current = new User(mailInput.getText().toString());
+                            User current = new User(mCorreoET.getText().toString());
                             current.getFromMail();
                             PersonalInfo.currentUser = current;
                             error.setVisibility(View.INVISIBLE);
-                            Intent siguiente = new Intent(InicioSesion.this, MainActivity.class);
+                            Intent siguiente = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(siguiente);
                             finish();
                         } else {
                             Log.println(Log.DEBUG, "login", task.getException().toString());
                             error.setText("Datos de usuario incorrectos");
                             error.setVisibility(View.VISIBLE);
-                            Toast.makeText(InicioSesion.this, "Authentication failed.",
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -227,7 +253,7 @@ public class InicioSesion extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("login", "signInWithCredential:failure", task.getException());
-                            Toast.makeText(InicioSesion.this, "Authentication failed.",
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                             error.setText("Datos de usuario incorrectos");
                             error.setVisibility(View.VISIBLE);
@@ -285,12 +311,76 @@ public class InicioSesion extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.println(Log.DEBUG, "login", "signInWithCredential:failure" + task.getException());
-                            Toast.makeText(InicioSesion.this, "Authentication failed.",
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                             error.setText("Datos de usuario incorrectos");
                             error.setVisibility(View.VISIBLE);
                         }
                     }
                 });
+    }
+
+    /**
+     * <p>Método que cierra el Softkeyboard si se hace click afuera de él.</p>
+     * @param event El evento registrado en el dispositivo.
+     */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            View v = getCurrentFocus();
+            if (v instanceof EditText) {
+                Rect outRect = new Rect();
+                v.getGlobalVisibleRect(outRect);
+                if (!outRect.contains((int) event.getRawX(), (int) event.getRawY())) {
+                    v.clearFocus();
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    assert imm != null;
+                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
+            }
+        }
+        return super.dispatchTouchEvent(event);
+    }
+
+    /**
+     * <p></p>
+     * */
+    private void initFacialFingerPrint(){
+        biometricPrompt.authenticate(promptInfo);
+    }
+
+    /**
+     * <p>Método que manda a llamar a las funciones y utilierías del biométrico del dispositivo.</p>
+     * */
+    private void configureBiometrics() {
+        // Biometric
+        Executor executor = ContextCompat.getMainExecutor(this);
+        biometricPrompt = new BiometricPrompt(LoginActivity.this,
+                executor, new BiometricPrompt.AuthenticationCallback() {
+            @Override
+            public void onAuthenticationSucceeded(
+                    @NonNull BiometricPrompt.AuthenticationResult result) {
+                super.onAuthenticationSucceeded(result);
+                signIn("makuturunenjackson@gmail.com", "PuraPaja.");
+            }
+        });
+
+        promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                .setTitle("Accede a tu cuenta")
+                .setSubtitle("Inicia sesión con tus datos biometricos.")
+                .setNegativeButtonText("Utiliza tu contraseña")
+                .build();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.login_activity_login_btn:
+                signIn(mCorreoET.getText().toString(), mPasswordET.getText().toString());
+            break;
+            case R.id.login_activity_fingerprint_btn:
+                initFacialFingerPrint();
+            break;
+        }
     }
 }

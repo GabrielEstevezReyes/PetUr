@@ -15,14 +15,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.urpet.connections.BelongGroup;
-import com.example.urpet.connections.Group;
 import com.example.urpet.connections.Post;
+import com.example.urpet.home.grupos.GrupoPrincipal;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 
 import java.io.ByteArrayOutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class CreatePost extends AppCompatActivity {
 

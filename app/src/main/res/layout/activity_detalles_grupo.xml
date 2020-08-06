@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/ic_patron"
     android:padding="25dp"
-    tools:context=".DetallesGrupo">
+    tools:context=".home.grupos.DetallesGrupo">
 
     <LinearLayout
         android:layout_width="match_parent"

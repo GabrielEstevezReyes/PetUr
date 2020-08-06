@@ -1,13 +1,10 @@
-package com.example.urpet;
+package com.example.urpet.home.grupos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -15,7 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.urpet.connections.BelongGroup;
+import com.example.urpet.R;
 import com.example.urpet.connections.Group;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,8 +21,6 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import org.json.JSONException;
-
-import java.io.ByteArrayOutputStream;
 
 public class CrearGrupo extends AppCompatActivity {
 

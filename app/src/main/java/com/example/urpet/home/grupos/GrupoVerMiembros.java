@@ -1,14 +1,16 @@
-package com.example.urpet;
+package com.example.urpet.home.grupos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class GrupoSolicitudes extends AppCompatActivity {
+import com.example.urpet.R;
+
+public class GrupoVerMiembros extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grupo_solicitudes);
+        setContentView(R.layout.activity_grupo_ver_miembros);
     }
 }

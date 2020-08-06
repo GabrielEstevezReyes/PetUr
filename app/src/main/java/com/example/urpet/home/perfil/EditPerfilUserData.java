@@ -1,4 +1,4 @@
-package com.example.urpet;
+package com.example.urpet.home.perfil;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +16,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.urpet.PerfilDatosUser;
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.R;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -26,7 +29,6 @@ import com.mikhaellopez.circularimageview.CircularImageView;
 
 import org.json.JSONException;
 
-import java.io.ByteArrayOutputStream;
 import java.util.Calendar;
 
 public class EditPerfilUserData extends AppCompatActivity {

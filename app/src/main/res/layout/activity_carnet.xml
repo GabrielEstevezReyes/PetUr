@@ -7,7 +7,7 @@
     android:padding="20dp"
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
-    tools:context=".Carnet">
+    tools:context=".home.medico.Carnet">
 
     <TextView
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.example.urpet;
+package com.example.urpet.home.medico;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.example.urpet.connections.Pet;
+import com.example.urpet.home.perfil.EditPerfilPet;
+import com.example.urpet.home.mascota.ListaMascotas;
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.R;
 
 public class Carnet extends AppCompatActivity {
 

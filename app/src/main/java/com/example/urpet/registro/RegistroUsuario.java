@@ -1,4 +1,4 @@
-package com.example.urpet;
+package com.example.urpet.registro;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,10 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.urpet.LoginActivity;
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.R;
+import com.example.urpet.SMS;
 import com.example.urpet.connections.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,7 +28,7 @@ import org.json.JSONException;
 import java.io.IOException;
 import java.util.List;
 
-public class RegistroUsuario extends AppCompatActivity {
+public class RegistroUsuario extends AppCompatActivity implements View.OnClickListener {
 
     public EditText namesInput =  null;
     public EditText middleNameInput =  null;
@@ -33,6 +38,7 @@ public class RegistroUsuario extends AppCompatActivity {
     public EditText passwordInput =  null;
     public EditText confirmPasswordInput =  null;
     public TextView errorMessage = null;
+    private Button mButtonRegistrar;
     List<String> phns = null;
     private FirebaseAuth mAuth;
 
@@ -48,6 +54,8 @@ public class RegistroUsuario extends AppCompatActivity {
         passwordInput           = findViewById(R.id.registroUsuarioPassword);
         confirmPasswordInput    = findViewById(R.id.registroUsuarioConfirmPass);
         errorMessage            = findViewById(R.id.registroUsuarioErrorMessage);
+        bindviews();
+        configureViews();
         User current1 = new User(mailInput.getText().toString());
         phns = current1.getAllPhoneNumbers();
         mAuth = FirebaseAuth.getInstance();
@@ -60,9 +68,17 @@ public class RegistroUsuario extends AppCompatActivity {
         }
     }
 
+    private void bindviews(){
+        mButtonRegistrar = findViewById(R.id.registro_activity_registrar_btn);
+    }
+
+    private void configureViews(){
+        mButtonRegistrar.setOnClickListener(this);
+    }
+
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(RegistroUsuario.this, InicioSesion.class);
+        Intent siguiente = new Intent(RegistroUsuario.this, LoginActivity.class);
         startActivity (siguiente);
         finish();
     }
@@ -119,7 +135,7 @@ public class RegistroUsuario extends AppCompatActivity {
                             Log.println(Log.DEBUG, "createuser", "createAccount: [" + user.getEmail() + "]");
                             User current = new User(mailInput.getText().toString());
                             try {
-                                current.create(namesInput.getText().toString(), lastNameInput.getText().toString() + " " + middleNameInput.getText().toString(),
+                                current.create(namesInput.getText().toString(), lastNameInput.getText().toString(),
                                         mailInput.getText().toString(), cellphoneInput.getText().toString());
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -155,5 +171,14 @@ public class RegistroUsuario extends AppCompatActivity {
     private boolean isValid(String email) {
         String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
         return email.matches(regex);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.registro_activity_registrar_btn:
+                createAccount(mailInput.getText().toString(), passwordInput.getText().toString());
+            break;
+        }
     }
 }

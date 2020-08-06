@@ -6,7 +6,7 @@
     android:padding="20dp"
     android:background="#FFF"
     android:orientation="vertical"
-    tools:context=".Clinicas">
+    tools:context=".home.medico.Clinicas">
 
     <TextView
         android:layout_width="match_parent"

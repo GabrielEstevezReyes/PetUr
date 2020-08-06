@@ -1,10 +1,14 @@
-package com.example.urpet;
+package com.example.urpet.home.medico;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.urpet.R;
+import com.example.urpet.TipoVisita;
+import com.example.urpet.VisitaVeterinario;
 
 public class ListaVisitasMedicas extends AppCompatActivity {
 

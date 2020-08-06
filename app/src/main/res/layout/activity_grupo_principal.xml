@@ -6,7 +6,7 @@
     android:background="#FFF"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".GrupoPrincipal">
+    tools:context=".home.grupos.GrupoPrincipal">
 
     <ImageView
         android:id="@+id/imagePrincipalGroup"

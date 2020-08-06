@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".InicioSesion">
+    tools:context=".LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
 
 
         <EditText
-            android:id="@+id/mailIF"
+            android:id="@+id/login_activity_correo_et"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="15dp"
@@ -73,7 +73,7 @@
             android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/passwordIF"
+            android:id="@+id/login_activity_password_et"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="15dp"
@@ -106,14 +106,26 @@
             android:visibility="invisible" />
 
         <Button
+            android:id="@+id/login_activity_login_btn"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="20sp"
             android:background="@drawable/btn"
             android:fontFamily="@font/sf_bold"
-            android:onClick="updateGroup"
             android:shadowColor="#00FFFFFF"
             android:text="Iniciar sesión"
+            android:textColor="#FFF"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/login_activity_fingerprint_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/btn"
+            android:fontFamily="@font/sf_bold"
+            android:shadowColor="#00FFFFFF"
+            android:text="@string/fingerprint"
             android:textColor="#FFF"
             android:textSize="12sp" />
 

@@ -1,11 +1,17 @@
-package com.example.urpet;
+package com.example.urpet.home.medico;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.urpet.home.mascota.HistorialRecorridos;
+import com.example.urpet.home.perfil.InfoCardPet;
+import com.example.urpet.R;
+import com.example.urpet.Vacunas;
+import com.example.urpet.home.MainActivity;
+import com.example.urpet.home.alimentos.AnadirAlimento;
 
 public class MenuCuidados extends AppCompatActivity {
 

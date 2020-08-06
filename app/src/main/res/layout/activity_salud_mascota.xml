@@ -7,7 +7,7 @@
     android:padding="20dp"
     android:background="#FFF"
     android:orientation="vertical"
-    tools:context=".SaludMascota">
+    tools:context=".home.mascota.SaludMascota">
 
     <TextView
         android:layout_width="match_parent"

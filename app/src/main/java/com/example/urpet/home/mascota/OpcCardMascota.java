@@ -1,9 +1,12 @@
-package com.example.urpet;
+package com.example.urpet.home.mascota;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.example.urpet.R;
+import com.example.urpet.home.MainActivity;
 
 public class OpcCardMascota extends AppCompatActivity {
 

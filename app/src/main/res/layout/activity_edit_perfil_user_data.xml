@@ -7,7 +7,7 @@
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".EditPerfilUserData">
+    tools:context=".home.perfil.EditPerfilUserData">
 
 
     <LinearLayout

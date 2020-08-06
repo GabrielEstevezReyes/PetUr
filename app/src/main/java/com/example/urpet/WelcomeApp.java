@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.urpet.home.MainActivity;
+
 public class WelcomeApp extends AppCompatActivity {
 
     public TextView name;

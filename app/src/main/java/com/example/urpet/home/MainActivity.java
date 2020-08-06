@@ -1,30 +1,33 @@
-package com.example.urpet;
+package com.example.urpet.home;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
-import android.content.OperationApplicationException;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.icu.text.IDNA;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.urpet.home.medico.Clinicas;
+import com.example.urpet.home.perfil.InfoCardPet;
+import com.example.urpet.home.mascota.ListaMascotas;
+import com.example.urpet.home.mascota.OpcCardMascota;
+import com.example.urpet.PerfilDatosUser;
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.PlacesM;
+import com.example.urpet.R;
+import com.example.urpet.home.mascota.RegistroMascota;
+import com.example.urpet.SOS;
 import com.example.urpet.connections.Pet;
+import com.example.urpet.home.grupos.Grupos;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -34,8 +37,9 @@ import com.mikhaellopez.circularimageview.CircularImageView;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-    CircularImageView user;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    CircularImageView mFotoPerfilCIV;
     FirebaseStorage storage = FirebaseStorage.getInstance();
     LinearLayout cardPets = null;
 
@@ -45,14 +49,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView name = findViewById(R.id.nombrePrincipal);
-        name.setText(PersonalInfo.currentUser.getName());
-        user = findViewById(R.id.imageView4);
+        name.setText((PersonalInfo.currentUser.getName().isEmpty() ? "" : PersonalInfo.currentUser.getName()));
+        bindviews();
+        configureViews();
         cardPets = findViewById(R.id.scrollPets);
-        if(!PersonalInfo.currentUser.getBase64Image().isEmpty() && PersonalInfo.currentUser.getBase64Image() != "no-image.png") {
-            getBitmapFromURL(PersonalInfo.currentUser.getBase64Image(), user);
+        if(!PersonalInfo.currentUser.getBase64Image().isEmpty() && !PersonalInfo.currentUser.getBase64Image().equals("no-image.png")) {
+            getBitmapFromURL(PersonalInfo.currentUser.getBase64Image(), mFotoPerfilCIV);
         }
         else{
-            user.setImageResource(R.drawable.ic_user);
+            mFotoPerfilCIV.setImageResource(R.drawable.ic_user);
         }
         Pet obtener = new Pet();
 
@@ -112,6 +117,14 @@ public class MainActivity extends AppCompatActivity {
         return view;
     }
 
+    private void bindviews(){
+        mFotoPerfilCIV = findViewById(R.id.home_activity_foto_perfil_civ);
+    }
+
+    private void configureViews(){
+        mFotoPerfilCIV.setOnClickListener(this);
+    }
+
     public void linker(View view){
         String url1 = "https://www.purina-latam.com/mx/proplan";
         openURL(url1);
@@ -140,14 +153,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void btn_sig(View view){
-        Intent siguiente = new Intent(MainActivity.this, PerfilDatosUser.class);
-        startActivity (siguiente);
-        finish();
+    public void itAPerfil(){
+        startActivity(new Intent(this, PerfilDatosUser.class));
     }
 
     public void lis_mas(View view){
-        Intent siguiente = new Intent(MainActivity.this, ListaMascotas.class);
+        Intent siguiente = new Intent(this, ListaMascotas.class);
         startActivity (siguiente);
         finish();
     }
@@ -174,5 +185,14 @@ public class MainActivity extends AppCompatActivity {
         Intent siguiente = new Intent(MainActivity.this, SOS.class);
         startActivity (siguiente);
         finish();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.home_activity_foto_perfil_civ:
+                itAPerfil();
+            break;
+        }
     }
 }

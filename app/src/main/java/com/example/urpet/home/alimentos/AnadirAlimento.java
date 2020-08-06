@@ -1,10 +1,15 @@
-package com.example.urpet;
+package com.example.urpet.home.alimentos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.urpet.AnadirCompra;
+import com.example.urpet.home.perfil.InfoCardPet;
+import com.example.urpet.home.medico.MenuCuidados;
+import com.example.urpet.R;
 
 public class AnadirAlimento extends AppCompatActivity {
 

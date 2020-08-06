@@ -1,15 +1,11 @@
-package com.example.urpet;
+package com.example.urpet.home.grupos;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -17,14 +13,11 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.urpet.home.MainActivity;
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.R;
 import com.example.urpet.connections.BelongGroup;
 import com.example.urpet.connections.Group;
-import com.example.urpet.connections.Pet;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.text.ParseException;
 import java.util.ArrayList;

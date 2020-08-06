@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 
 public class Splash extends AppCompatActivity {
 
@@ -17,7 +16,7 @@ public class Splash extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(Splash.this, InicioSesion.class);
+                Intent intent = new Intent(Splash.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

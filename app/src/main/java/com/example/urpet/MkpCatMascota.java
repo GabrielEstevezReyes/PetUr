@@ -1,14 +1,14 @@
 package com.example.urpet;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class AddComida extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MkpCatMascota extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_comida);
+        setContentView(R.layout.activity_mkp_cat_mascota);
     }
 }

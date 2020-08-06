@@ -1,4 +1,4 @@
-package com.example.urpet;
+package com.example.urpet.home.grupos;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,9 +10,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
-import android.os.Debug;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -23,6 +21,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.urpet.CreatePost;
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.R;
 import com.example.urpet.connections.BelongGroup;
 import com.example.urpet.connections.Post;
 import com.example.urpet.connections.User;
