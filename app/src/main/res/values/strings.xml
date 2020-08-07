@@ -9,6 +9,26 @@
     <string name="fb_login_protocol_scheme">fb5745e4891f72f93a3b8939a5d921d1</string>
     <string name="advertising">Advertising</string>
     <string name="fingerprint">Inicia sesión con tu huella digital</string>
+    <string name="agendar_titulo">Agendar</string>
+    <string name="agendar_instrucciones">Registra el nombre del evento y las fechas en las que ocurrirá.</string>
+    <string name="agendar_hint_nombre">Nombre del evento</string>
+    <string name="agendar_inicio">Fecha de inicio</string>
+    <string name="agendar_fin">Fecha fin</string>
+    <string name="agendar_btn">Agendar</string>
+    <string name="calendar_instrucciones">Desliza para elegir la fecha</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="fecha_format">%s/%s/%s</string>
+    <string name="eventos_titulo">Eventos</string>
+    <string name="cuidados_titulo">Cuidados</string>
+    <string name="veterinario_titulo">Veterinario</string>
+    <string name="escanear_titulo">Escanear</string>
+    <string name="ajustes_titulo">Ajustes</string>
+    <string name="agregar_evento_titulo">Agregar evento</string>
+    <string name="medico_titulo">Médico</string>
+    <string name="item_evento_nombre">Nombre del evento</string>
+    <string name="item_evento_inicio">Fecha de inicio</string>
+    <string name="item_evento_fin">Fecha de fin</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>

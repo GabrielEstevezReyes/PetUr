@@ -21,7 +21,7 @@ import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
 import com.example.urpet.connections.Pet;
 import com.example.urpet.home.MainActivity;
-import com.example.urpet.home.medico.Carnet;
+import com.example.urpet.home.mascota.detallesMascota.CarnetMascotaActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -60,17 +60,11 @@ public class ListaMascotas extends AppCompatActivity {
         StorageReference islandRef = storageRef.child(src);
 
         final long ONE_MEGABYTE = 1024 * 1024;
-        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-            @Override
-            public void onSuccess(byte[] b) {
-                Drawable image = new BitmapDrawable(getResources(),BitmapFactory.decodeByteArray(b, 0, b.length));
-                circ.setImageDrawable(image);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle any errors
-            }
+        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(b -> {
+            Drawable image = new BitmapDrawable(getResources(),BitmapFactory.decodeByteArray(b, 0, b.length));
+            circ.setImageDrawable(image);
+        }).addOnFailureListener(exception -> {
+            // Handle any errors
         });
     }
 
@@ -130,11 +124,8 @@ public class ListaMascotas extends AppCompatActivity {
         detailsOfPet.setTypeface(typeface);
         nameOfPet.setTypeface(typeface);
         textsPet.addView(detailsOfPet);
-        textsPet.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                btn_edit(v, petName);
-            }
-        });
+
+        //textsPet.setOnClickListener(v -> abrirCarnet(petName));
         textsPet.setId(petName.getID());
         parentPet.addView(textsPet);
 
@@ -142,22 +133,21 @@ public class ListaMascotas extends AppCompatActivity {
     }
 
     public void btn_sig(View view){
-        Intent siguiente = new Intent(ListaMascotas.this, RegistroMascota.class);
+        Intent siguiente = new Intent(this, RegistroMascota.class);
         startActivity (siguiente);
         finish();
     }
 
-    public void btn_edit(View view, Pet petToEdit){
-        PersonalInfo.clickedPet = petToEdit;
-        Log.println(Log.INFO, "kek2", PersonalInfo.clickedPet.toString());
-        Intent siguiente = new Intent(ListaMascotas.this, Carnet.class);
-        startActivity (siguiente);
-        finish();
-    }
+//    public void abrirCarnet(Pet petToEdit){
+//        PersonalInfo.clickedPet = petToEdit;
+//        Intent siguiente = new Intent(this, CarnetMascotaActivity.class);
+//        startActivity (siguiente);
+//        finish();
+//    }
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(ListaMascotas.this, MainActivity.class);
+        Intent siguiente = new Intent(this, MainActivity.class);
         startActivity (siguiente);
         finish();
     }

@@ -8,7 +8,7 @@ import android.os.Bundle;
 import com.example.urpet.R;
 import com.example.urpet.home.MainActivity;
 
-public class OpcCardMascota extends AppCompatActivity {
+public class MascotaSettingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class OpcCardMascota extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(OpcCardMascota.this, MainActivity.class);
+        Intent siguiente = new Intent(MascotaSettingActivity.this, MainActivity.class);
         startActivity (siguiente);
         finish();
     }

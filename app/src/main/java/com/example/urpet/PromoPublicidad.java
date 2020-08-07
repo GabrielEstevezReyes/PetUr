@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 
 import com.example.urpet.connections.Marketing;
 import com.example.urpet.home.mascota.ListaMascotas;
+import com.example.urpet.home.mascota.SuccesRegPet;
 
 public class PromoPublicidad extends AppCompatActivity {
 

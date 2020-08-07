@@ -7,7 +7,7 @@
     android:background="@drawable/ic_patron"
     android:padding="20dp"
     android:orientation="vertical"
-    tools:context=".home.perfil.InfoCardPet">
+    tools:context=".home.mascota.detallesMascota.DetalleMascotaActivity">
 
     <TextView
         android:id="@+id/nombreInfoCard"
@@ -254,13 +254,14 @@
                 android:textSize="12sp" />
 
             <Button
+                android:id="@+id/detalle_mascota_medico_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_semi_bold"
                 android:onClick="carnet"
-                android:text="Medico"
+                android:text="@string/medico_titulo"
                 android:textAllCaps="true"
                 android:textColor="#FFF"
                 android:textSize="12sp" />

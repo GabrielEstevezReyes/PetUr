@@ -1,4 +1,4 @@
-package com.example.urpet;
+package com.example.urpet.home.mascota;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.R;
 import com.example.urpet.home.MainActivity;
 import com.mikhaellopez.circularimageview.CircularImageView;
 

@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.urpet.AnadirCompra;
-import com.example.urpet.home.perfil.InfoCardPet;
+import com.example.urpet.home.mascota.detallesMascota.DetalleMascotaActivity;
 import com.example.urpet.home.medico.MenuCuidados;
 import com.example.urpet.R;
 
@@ -34,7 +34,7 @@ public class AnadirAlimento extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(AnadirAlimento.this, InfoCardPet.class);
+        Intent siguiente = new Intent(AnadirAlimento.this, DetalleMascotaActivity.class);
         startActivity (siguiente);
         finish();
     }

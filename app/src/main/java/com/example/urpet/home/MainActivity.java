@@ -17,9 +17,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.urpet.home.medico.Clinicas;
-import com.example.urpet.home.perfil.InfoCardPet;
+import com.example.urpet.home.mascota.detallesMascota.DetalleMascotaActivity;
 import com.example.urpet.home.mascota.ListaMascotas;
-import com.example.urpet.home.mascota.OpcCardMascota;
+import com.example.urpet.home.mascota.MascotaSettingActivity;
 import com.example.urpet.PerfilDatosUser;
 import com.example.urpet.PersonalInfo;
 import com.example.urpet.PlacesM;
@@ -73,13 +73,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         View viewN = getLayoutInflater().inflate(R.layout.newpetcard, null);
         viewN.setPadding(10,0,10,0);
-        viewN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent siguiente = new Intent(MainActivity.this, RegistroMascota.class);
-                startActivity (siguiente);
-                finish();
-            }
+        viewN.setOnClickListener(v -> {
+            Intent siguiente = new Intent(MainActivity.this, RegistroMascota.class);
+            startActivity (siguiente);
+            finish();
         });
         cardPets.addView(viewN);
     }
@@ -87,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     View buildPetLayout(final Pet petName){
         View view = getLayoutInflater().inflate(R.layout.petcard, null);
         CircularImageView petI = view.findViewById(R.id.petCardImage);
-        if(!petName.getBase64Image().isEmpty() && petName.getBase64Image() != "no-image.png") {
+        if(!petName.getBase64Image().isEmpty() && !petName.getBase64Image().equals("no-image.png")) {
             getBitmapFromURL(petName.getBase64Image(), petI);
         }
         else{
@@ -96,23 +93,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView petN = view.findViewById(R.id.petCardName);
         petN.setText(petName.getName());
         view.setPadding(10,0,10,0);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PersonalInfo.clickedPet = petName;
-                Intent siguiente = new Intent(MainActivity.this, InfoCardPet.class);
-                startActivity (siguiente);
-                finish();
-            }
+        view.setOnClickListener(v -> {
+            PersonalInfo.clickedPet = petName;
+            Intent siguiente = new Intent(this, DetalleMascotaActivity.class);
+            startActivity (siguiente);
+            finish();
         });
-        ImageView sett = view.findViewById(R.id.petCardSettings);
-        sett.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent siguiente = new Intent(MainActivity.this, OpcCardMascota.class);
-                startActivity (siguiente);
-                finish();
-            }
+
+        ImageView sett = view.findViewById(R.id.item_home_mascota_setting_iv);
+        sett.setOnClickListener(v -> {
+            Intent siguiente = new Intent(this, MascotaSettingActivity.class);
+            startActivity (siguiente);
+            finish();
         });
         return view;
     }

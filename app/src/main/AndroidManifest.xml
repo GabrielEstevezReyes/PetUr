@@ -31,14 +31,14 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             />
         <activity
-            android:name=".home.perfil.InfoCardPet"
+            android:name=".home.mascota.detallesMascota.DetalleMascotaActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             />
         <activity
-            android:name=".home.mascota.OpcCardMascota"
+            android:name=".home.mascota.MascotaSettingActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.medico.Carnet"
+            android:name=".home.mascota.detallesMascota.CarnetMascotaActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".home.medico.ListaVisitasMedicas"
@@ -126,7 +126,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".SuccesRegPet"
+            android:name=".home.mascota.SuccesRegPet"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />

@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.example.urpet.R;
 import com.example.urpet.home.medico.MenuCuidados;
-import com.example.urpet.home.perfil.InfoCardPet;
+import com.example.urpet.home.mascota.detallesMascota.DetalleMascotaActivity;
 
 public class HistorialRecorridos extends AppCompatActivity {
 
@@ -26,7 +26,7 @@ public class HistorialRecorridos extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(HistorialRecorridos.this, InfoCardPet.class);
+        Intent siguiente = new Intent(HistorialRecorridos.this, DetalleMascotaActivity.class);
         startActivity (siguiente);
         finish();
     }

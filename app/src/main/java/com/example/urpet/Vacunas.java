@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.urpet.home.medico.MenuCuidados;
-import com.example.urpet.home.perfil.InfoCardPet;
+import com.example.urpet.home.mascota.detallesMascota.DetalleMascotaActivity;
 
 public class Vacunas extends AppCompatActivity {
 
@@ -25,7 +25,7 @@ public class Vacunas extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(Vacunas.this, InfoCardPet.class);
+        Intent siguiente = new Intent(Vacunas.this, DetalleMascotaActivity.class);
         startActivity (siguiente);
         finish();
     }

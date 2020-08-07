@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.urpet.home.mascota.HistorialRecorridos;
-import com.example.urpet.home.perfil.InfoCardPet;
+import com.example.urpet.home.mascota.detallesMascota.DetalleMascotaActivity;
 import com.example.urpet.R;
 import com.example.urpet.Vacunas;
 import com.example.urpet.home.MainActivity;
@@ -35,7 +35,7 @@ public class MenuCuidados extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(MenuCuidados.this, InfoCardPet.class);
+        Intent siguiente = new Intent(MenuCuidados.this, DetalleMascotaActivity.class);
         startActivity (siguiente);
         finish();
     }

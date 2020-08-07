@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#F6921E</color>
     <color name="colorAccent">#F6921E</color>
     <color name="TextColor">#1D2229</color>
+    <color name="blanco">#FFF</color>
     <color name="TextColorSecundary">#80364353</color>
 </resources>

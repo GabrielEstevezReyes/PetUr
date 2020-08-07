@@ -20,7 +20,7 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:id="@+id/petCardSettings"
+                android:id="@+id/item_home_mascota_setting_iv"
                 android:layout_gravity="right"
                 android:text="Configurar"
                 android:textSize="10dp" />
