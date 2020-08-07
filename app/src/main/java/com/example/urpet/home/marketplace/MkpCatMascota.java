@@ -1,8 +1,10 @@
-package com.example.urpet;
+package com.example.urpet.home.marketplace;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.urpet.R;
 
 public class MkpCatMascota extends AppCompatActivity {
 

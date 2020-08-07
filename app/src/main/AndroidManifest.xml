@@ -23,8 +23,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MkpCatMascota"></activity>
-        <activity android:name=".MkpMain" />
+        <activity android:name=".home.marketplace.MkpCatMascota"/>
+        <activity android:name=".home.marketplace.MarketplaceActivity" />
         <activity android:name=".Post" />
         <activity
             android:name=".Notifications"

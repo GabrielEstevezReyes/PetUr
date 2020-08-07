@@ -286,22 +286,49 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         app:cardCornerRadius="10dp"
+                        android:elevation="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#000"
+                        >
+                        <Button
+                            android:id="@+id/home_activity_tienda_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/menu_mascotas"
+                            android:drawableEnd="@drawable/ic_sos_menu"
+                            android:text="@string/tienda"
+                            android:gravity="start|center"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="0dp"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:textAllCaps="false"
+                            android:textColor="#FFF"
+                            android:textSize="@dimen/titulos"
+                            />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        app:cardCornerRadius="10dp"
                         android:onClick="lis_grupos"
                         android:elevation="16dp"
                         android:background="#000"
                         >
                         <Button
+                            android:id="@+id/home_activity_sos_btn"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:background="@drawable/menu_mascotas"
-                            android:drawableRight="@drawable/ic_sos_menu"
-                            android:text="S.O.S"
-                            android:gravity="left|center"
-                            android:paddingLeft="20dp"
+                            android:drawableEnd="@drawable/ic_sos_menu"
+                            android:text="@string/sos"
+                            android:gravity="start|center"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="0dp"
                             android:fontFamily="@font/poppins_semi_bold"
                             android:textAllCaps="false"
                             android:textColor="#FFF"
-                            android:textSize="18dp"
+                            android:textSize="@dimen/titulos"
                             />
                     </androidx.cardview.widget.CardView>
 

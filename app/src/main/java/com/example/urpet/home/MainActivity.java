@@ -3,6 +3,7 @@ package com.example.urpet.home;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -13,10 +14,12 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.urpet.home.marketplace.MarketplaceActivity;
 import com.example.urpet.home.medico.Clinicas;
 import com.example.urpet.home.mascota.detallesMascota.DetalleMascotaActivity;
 import com.example.urpet.home.mascota.ListaMascotas;
@@ -39,6 +42,8 @@ import java.text.ParseException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private Button mSOSBtn, mBtnTiendaBTN;
 
     CircularImageView mFotoPerfilCIV;
     FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -113,10 +118,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void bindviews(){
         mFotoPerfilCIV = findViewById(R.id.home_activity_foto_perfil_civ);
+        mBtnTiendaBTN = findViewById(R.id.home_activity_tienda_btn);
+        mSOSBtn = findViewById(R.id.home_activity_sos_btn);
     }
 
     private void configureViews(){
         mFotoPerfilCIV.setOnClickListener(this);
+        mBtnTiendaBTN.setOnClickListener(this);
+        mSOSBtn.setOnClickListener(this);
     }
 
     public void linker(View v){
@@ -179,10 +188,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         finish();
     }
 
-    public void lis_SOS(View view){
+    public void irASoS(){
         Intent siguiente = new Intent(MainActivity.this, SOS.class);
         startActivity (siguiente);
         finish();
+    }
+
+    private void irAMarket(){
+        Intent siguiente = new Intent(this, MarketplaceActivity.class);
+        startActivity (siguiente);
     }
 
     @Override
@@ -190,6 +204,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.home_activity_foto_perfil_civ:
                 itAPerfil();
+            break;
+            case R.id.home_activity_tienda_btn:
+                irAMarket();
+            break;
+            case R.id.home_activity_sos_btn:
+                irASoS();
             break;
         }
     }

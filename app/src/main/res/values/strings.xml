@@ -32,6 +32,9 @@
     <string name="unicacion_real">Ubicación real</string>
     <string name="casa">Casa</string>
     <string name="social">Social</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="tienda">Tienda</string>
+    <string name="sos">S.O.S</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>

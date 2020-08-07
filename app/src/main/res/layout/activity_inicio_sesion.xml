@@ -113,7 +113,7 @@
             android:background="@drawable/btn"
             android:fontFamily="@font/sf_bold"
             android:shadowColor="#00FFFFFF"
-            android:text="Iniciar sesión"
+            android:text="@string/login"
             android:textColor="#FFF"
             android:textSize="12sp" />
 
