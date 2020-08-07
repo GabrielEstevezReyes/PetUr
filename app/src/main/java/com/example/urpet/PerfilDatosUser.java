@@ -5,19 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.urpet.home.MainActivity;
 import com.example.urpet.home.perfil.EditPerfilUserData;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class PerfilDatosUser extends AppCompatActivity {
+public class PerfilDatosUser extends AppCompatActivity implements View.OnClickListener {
 
     public TextView nameI =  null;
     public TextView cellI =  null;
     public TextView mailI =  null;
     public TextView addrI =  null;
     private FirebaseAuth mAuth;
+    private Button mEditarbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +34,19 @@ public class PerfilDatosUser extends AppCompatActivity {
         cellI.setText(PersonalInfo.currentUser.getPhoneNumber());
         addrI.setText(PersonalInfo.currentUser.getAddr());
         mAuth = FirebaseAuth.getInstance();
+        bindviews();
+        configureViews();
     }
 
-    public void btn_sig(View view){
+    private void bindviews(){
+        mEditarbtn = findViewById(R.id.editar_perfil_editar_btn);
+    }
+
+    private void configureViews(){
+        mEditarbtn.setOnClickListener(this);
+    }
+
+    public void irAEditarPerfil(){
         Intent siguiente = new Intent(PerfilDatosUser.this, EditPerfilUserData.class);
         startActivity (siguiente);
         finish();
@@ -56,5 +68,14 @@ public class PerfilDatosUser extends AppCompatActivity {
 
     public void volver(View view){
         onBackPressed();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.editar_perfil_editar_btn:
+                irAEditarPerfil();
+            break;
+        }
     }
 }

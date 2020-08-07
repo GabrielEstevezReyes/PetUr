@@ -50,11 +50,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView name = findViewById(R.id.nombrePrincipal);
-        name.setText((PersonalInfo.currentUser.getName().isEmpty() ? "" : PersonalInfo.currentUser.getName()));
+        name.setText(
+                (PersonalInfo.currentUser != null ? (PersonalInfo.currentUser.getName().isEmpty() ? "" : PersonalInfo.currentUser.getName()) : ""));
         bindviews();
         configureViews();
         cardPets = findViewById(R.id.scrollPets);
-        if(!PersonalInfo.currentUser.getBase64Image().isEmpty() && !PersonalInfo.currentUser.getBase64Image().equals("no-image.png")) {
+        if(PersonalInfo.currentUser != null && !PersonalInfo.currentUser.getBase64Image().isEmpty() && !PersonalInfo.currentUser.getBase64Image().equals("no-image.png")) {
             getBitmapFromURL(PersonalInfo.currentUser.getBase64Image(), mFotoPerfilCIV);
         }
         else{
