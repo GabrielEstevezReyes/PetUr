@@ -19,12 +19,14 @@ public class MenuCuidados extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_cuidados);
+        findViewById(R.id.cuidados_activity_vacunas_et).setOnClickListener(v-> irAVacunas());
+        findViewById(R.id.cuidados_activity_aliments_tv).setOnClickListener(v-> iraAlimentos());
+        findViewById(R.id.cuidados_activity_recorrido_et).setOnClickListener(v-> irAHistorial());
     }
 
-    public void btn_sig(View view){
+    public void irAVacunas(){
         Intent siguiente = new Intent(MenuCuidados.this, Vacunas.class);
         startActivity (siguiente);
-        finish();
     }
 
     public void btn_atras(View view){
@@ -40,15 +42,13 @@ public class MenuCuidados extends AppCompatActivity {
         finish();
     }
 
-    public void btn_alimentos(View view){
+    public void iraAlimentos(){
         Intent siguiente = new Intent(MenuCuidados.this, AnadirAlimento.class);
         startActivity (siguiente);
-        finish();
     }
 
-    public void btn_recorr(View view){
+    public void irAHistorial(){
         Intent siguiente = new Intent(MenuCuidados.this, HistorialRecorridos.class);
         startActivity (siguiente);
-        finish();
     }
 }
