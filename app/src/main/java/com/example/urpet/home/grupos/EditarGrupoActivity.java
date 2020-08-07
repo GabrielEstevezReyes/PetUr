@@ -36,7 +36,7 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetallesGrupo extends AppCompatActivity {
+public class EditarGrupoActivity extends AppCompatActivity {
 
     public EditText name;
     public EditText description;
@@ -94,7 +94,7 @@ public class DetallesGrupo extends AppCompatActivity {
     public void updateGroup(View view) throws JSONException {
         PersonalInfo.selectedGroup.setName(name.getText().toString());
         PersonalInfo.selectedGroup.update();
-        Intent siguiente = new Intent(DetallesGrupo.this, Grupos.class);
+        Intent siguiente = new Intent(EditarGrupoActivity.this, ListadoGruposActivity.class);
         startActivity (siguiente);
         finish();
     }
@@ -186,7 +186,7 @@ public class DetallesGrupo extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(DetallesGrupo.this, GrupoPrincipal.class);
+        Intent siguiente = new Intent(EditarGrupoActivity.this, DetalleGrupoActivity.class);
         startActivity (siguiente);
         finish();
     }

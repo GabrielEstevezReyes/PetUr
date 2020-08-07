@@ -231,24 +231,29 @@
             android:textSize="12dp" />
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:orientation="vertical">
+
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <Button
+                android:id="@+id/detalle_mascota_social_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn"
                 android:fontFamily="@font/poppins_semi_bold"
-                android:onClick="grupos"
-                android:text="Social"
                 android:gravity="center"
+                android:text="@string/social"
                 android:textAllCaps="true"
                 android:textColor="#FFF"
                 android:textSize="12sp" />
@@ -257,8 +262,8 @@
                 android:id="@+id/detalle_mascota_medico_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/btn"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/btn"
                 android:fontFamily="@font/poppins_semi_bold"
                 android:onClick="carnet"
                 android:text="@string/medico_titulo"
@@ -266,40 +271,50 @@
                 android:textColor="#FFF"
                 android:textSize="12sp" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
+
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/btn"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:onClick="sitios"
+            android:text="@string/unicacion_real"
+            android:textAllCaps="true"
+            android:textColor="#FFF"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-            <Button
-                android:layout_width="175dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:onClick="sitios"
-                android:text="Ubicación Real"
-                android:textAllCaps="true"
-                android:textColor="#FFF"
-                android:textSize="12sp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
 
-            <Button
-                android:layout_width="175dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/btn"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:onClick="casa"
-                android:text="Casa"
-                android:textAllCaps="true"
-                android:textColor="#FFF"
-                android:textSize="12sp" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/btn"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:onClick="casa"
+            android:text="@string/casa"
+            android:textAllCaps="true"
+            android:textColor="#FFF"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/button2" />
 
-        </LinearLayout>
-
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

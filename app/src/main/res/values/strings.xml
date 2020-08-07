@@ -27,8 +27,11 @@
     <string name="agregar_evento_titulo">Agregar evento</string>
     <string name="medico_titulo">Médico</string>
     <string name="item_evento_nombre">Nombre del evento</string>
-    <string name="item_evento_inicio">Fecha de inicio</string>
-    <string name="item_evento_fin">Fecha de fin</string>
+    <string name="item_evento_inicio">Fecha inicio</string>
+    <string name="item_evento_fin">Fecha fin</string>
+    <string name="unicacion_real">Ubicación real</string>
+    <string name="casa">Casa</string>
+    <string name="social">Social</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>
@@ -47,7 +50,6 @@
         <item>Terrier</item>
         <item>Whippet</item>
         <item>Xoloitzcuintle</item>
-
     </string-array>
 
 </resources>

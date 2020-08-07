@@ -1,4 +1,4 @@
-package com.example.urpet;
+package com.example.urpet.home.grupos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,13 +15,14 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.R;
 import com.example.urpet.connections.Post;
-import com.example.urpet.home.grupos.GrupoPrincipal;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 
 import java.io.ByteArrayOutputStream;
 
-public class CreatePost extends AppCompatActivity {
+public class RealizarPublicacionActivity extends AppCompatActivity {
 
     public EditText titlePost =  null;
     public EditText descriptionPost =  null;
@@ -70,7 +71,7 @@ public class CreatePost extends AppCompatActivity {
                 Toast toast = Toast.makeText(this, "Error, intente de nuevo más tarde", Toast.LENGTH_LONG);
                 toast.show();
             }
-            Intent siguiente = new Intent(CreatePost.this, GrupoPrincipal.class);
+            Intent siguiente = new Intent(RealizarPublicacionActivity.this, DetalleGrupoActivity.class);
             startActivity(siguiente);
             finish();
         }
@@ -93,7 +94,7 @@ public class CreatePost extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(CreatePost.this, GrupoPrincipal.class);
+        Intent siguiente = new Intent(RealizarPublicacionActivity.this, DetalleGrupoActivity.class);
         startActivity (siguiente);
         finish();
     }
@@ -118,7 +119,7 @@ public class CreatePost extends AppCompatActivity {
                     byteArray = stream.toByteArray();
                     encodedImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
                     System.out.println("Guardando: " + encodedImage);
-                    Toast.makeText(CreatePost.this, "Conversion Done", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RealizarPublicacionActivity.this, "Conversion Done", Toast.LENGTH_SHORT).show();
                     selectedImage = true;
                 }
             } catch (Exception e) {

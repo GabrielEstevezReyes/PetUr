@@ -6,7 +6,7 @@
     android:background="#FFF"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".home.grupos.GrupoPrincipal">
+    tools:context=".home.grupos.DetalleGrupoActivity">
 
     <ImageView
         android:id="@+id/imagePrincipalGroup"
@@ -135,7 +135,7 @@
             android:fontFamily="@font/poppins_semi_bold"
             android:gravity="center"
             android:text="PUBLICAR"
-            android:onClick="goToPost"
+            android:onClick="onRealizarPublicacion"
             android:textAllCaps="true"
             android:textColor="#FFF"
             android:textColorLink="#FFFFFF"

@@ -1,6 +1,5 @@
 package com.example.urpet.home.mascota.detallesMascota;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -17,18 +16,16 @@ import com.example.urpet.PlacesM;
 import com.example.urpet.R;
 import com.example.urpet.connections.Pet;
 import com.example.urpet.home.MainActivity;
-import com.example.urpet.home.grupos.Grupos;
+import com.example.urpet.home.grupos.ListadoGruposActivity;
 import com.example.urpet.home.medico.Clinicas;
 import com.example.urpet.home.medico.MenuCuidados;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 public class DetalleMascotaActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button mMedicoBTN;
+    private Button mMedicoBTN, mSocialBtn;
 
     CircularImageView petImage = null;
     TextView petName = null;
@@ -43,7 +40,7 @@ public class DetalleMascotaActivity extends AppCompatActivity implements View.On
         petName = findViewById(R.id.nombreInfoCard);
         petImage = findViewById(R.id.imageView6);
         petName.setText(PersonalInfo.clickedPet.getName());
-        if(!PersonalInfo.currentUser.getBase64Image().isEmpty() && PersonalInfo.currentUser.getBase64Image() != "no-image.png") {
+        if(!PersonalInfo.currentUser.getBase64Image().isEmpty() && !PersonalInfo.currentUser.getBase64Image().equals("no-image.png")) {
             getBitmapFromURL(PersonalInfo.currentUser.getBase64Image(), petImage);
         }
         else{
@@ -53,10 +50,12 @@ public class DetalleMascotaActivity extends AppCompatActivity implements View.On
 
     private void bindViews(){
         mMedicoBTN = findViewById(R.id.detalle_mascota_medico_btn);
+        mSocialBtn = findViewById(R.id.detalle_mascota_social_btn);
     }
 
     private void configureViews(){
         mMedicoBTN.setOnClickListener(this);
+        mSocialBtn.setOnClickListener(this);
     }
 
     public void getBitmapFromURL(String src, final CircularImageView circ) {
@@ -72,16 +71,14 @@ public class DetalleMascotaActivity extends AppCompatActivity implements View.On
         });
     }
 
-    public void grupos(View view) {
-        Intent siguiente = new Intent(DetalleMascotaActivity.this, Grupos.class);
+    public void grupos() {
+        Intent siguiente = new Intent(this, ListadoGruposActivity.class);
         startActivity (siguiente);
-        finish();
     }
 
     public void carnet(View view) {
         Intent siguiente = new Intent(DetalleMascotaActivity.this, CarnetMascotaActivity.class);
         startActivity (siguiente);
-        finish();
     }
 
     public void sitios(View view) {
@@ -114,6 +111,9 @@ public class DetalleMascotaActivity extends AppCompatActivity implements View.On
         switch (view.getId()){
             case R.id.detalle_mascota_medico_btn:
                 abrirCarnet(null);
+            break;
+            case R.id.detalle_mascota_social_btn:
+                grupos();
             break;
         }
     }

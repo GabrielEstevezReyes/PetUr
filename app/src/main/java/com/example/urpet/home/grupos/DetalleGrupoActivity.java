@@ -21,7 +21,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.urpet.CreatePost;
 import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
 import com.example.urpet.connections.BelongGroup;
@@ -35,7 +34,7 @@ import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.List;
 
-public class GrupoPrincipal extends AppCompatActivity {
+public class DetalleGrupoActivity extends AppCompatActivity {
 
     public TextView title;
     public TextView description;
@@ -192,13 +191,13 @@ public class GrupoPrincipal extends AppCompatActivity {
     }
 
     public void goToEditGroup(View v1){
-        Intent siguiente = new Intent(GrupoPrincipal.this, DetallesGrupo.class);
+        Intent siguiente = new Intent(DetalleGrupoActivity.this, EditarGrupoActivity.class);
         startActivity (siguiente);
         finish();
     }
 
-    public void goToPost(View v1){
-        Intent siguiente = new Intent(GrupoPrincipal.this, CreatePost.class);
+    public void onRealizarPublicacion(View v1){
+        Intent siguiente = new Intent(DetalleGrupoActivity.this, RealizarPublicacionActivity.class);
         startActivity (siguiente);
         finish();
     }
@@ -206,7 +205,7 @@ public class GrupoPrincipal extends AppCompatActivity {
     public void joinGroup(){
         BelongGroup toJoin = new BelongGroup(PersonalInfo.currentUser.getID(), PersonalInfo.selectedGroup.getID());
         toJoin.create();
-        Toast.makeText(GrupoPrincipal.this, "Te has unido a este grupo.",
+        Toast.makeText(DetalleGrupoActivity.this, "Te has unido a este grupo.",
                 Toast.LENGTH_SHORT).show();
         reload();
     }
@@ -223,14 +222,14 @@ public class GrupoPrincipal extends AppCompatActivity {
     public void requestJoinGroup(){
         BelongGroup toJoin = new BelongGroup(PersonalInfo.currentUser.getID(), PersonalInfo.selectedGroup.getID());
         toJoin.requestJoin();
-        Toast.makeText(GrupoPrincipal.this, "Tu solicitud para unirte ha sido enviada.",
+        Toast.makeText(DetalleGrupoActivity.this, "Tu solicitud para unirte ha sido enviada.",
                 Toast.LENGTH_SHORT).show();
         reload();
     }
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(GrupoPrincipal.this, Grupos.class);
+        Intent siguiente = new Intent(DetalleGrupoActivity.this, ListadoGruposActivity.class);
         startActivity (siguiente);
         finish();
     }

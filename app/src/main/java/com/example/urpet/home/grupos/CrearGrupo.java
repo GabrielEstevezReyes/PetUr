@@ -56,7 +56,7 @@ public class CrearGrupo extends AppCompatActivity {
                 newGroup.setImage(encodedImage);
             }
             newGroup.create();
-            Intent siguiente = new Intent(CrearGrupo.this, Grupos.class);
+            Intent siguiente = new Intent(CrearGrupo.this, ListadoGruposActivity.class);
             startActivity(siguiente);
             finish();
         }
@@ -64,7 +64,7 @@ public class CrearGrupo extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(CrearGrupo.this, Grupos.class);
+        Intent siguiente = new Intent(CrearGrupo.this, ListadoGruposActivity.class);
         startActivity (siguiente);
         finish();
     }

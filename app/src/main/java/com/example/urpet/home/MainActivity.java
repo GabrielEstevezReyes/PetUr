@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -27,7 +28,7 @@ import com.example.urpet.R;
 import com.example.urpet.home.mascota.RegistroMascota;
 import com.example.urpet.SOS;
 import com.example.urpet.connections.Pet;
-import com.example.urpet.home.grupos.Grupos;
+import com.example.urpet.home.grupos.ListadoGruposActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -117,13 +118,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mFotoPerfilCIV.setOnClickListener(this);
     }
 
-    public void linker(View view){
-        String url1 = "https://www.purina-latam.com/mx/proplan";
+    public void linker(View v){
+        String url1 = "amzn://apps/android?";
         openURL(url1);
     }
 
     public void openURL(String url){
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+        try{
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+        } catch (ActivityNotFoundException ex){
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.amazon.com/gp/mas/dl/android?s=purina%20pro")));
+        }
     }
 
     public void getBitmapFromURL(String src, final CircularImageView circ) {
@@ -162,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void lis_grupos(View view){
-        Intent siguiente = new Intent(MainActivity.this, Grupos.class);
+        Intent siguiente = new Intent(MainActivity.this, ListadoGruposActivity.class);
         startActivity (siguiente);
         finish();
     }

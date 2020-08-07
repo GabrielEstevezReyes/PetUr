@@ -22,7 +22,7 @@ import com.example.urpet.connections.Group;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-public class Grupos extends AppCompatActivity {
+public class ListadoGruposActivity extends AppCompatActivity {
 
     LinearLayout scroll = null;
     ArrayList<Group> allGroups = null;
@@ -101,7 +101,7 @@ public class Grupos extends AppCompatActivity {
     }
 
     public void btn_sig(View view){
-        Intent siguiente = new Intent(Grupos.this, CrearGrupo.class);
+        Intent siguiente = new Intent(ListadoGruposActivity.this, CrearGrupo.class);
         startActivity (siguiente);
         finish();
     }
@@ -120,7 +120,7 @@ public class Grupos extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(Grupos.this, MainActivity.class);
+        Intent siguiente = new Intent(ListadoGruposActivity.this, MainActivity.class);
         startActivity (siguiente);
         finish();
     }
@@ -169,7 +169,7 @@ public class Grupos extends AppCompatActivity {
     public void goToPrincipalGroup(View v1, Group petToEdit){
         PersonalInfo.selectedGroup = petToEdit;
         Log.println(Log.INFO, "kek2", PersonalInfo.selectedGroup.toString());
-        Intent siguiente = new Intent(Grupos.this, GrupoPrincipal.class);
+        Intent siguiente = new Intent(ListadoGruposActivity.this, DetalleGrupoActivity.class);
         startActivity (siguiente);
         finish();
     }

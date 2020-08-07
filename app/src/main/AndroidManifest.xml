@@ -65,7 +65,7 @@
             android:name=".home.grupos.ChatGrupo"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".CreatePost"
+            android:name=".home.grupos.RealizarPublicacionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <!--
@@ -110,10 +110,10 @@
             android:name=".home.grupos.GrupoVerMiembros"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.grupos.GrupoPrincipal"
+            android:name=".home.grupos.DetalleGrupoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.grupos.DetallesGrupo"
+            android:name=".home.grupos.EditarGrupoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".home.perfil.EditPerfilPet"
@@ -196,7 +196,7 @@
             android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.grupos.Grupos"
+            android:name=".home.grupos.ListadoGruposActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
