@@ -7,7 +7,7 @@
     android:background="#FFF"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".PerfilDatosUser">
+    tools:context=".home.perfil.MiPerfilActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -169,12 +169,12 @@
             android:textSize="12sp" />
 
         <Button
+            android:id="@+id/perfil_activity_cerrar_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/poppins_semi_bold"
-            android:onClick="btn_sig2"
             android:background="#FFFFFF"
             android:text="Cerrar sesión"
             android:padding="10dp"

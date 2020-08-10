@@ -16,7 +16,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.urpet.PerfilDatosUser;
 import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
 import com.github.dhaval2404.imagepicker.ImagePicker;
@@ -99,7 +98,7 @@ public class EditPerfilUserData extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(EditPerfilUserData.this, PerfilDatosUser.class);
+        Intent siguiente = new Intent(EditPerfilUserData.this, MiPerfilActivity.class);
         startActivity (siguiente);
         finish();
     }

@@ -1,4 +1,4 @@
-package com.example.urpet;
+package com.example.urpet.login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Rect;
 import androidx.biometric.BiometricPrompt;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -21,6 +22,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.R;
+import com.example.urpet.Utils.SharedPreferencesUtil;
 import com.example.urpet.connections.User;
 
 import com.example.urpet.home.MainActivity;
@@ -96,7 +100,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (currentUser!=null) {
             Log.println(Log.DEBUG, "login", "Usuario con sesion activa FIREBASE");
             try {
-                alredyLogged();
+                iniciarSesionFirebase();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -116,6 +120,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void configureViews(){
         mLoginBtn.setOnClickListener(this);
         mFingerPrintBtn.setOnClickListener(this);
+        mFingerPrintBtn.setVisibility(SharedPreferencesUtil.getInstance().isBiometricenabled() ? View.VISIBLE : View.GONE);
     }
 
     public void btn_sig(View view) {
@@ -123,7 +128,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String mail = mCorreoET.getText().toString();
         String pass = mPasswordET.getText().toString();
         if(!mail.isEmpty() && !pass.isEmpty()) {
-            signIn(mail, pass);
+            iniciarSesionClasico(mail, pass);
         }
         else {
             error.setText("Por favor ingresa un usuario y contraseña");
@@ -137,7 +142,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         finish();
     }
 
-    private void alredyLogged() throws JSONException {
+    private void iniciarSesionFirebase() throws JSONException {
         FirebaseUser user = mAuth.getCurrentUser();
         User current = new User(user.getEmail());
         current.getFromMail();
@@ -154,7 +159,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         finish();
     }
 
-    private void alredyLogged(FirebaseUser user) throws JSONException {
+    private void iniciarSesionFirebase(FirebaseUser user) throws JSONException {
         User current = new User(user.getEmail());
         current.getFromMail();
         if(current.getID() == -1){
@@ -165,36 +170,36 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Log.println(Log.DEBUG, "login", current.toString());
         PersonalInfo.currentUser = current;
         error.setVisibility(View.INVISIBLE);
+        SharedPreferencesUtil.getInstance().createLogin(mCorreoET.getText().toString(), "", SharedPreferencesUtil.EnumTipoLogin.FACEBOOK);
         Intent siguiente = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(siguiente);
         finish();
     }
 
-    public void signIn(String email, String password) {
-        Log.println(Log.DEBUG, "login", "signIn:" + email);
+    public void iniciarSesionClasico(String email, String password) {
+        Log.d("Logins", "["+email+"]" + "["+password+"]");
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Log.println(Log.DEBUG, "login", "signInWithEmail:success");
-                            User current = new User(mCorreoET.getText().toString());
-                            current.getFromMail();
-                            PersonalInfo.currentUser = current;
-                            error.setVisibility(View.INVISIBLE);
-                            Intent siguiente = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(siguiente);
-                            finish();
-                        } else {
-                            Log.println(Log.DEBUG, "login", task.getException().toString());
-                            error.setText("Datos de usuario incorrectos");
-                            error.setVisibility(View.VISIBLE);
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                        }
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        Log.println(Log.DEBUG, "login", "signInWithEmail:success");
+                        User current = new User(email);
+                        current.getFromMail();
+                        PersonalInfo.currentUser = current;
+                        error.setVisibility(View.INVISIBLE);
+                        Intent siguiente = new Intent(LoginActivity.this, MainActivity.class);
+                        SharedPreferencesUtil.getInstance().createLogin(mCorreoET.getText().toString(), mPasswordET.getText().toString(), SharedPreferencesUtil.EnumTipoLogin.PASSWORD);
+                        startActivity(siguiente);
+                        finish();
+                    } else {
+                        Log.println(Log.DEBUG, "login", task.getException().toString());
+                        error.setText("Datos de usuario incorrectos");
+                        error.setVisibility(View.VISIBLE);
+                        Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show();
                     }
                 });
     }
+
 
     @Override
     public void onBackPressed() {
@@ -246,7 +251,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             Log.d("login", "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             try {
-                                alredyLogged(user);
+                                iniciarSesionFirebase(user);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -304,7 +309,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             Log.println(Log.DEBUG, "login", "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             try {
-                                alredyLogged(user);
+                                iniciarSesionFirebase(user);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -361,14 +366,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onAuthenticationSucceeded(
                     @NonNull BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
-                signIn("makuturunenjackson@gmail.com", "PuraPaja.");
+                SharedPreferencesUtil sp = SharedPreferencesUtil.getInstance();
+                iniciarSesionClasico(sp.getCorreoBiometrico(), sp.getPasswordBiometrico());
             }
         });
 
         promptInfo = new BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Accede a tu cuenta")
-                .setSubtitle("Inicia sesión con tus datos biometricos.")
-                .setNegativeButtonText("Utiliza tu contraseña")
+                .setTitle(getResources().getString(R.string.biom_acceso))
+                .setSubtitle(getResources().getString(R.string.biom_subt))
+                .setNegativeButtonText(getResources().getString(R.string.biom_fail))
                 .build();
     }
 
@@ -376,7 +382,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.login_activity_login_btn:
-                signIn(mCorreoET.getText().toString(), mPasswordET.getText().toString());
+                iniciarSesionClasico(mCorreoET.getText().toString(), mPasswordET.getText().toString());
             break;
             case R.id.login_activity_fingerprint_btn:
                 initFacialFingerPrint();

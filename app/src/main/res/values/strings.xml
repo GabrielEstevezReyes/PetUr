@@ -35,6 +35,16 @@
     <string name="login">Iniciar sesión</string>
     <string name="tienda">Tienda</string>
     <string name="sos">S.O.S</string>
+    <string name="biom_acceso">Accede a tu cuenta</string>
+    <string name="biom_subt">Inicia sesión con tus datos biometricos.</string>
+    <string name="biom_fail">Utiliza tu contraseña</string>
+    <string name="biom_deseas">¿Deseas activar el desbloqueo por huella digital?</string>
+    <string name="biom_si">Si, activar</string>
+    <string name="biom_no">Ahora no</string>
+    <string name="biom_desc_conf">Configura una huella digital en tu dispositivo</string>
+    <string name="biom_btn_config">"Configurar "</string>
+    <string name="biom_exito">Aceptar</string>
+    <string name="biom_desc_exito">Huella digital activada con éxito</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>

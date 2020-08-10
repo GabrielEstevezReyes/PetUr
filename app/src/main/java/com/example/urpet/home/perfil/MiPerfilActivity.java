@@ -1,4 +1,4 @@
-package com.example.urpet;
+package com.example.urpet.home.perfil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,66 +8,68 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.R;
+import com.example.urpet.Utils.SharedPreferencesUtil;
 import com.example.urpet.home.MainActivity;
-import com.example.urpet.home.perfil.EditPerfilUserData;
+import com.example.urpet.login.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class PerfilDatosUser extends AppCompatActivity implements View.OnClickListener {
+public class MiPerfilActivity extends AppCompatActivity implements View.OnClickListener {
 
     public TextView nameI =  null;
     public TextView cellI =  null;
     public TextView mailI =  null;
     public TextView addrI =  null;
     private FirebaseAuth mAuth;
-    private Button mEditarbtn;
+    private Button mEditarbtn, mCerrarsesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_datos_user);
-        nameI = findViewById(R.id.fullNameInfo);
-        cellI = findViewById(R.id.cellphoneInfo);
-        mailI = findViewById(R.id.mailInfo);
-        addrI = findViewById(R.id.addressInfo);
-        nameI.setText(PersonalInfo.currentUser.getName());
-        mailI.setText(PersonalInfo.currentUser.getMail());
-        cellI.setText(PersonalInfo.currentUser.getPhoneNumber());
-        addrI.setText(PersonalInfo.currentUser.getAddr());
-        mAuth = FirebaseAuth.getInstance();
         bindviews();
         configureViews();
     }
 
     private void bindviews(){
         mEditarbtn = findViewById(R.id.editar_perfil_editar_btn);
+        nameI = findViewById(R.id.fullNameInfo);
+        cellI = findViewById(R.id.cellphoneInfo);
+        mailI = findViewById(R.id.mailInfo);
+        addrI = findViewById(R.id.addressInfo);
+        mCerrarsesion = findViewById(R.id.perfil_activity_cerrar_btn);
     }
 
     private void configureViews(){
         mEditarbtn.setOnClickListener(this);
+        nameI.setText(PersonalInfo.currentUser.getName());
+        mailI.setText(PersonalInfo.currentUser.getMail());
+        cellI.setText(PersonalInfo.currentUser.getPhoneNumber());
+        addrI.setText(PersonalInfo.currentUser.getAddr());
+        mCerrarsesion.setOnClickListener(v-> onCerrarSesion());
+        mAuth = FirebaseAuth.getInstance();
     }
 
     public void irAEditarPerfil(){
-        Intent siguiente = new Intent(PerfilDatosUser.this, EditPerfilUserData.class);
+        Intent siguiente = new Intent(MiPerfilActivity.this, EditPerfilUserData.class);
         startActivity (siguiente);
         finish();
     }
 
-    public void btn_sig2(View view){
+    public void onCerrarSesion(){
         mAuth.signOut();
-        Intent siguiente = new Intent(PerfilDatosUser.this, LoginActivity.class);
+        SharedPreferencesUtil.getInstance().closeSession();
+        Intent siguiente = new Intent(this, LoginActivity.class);
         startActivity (siguiente);
         finish();
     }
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(PerfilDatosUser.this, MainActivity.class);
+        Intent siguiente = new Intent(MiPerfilActivity.this, MainActivity.class);
         startActivity (siguiente);
         finish();
-    }
-
-    public void volver(View view){
-        onBackPressed();
     }
 
     @Override

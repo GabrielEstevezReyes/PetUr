@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.urpet.LoginActivity;
+import com.example.urpet.login.LoginActivity;
 import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
 import com.example.urpet.SMS;

@@ -3,7 +3,7 @@ package com.example.urpet.home;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+import androidx.biometric.BiometricManager;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -13,18 +13,20 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.urpet.Utils.SharedPreferencesUtil;
 import com.example.urpet.home.marketplace.MarketplaceActivity;
 import com.example.urpet.home.medico.Clinicas;
 import com.example.urpet.home.mascota.detallesMascota.DetalleMascotaActivity;
 import com.example.urpet.home.mascota.ListaMascotas;
 import com.example.urpet.home.mascota.MascotaSettingActivity;
-import com.example.urpet.PerfilDatosUser;
+import com.example.urpet.home.perfil.MiPerfilActivity;
 import com.example.urpet.PersonalInfo;
 import com.example.urpet.PlacesM;
 import com.example.urpet.R;
@@ -32,6 +34,7 @@ import com.example.urpet.home.mascota.RegistroMascota;
 import com.example.urpet.SOS;
 import com.example.urpet.connections.Pet;
 import com.example.urpet.home.grupos.ListadoGruposActivity;
+import com.example.urpet.login.LoginFingerprintAlert;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -41,7 +44,7 @@ import com.mikhaellopez.circularimageview.CircularImageView;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, LoginFingerprintAlert.initLogin {
 
     private Button mSOSBtn, mBtnTiendaBTN;
 
@@ -120,6 +123,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mFotoPerfilCIV = findViewById(R.id.home_activity_foto_perfil_civ);
         mBtnTiendaBTN = findViewById(R.id.home_activity_tienda_btn);
         mSOSBtn = findViewById(R.id.home_activity_sos_btn);
+        bindbiometric();
+    }
+
+    private void bindbiometric(){
+        if(!SharedPreferencesUtil.getInstance().isBiometricenabled()){
+            LoginFingerprintAlert fr = LoginFingerprintAlert.newInstance(LoginFingerprintAlert.TiposAlert.ACTIVAR);
+            fr.setmListener(this);
+            fr.show(getSupportFragmentManager(), "Alert Fingerprint");
+        }
     }
 
     private void configureViews(){
@@ -161,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void itAPerfil(){
-        startActivity(new Intent(this, PerfilDatosUser.class));
+        startActivity(new Intent(this, MiPerfilActivity.class));
     }
 
     public void lis_mas(View view){
@@ -213,4 +225,58 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             break;
         }
     }
+
+    @Override
+    public void onSetFingerprint() {
+        validaStatusBiometrico();
+    }
+
+    @Override
+    public void onIrAConfig() {
+        abrirconfiguracion();
+    }
+
+
+    private void validaStatusBiometrico(){
+        BiometricManager biometricManager = BiometricManager.from(this);
+        switch (biometricManager.canAuthenticate()) {
+            case BiometricManager.BIOMETRIC_SUCCESS:
+                registrarFingerprint();
+                break;
+            case BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE:
+            case BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE:
+                break;
+            case BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED:
+                LoginFingerprintAlert fr = LoginFingerprintAlert.newInstance(LoginFingerprintAlert.TiposAlert.IR_A_CONFIG);
+                fr.setmListener(this);
+                fr.show(getSupportFragmentManager(), "Config Fingerprint");
+            break;
+        }
+    }
+
+    private void abrirconfiguracion(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            startActivity(new Intent(Settings.ACTION_FINGERPRINT_ENROLL));
+        }
+        else{
+            startActivity(new Intent(Settings.ACTION_SETTINGS));
+        }
+    }
+
+    /**
+     * <p>Método para</p>
+     * */
+    private void registrarFingerprint(){
+        if(!SharedPreferencesUtil.getInstance().isBiometricenabled() && SharedPreferencesUtil.getInstance().isLoginClasico()){
+            SharedPreferencesUtil.getInstance().createBiometricUser(
+                    SharedPreferencesUtil.getInstance().getCorreo(),
+                    SharedPreferencesUtil.getInstance().getPassword()
+            );
+            LoginFingerprintAlert fr = LoginFingerprintAlert.newInstance(LoginFingerprintAlert.TiposAlert.EXITO);
+            fr.setmListener(this);
+            fr.show(getSupportFragmentManager(), "Exito Fingerprint");
+        }
+    }
+
+
 }
