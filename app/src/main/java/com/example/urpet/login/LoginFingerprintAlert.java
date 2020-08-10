@@ -96,7 +96,7 @@ public class LoginFingerprintAlert extends DialogFragment {
             case EXITO:
                 mRechazar.setVisibility(View.GONE);
                 mAceptar.setVisibility(View.GONE);
-                mView.findViewById(R.id.alert_finger_exito);
+                mView.findViewById(R.id.alert_finger_exito).setOnClickListener(v-> dismiss());
                 ((TextView) mView.findViewById(R.id.alert_finger_desc_tv)).setText(R.string.biom_desc_exito);
                 ((TextView) mView.findViewById(R.id.alert_finger_exito)).setVisibility(View.VISIBLE);
             break;
