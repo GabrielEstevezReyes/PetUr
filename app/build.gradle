@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.urpet"
+        applicationId 'com.makugabo.urpet'
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
