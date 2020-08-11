@@ -31,9 +31,14 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
 
     private Context mContext;
 
+    private onItemClicked mListener;
+
     public MascotaAdapter(Context c) {
         mListadoMascotas = new ArrayList<>();
         mContext = c;
+    }
+    public interface onItemClicked{
+        void onFlechaClicked(boolean esSiguiente, int position);
     }
 
     public void setmFirebaseStora(FirebaseStorage mFirebaseStora) {
@@ -44,6 +49,10 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         mListadoMascotas.clear();
         mListadoMascotas = mascotas;
         notifyDataSetChanged();
+    }
+
+    public void setmListener(onItemClicked mListener) {
+        this.mListener = mListener;
     }
 
     @NonNull
@@ -73,6 +82,20 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
             Intent siguiente = new Intent(mContext, DetalleMascotaActivity.class);
             mContext.startActivity(siguiente);
         });
+
+        if(position == 0){
+            holder.mAnterior.setVisibility(View.GONE);
+            holder.mSiguiente.setVisibility(View.VISIBLE);
+        } else if(position == mListadoMascotas.size() - 1){
+            holder.mAnterior.setVisibility(View.VISIBLE);
+            holder.mSiguiente.setVisibility(View.GONE);
+        } else{
+            holder.mAnterior.setVisibility(View.VISIBLE);
+            holder.mSiguiente.setVisibility(View.VISIBLE);
+        }
+
+        holder.mSiguiente.setOnClickListener(v-> mListener.onFlechaClicked(true, position));
+        holder.mAnterior.setOnClickListener(v-> mListener.onFlechaClicked(false, position));
     }
 
     @Override
@@ -85,6 +108,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         CircularImageView fotoPerfilMascota;
         RecyclerView listadoEventosRV;
         ImageView settingsMascota;
+        ImageView mSiguiente, mAnterior;
         ConstraintLayout contenedorPrincipal;
 
         public MascotaViewHolder(@NonNull View itemView) {
@@ -94,6 +118,8 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
             listadoEventosRV = itemView.findViewById(R.id.item_mascota_listado_eventos_rv);
             settingsMascota = itemView.findViewById(R.id.item_mascota_settings_iv);
             contenedorPrincipal = itemView.findViewById(R.id.item_mascota_full_item_cl);
+            mSiguiente = itemView.findViewById(R.id.item_home_next_arrow_iv);
+            mAnterior = itemView.findViewById(R.id.item_home_back_arrow_iv);
         }
     }
 }

@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricManager;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.urpet.PersonalInfo;
@@ -42,7 +43,7 @@ import com.mikhaellopez.circularimageview.CircularImageView;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, LoginFingerprintAlert.initLogin {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, LoginFingerprintAlert.initLogin, MascotaAdapter.onItemClicked{
 
     private Button mSOSBtn, mBtnTiendaBTN;
     private CardView mAddPetBtn;
@@ -117,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mAdapterMascotas = new MascotaAdapter(this);
         mAdapterMascotas.setmFirebaseStora(storage);
+        mAdapterMascotas.setmListener(this);
 
         Pet obtener = new Pet();
         ArrayList<Pet> allPets;
@@ -132,7 +134,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         LinearLayoutManager mL = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
         mListadoMascotasRV.setAdapter(mAdapterMascotas);
         mListadoMascotasRV.setLayoutManager(mL);
+        PagerSnapHelper snapHelper = new PagerSnapHelper();
+        snapHelper.attachToRecyclerView(mListadoMascotasRV);
 
+    }
+
+    @Override
+    public void onFlechaClicked(boolean esSiguiente, int position) {
+        if(esSiguiente){
+            toRight(position);
+        }
+        else{
+            toLeft(position);
+        }
+    }
+
+    /**
+     * <p>Método que te permiete recorrer la lista a la derecha</p>
+     */
+    public void toRight(int position) {
+        int pos = position + 1;
+        mListadoMascotasRV.scrollToPosition(pos >= mAdapterMascotas.getItemCount() ? mAdapterMascotas.getItemCount()-1: pos);
+    }
+
+    /**
+     * <p>Metodo que te permite recorrer la lista a la izquierda</p>
+     */
+
+    public void toLeft(int position) {
+        int pos = position - 1;
+        mListadoMascotasRV.scrollToPosition(pos >= 0 ? pos: position);
     }
 
     public void linker(View v){
