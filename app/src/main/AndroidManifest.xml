@@ -35,7 +35,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             />
         <activity
-            android:name=".home.mascota.MascotaSettingActivity"
+            android:name=".home.mascota.detallesMascota.MascotaSettingActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".home.mascota.detallesMascota.CarnetMascotaActivity"
@@ -172,7 +172,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".home.mascota.RegistroMascota"
+            android:name=".home.mascota.anadirMascota.RegistroMascota"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />

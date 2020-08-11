@@ -50,7 +50,7 @@
                         android:fontFamily="@font/poppins_medium"
                         android:text="Giovanni"
                         android:textAllCaps="false"
-                        android:textColor="@color/TextColor"
+                        android:textColor="@color/texto_color_negro"
                         android:textSize="14sp"
                         tools:ignore="HardcodedText" />
 
@@ -105,7 +105,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif"
-                android:shadowColor="@color/TextColor"
+                android:shadowColor="@color/texto_color_negro"
                 android:text="@string/advertising"
                 android:textAllCaps="true"
                 android:textSize="8sp" />

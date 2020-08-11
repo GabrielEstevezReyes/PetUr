@@ -7,7 +7,7 @@
     android:background="#FFF"
     android:padding="20dp"
     android:orientation="vertical"
-    tools:context=".home.mascota.MascotaSettingActivity">
+    tools:context=".home.mascota.detallesMascota.MascotaSettingActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:gravity="center"
         android:text="Eventos"
         android:textAllCaps="true"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
@@ -33,7 +33,7 @@
         android:fontFamily="@font/sf_regular"
         android:gravity="center|left"
         android:text="Selecciona hasta 3 opciones"
-        android:textColor="@color/TextColorSecundary"
+        android:textColor="@color/texto_color_gris"
         android:textSize="11sp" />
 
     <LinearLayout
@@ -52,7 +52,7 @@
                 android:fontFamily="@font/sf_regular"
                 android:gravity="center|left"
                 android:text="Proximas vacunas"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14dp" />
 
             <CheckBox
@@ -87,7 +87,7 @@
                 android:fontFamily="@font/sf_regular"
                 android:gravity="center|left"
                 android:text="Paseos"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14dp" />
 
             <CheckBox
@@ -124,7 +124,7 @@
                 android:fontFamily="@font/sf_regular"
                 android:gravity="center|left"
                 android:text="Citas médicas"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14dp" />
 
             <CheckBox
@@ -157,7 +157,7 @@
                 android:fontFamily="@font/sf_regular"
                 android:gravity="center|left"
                 android:text="Aseos"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14dp" />
 
             <CheckBox
@@ -188,7 +188,7 @@
                 android:fontFamily="@font/sf_regular"
                 android:gravity="center|left"
                 android:text="Proximás comidas"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14dp" />
 
             <CheckBox

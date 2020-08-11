@@ -23,7 +23,7 @@
             android:gravity="center"
             android:text="Grupos"
             android:textAllCaps="true"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="14sp" />
 
         <View

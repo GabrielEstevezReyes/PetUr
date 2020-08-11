@@ -20,7 +20,7 @@
             android:gravity="center"
             android:text="EDITAR GRUPO"
             android:textAllCaps="true"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="14sp" />
 
         <View
@@ -38,7 +38,7 @@
             android:fontFamily="@font/sf_regular"
             android:textAllCaps="true"
             android:textColor="#242B3C"
-            android:textColorHint="@color/TextColorSecundary"
+            android:textColorHint="@color/texto_color_gris"
             android:textSize="14sp" />
 
         <EditText
@@ -46,12 +46,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:backgroundTint="@color/TextColorSecundary"
+            android:backgroundTint="@color/texto_color_gris"
             android:fontFamily="@font/sf_light"
             android:paddingLeft="15dp"
             android:paddingRight="10dp"
-            android:textColor="@color/TextColor"
-            android:textColorHint="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_negro"
+            android:textColorHint="@color/texto_color_gris"
             android:textColorLink="#FFF"
             android:textSize="14sp" />
 
@@ -64,8 +64,8 @@
             android:fontFamily="@font/sf_regular"
             android:text="Grupo cerrado"
             android:textAllCaps="false"
-            android:textColor="@color/TextColorSecundary"
-            android:textColorHint="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_gris"
+            android:textColorHint="@color/texto_color_gris"
             android:textSize="12sp" />
 
         <Button
@@ -96,7 +96,7 @@
                 android:gravity="center|left"
                 android:text="Solicitudes de unión"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14sp" />
 
             <TextView
@@ -105,7 +105,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/sf_regular"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="20sp" />
         </LinearLayout>
 

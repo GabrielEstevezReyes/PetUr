@@ -1,10 +1,5 @@
 package com.example.urpet.home;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.biometric.BiometricManager;
-
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -17,26 +12,29 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.urpet.Utils.SharedPreferencesUtil;
-import com.example.urpet.home.marketplace.MarketplaceActivity;
-import com.example.urpet.home.medico.Clinicas;
-import com.example.urpet.home.mascota.detallesMascota.DetalleMascotaActivity;
-import com.example.urpet.home.mascota.ListaMascotas;
-import com.example.urpet.home.mascota.MascotaSettingActivity;
-import com.example.urpet.home.perfil.MiPerfilActivity;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.biometric.BiometricManager;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.urpet.PersonalInfo;
 import com.example.urpet.PlacesM;
 import com.example.urpet.R;
-import com.example.urpet.home.mascota.RegistroMascota;
 import com.example.urpet.SOS;
+import com.example.urpet.Utils.SharedPreferencesUtil;
 import com.example.urpet.connections.Pet;
 import com.example.urpet.home.grupos.ListadoGruposActivity;
+import com.example.urpet.home.marketplace.MarketplaceActivity;
+import com.example.urpet.home.mascota.ListaMascotas;
+import com.example.urpet.home.mascota.anadirMascota.RegistroMascota;
+import com.example.urpet.home.mascota.listadoMascotas.MascotaAdapter;
+import com.example.urpet.home.medico.Clinicas;
+import com.example.urpet.home.perfil.MiPerfilActivity;
 import com.example.urpet.login.LoginFingerprintAlert;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -47,82 +45,43 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, LoginFingerprintAlert.initLogin {
 
     private Button mSOSBtn, mBtnTiendaBTN;
+    private CardView mAddPetBtn;
+    private ImageView mSettingBtn, mNotifBtn;
 
-    CircularImageView mFotoPerfilCIV;
+    private RecyclerView mListadoMascotasRV, mListadoPublicidadRV;
+
+    private MascotaAdapter mAdapterMascotas;
+
+    private TextView mNombreTV;
+
+    private CircularImageView mFotoPerfilCIV;
+
     FirebaseStorage storage = FirebaseStorage.getInstance();
-    LinearLayout cardPets = null;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        TextView name = findViewById(R.id.nombrePrincipal);
-        name.setText(
-                (PersonalInfo.currentUser != null ? (PersonalInfo.currentUser.getName().isEmpty() ? "" : PersonalInfo.currentUser.getName()) : ""));
+        setContentView(R.layout.home_activity);
+
         bindviews();
         configureViews();
-        cardPets = findViewById(R.id.scrollPets);
-        if(PersonalInfo.currentUser != null && !PersonalInfo.currentUser.getBase64Image().isEmpty() && !PersonalInfo.currentUser.getBase64Image().equals("no-image.png")) {
-            getBitmapFromURL(PersonalInfo.currentUser.getBase64Image(), mFotoPerfilCIV);
-        }
-        else{
-            mFotoPerfilCIV.setImageResource(R.drawable.ic_user);
-        }
-        Pet obtener = new Pet();
+        bindData();
 
-        ArrayList<Pet> allPets = null;
-        try {
-            allPets = obtener.read();
-        } catch (ParseException e) {
-            e.printStackTrace();
-            //TODO: mandar mensaje de alerta y volvel a intentarlo
-        }
-        for (int i=0; i<allPets.size(); i++){
-            cardPets.addView(buildPetLayout(allPets.get(i)));
-        }
-        View viewN = getLayoutInflater().inflate(R.layout.newpetcard, null);
-        viewN.setPadding(10,0,10,0);
-        viewN.setOnClickListener(v -> {
-            Intent siguiente = new Intent(MainActivity.this, RegistroMascota.class);
-            startActivity (siguiente);
-            finish();
-        });
-        cardPets.addView(viewN);
-    }
-
-    View buildPetLayout(final Pet petName){
-        View view = getLayoutInflater().inflate(R.layout.petcard, null);
-        CircularImageView petI = view.findViewById(R.id.petCardImage);
-        if(!petName.getBase64Image().isEmpty() && !petName.getBase64Image().equals("no-image.png")) {
-            getBitmapFromURL(petName.getBase64Image(), petI);
-        }
-        else{
-            petI.setImageResource(R.drawable.ic_mascotas_1);
-        }
-        TextView petN = view.findViewById(R.id.petCardName);
-        petN.setText(petName.getName());
-        view.setPadding(10,0,10,0);
-        view.setOnClickListener(v -> {
-            PersonalInfo.clickedPet = petName;
-            Intent siguiente = new Intent(this, DetalleMascotaActivity.class);
-            startActivity (siguiente);
-            finish();
-        });
-
-        ImageView sett = view.findViewById(R.id.item_home_mascota_setting_iv);
-        sett.setOnClickListener(v -> {
-            Intent siguiente = new Intent(this, MascotaSettingActivity.class);
-            startActivity (siguiente);
-            finish();
-        });
-        return view;
     }
 
     private void bindviews(){
+        mNombreTV = findViewById(R.id.home_activity_nombre_et);
+        mListadoMascotasRV = findViewById(R.id.home_activity_listado_mascota_rv);
+        mListadoPublicidadRV = findViewById(R.id.home_activity_listado_publicidad_rv);
+
         mFotoPerfilCIV = findViewById(R.id.home_activity_foto_perfil_civ);
         mBtnTiendaBTN = findViewById(R.id.home_activity_tienda_btn);
         mSOSBtn = findViewById(R.id.home_activity_sos_btn);
+        mAddPetBtn = findViewById(R.id.home_activity_add_pet_cv);
+        mSettingBtn = findViewById(R.id.home_activity_settings_iv);
+        mNotifBtn = findViewById(R.id.home_activity_notificaciones_iv);
+
         bindbiometric();
     }
 
@@ -138,6 +97,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mFotoPerfilCIV.setOnClickListener(this);
         mBtnTiendaBTN.setOnClickListener(this);
         mSOSBtn.setOnClickListener(this);
+        mAddPetBtn.setOnClickListener(this);
+        mSettingBtn.setOnClickListener(this);
+        mNotifBtn.setOnClickListener(this);
+
+        if(PersonalInfo.currentUser != null){
+            if(!PersonalInfo.currentUser.getBase64Image().isEmpty() && !PersonalInfo.currentUser.getBase64Image().equals("no-image.png")) {
+                getBitmapFromURL(PersonalInfo.currentUser.getBase64Image(), mFotoPerfilCIV);
+            }
+            else{
+                mFotoPerfilCIV.setImageResource(R.drawable.ic_user);
+            }
+            mNombreTV.setText(PersonalInfo.currentUser.getName().isEmpty() ? "" : PersonalInfo.currentUser.getName());
+        }
+
+    }
+
+    private void bindData(){
+
+        mAdapterMascotas = new MascotaAdapter(this);
+        mAdapterMascotas.setmFirebaseStora(storage);
+
+        Pet obtener = new Pet();
+        ArrayList<Pet> allPets;
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                allPets = obtener.read();
+                mAdapterMascotas.setmListadoMascotas(allPets);
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        LinearLayoutManager mL = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+        mListadoMascotasRV.setAdapter(mAdapterMascotas);
+        mListadoMascotasRV.setLayoutManager(mL);
+
     }
 
     public void linker(View v){
@@ -153,22 +148,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    private void addMascota(){
+        Intent siguiente = new Intent(this, RegistroMascota.class);
+        startActivity (siguiente);
+    }
+
     public void getBitmapFromURL(String src, final CircularImageView circ) {
         StorageReference storageRef = storage.getReference();
         StorageReference islandRef = storageRef.child(src);
 
         final long ONE_MEGABYTE = 1024 * 1024;
-        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-            @Override
-            public void onSuccess(byte[] b) {
-                Drawable image = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(b, 0, b.length));
-                circ.setImageDrawable(image);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle any errors
-            }
+        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(b -> {
+            Drawable image = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(b, 0, b.length));
+            circ.setImageDrawable(image);
+        }).addOnFailureListener(exception -> {
+            // Handle any errors
         });
     }
 
@@ -222,6 +216,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             break;
             case R.id.home_activity_sos_btn:
                 irASoS();
+            break;
+            case R.id.home_activity_add_pet_cv:
+                addMascota();
+            break;
+            case R.id.home_activity_settings_iv:
+
+            break;
+            case R.id.home_activity_notificaciones_iv:
+
             break;
         }
     }

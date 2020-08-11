@@ -16,7 +16,7 @@
         android:gravity="center"
         android:text="EDITAR PERFIL MASCOTA"
         android:textAllCaps="true"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
@@ -67,7 +67,7 @@
                         android:padding="5dp"
                         android:text="Seleccionar imagen"
                         android:textAllCaps="false"
-                        android:textColor="@color/TextColor"
+                        android:textColor="@color/texto_color_negro"
                         android:textSize="10sp" />
 
                     <Button
@@ -81,7 +81,7 @@
                         android:onClick="deletePet"
                         android:text="Eliminar perfil"
                         android:textAllCaps="false"
-                        android:textColor="@color/TextColor"
+                        android:textColor="@color/texto_color_negro"
                         android:textSize="10sp" />
 
                 </LinearLayout>
@@ -100,7 +100,7 @@
                     android:fontFamily="@font/poppins_semi_bold"
                     android:text="Nombre"
                     android:textAllCaps="true"
-                    android:textColor="@color/TextColorSecundary"
+                    android:textColor="@color/texto_color_gris"
                     android:textSize="12sp" />
 
 
@@ -108,13 +108,13 @@
                     android:id="@+id/petNameEdit"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:backgroundTint="@color/TextColorSecundary"
+                    android:backgroundTint="@color/texto_color_gris"
                     android:fontFamily="@font/sf_light"
                     android:text=""
-                    android:textColor="@color/TextColor"
-                    android:textColorHighlight="@color/TextColor"
-                    android:textColorHint="@color/TextColor"
-                    android:textColorLink="@color/TextColor"
+                    android:textColor="@color/texto_color_negro"
+                    android:textColorHighlight="@color/texto_color_negro"
+                    android:textColorHint="@color/texto_color_negro"
+                    android:textColorLink="@color/texto_color_negro"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -130,20 +130,20 @@
                     android:fontFamily="@font/poppins_semi_bold"
                     android:text="Tipo"
                     android:textAllCaps="true"
-                    android:textColor="@color/TextColorSecundary"
+                    android:textColor="@color/texto_color_gris"
                     android:textSize="12sp" />
 
                 <EditText
                     android:id="@+id/petTypeEdit"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:backgroundTint="@color/TextColorSecundary"
+                    android:backgroundTint="@color/texto_color_gris"
                     android:fontFamily="@font/sf_light"
                     android:text=""
-                    android:textColor="@color/TextColor"
-                    android:textColorHighlight="@color/TextColor"
-                    android:textColorHint="@color/TextColor"
-                    android:textColorLink="@color/TextColor"
+                    android:textColor="@color/texto_color_negro"
+                    android:textColorHighlight="@color/texto_color_negro"
+                    android:textColorHint="@color/texto_color_negro"
+                    android:textColorLink="@color/texto_color_negro"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -159,20 +159,20 @@
                     android:fontFamily="@font/poppins_semi_bold"
                     android:text="Raza"
                     android:textAllCaps="true"
-                    android:textColor="@color/TextColorSecundary"
+                    android:textColor="@color/texto_color_gris"
                     android:textSize="12sp" />
 
                 <EditText
                     android:id="@+id/petRaceEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/TextColorSecundary"
+                    android:backgroundTint="@color/texto_color_gris"
                     android:fontFamily="@font/sf_light"
                     android:text=""
-                    android:textColor="@color/TextColor"
-                    android:textColorHighlight="@color/TextColor"
-                    android:textColorHint="@color/TextColor"
-                    android:textColorLink="@color/TextColor"
+                    android:textColor="@color/texto_color_negro"
+                    android:textColorHighlight="@color/texto_color_negro"
+                    android:textColorHint="@color/texto_color_negro"
+                    android:textColorLink="@color/texto_color_negro"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -189,20 +189,20 @@
                     android:shadowColor="#58676A"
                     android:text="Color"
                     android:textAllCaps="true"
-                    android:textColor="@color/TextColorSecundary"
+                    android:textColor="@color/texto_color_gris"
                     android:textSize="12sp" />
 
                 <EditText
                     android:id="@+id/petColorEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/TextColorSecundary"
+                    android:backgroundTint="@color/texto_color_gris"
                     android:fontFamily="@font/sf_light"
                     android:text=""
-                    android:textColor="@color/TextColor"
-                    android:textColorHighlight="@color/TextColor"
-                    android:textColorHint="@color/TextColor"
-                    android:textColorLink="@color/TextColor"
+                    android:textColor="@color/texto_color_negro"
+                    android:textColorHighlight="@color/texto_color_negro"
+                    android:textColorHint="@color/texto_color_negro"
+                    android:textColorLink="@color/texto_color_negro"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -218,20 +218,20 @@
                     android:fontFamily="@font/poppins_semi_bold"
                     android:text="Fecha de nacimiento"
                     android:textAllCaps="true"
-                    android:textColor="@color/TextColorSecundary"
+                    android:textColor="@color/texto_color_gris"
                     android:textSize="12sp" />
 
                 <EditText
                     android:id="@+id/petAgeEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/TextColorSecundary"
+                    android:backgroundTint="@color/texto_color_gris"
                     android:fontFamily="@font/sf_light"
                     android:text=""
-                    android:textColor="@color/TextColor"
-                    android:textColorHighlight="@color/TextColor"
-                    android:textColorHint="@color/TextColor"
-                    android:textColorLink="@color/TextColor"
+                    android:textColor="@color/texto_color_negro"
+                    android:textColorHighlight="@color/texto_color_negro"
+                    android:textColorHint="@color/texto_color_negro"
+                    android:textColorLink="@color/texto_color_negro"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -245,23 +245,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semi_bold"
-                    android:shadowColor="@color/TextColorSecundary"
+                    android:shadowColor="@color/texto_color_gris"
                     android:text="Descripción"
                     android:textAllCaps="true"
-                    android:textColor="@color/TextColorSecundary"
+                    android:textColor="@color/texto_color_gris"
                     android:textSize="12sp" />
 
                 <EditText
                     android:id="@+id/petDescriptionEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/TextColorSecundary"
+                    android:backgroundTint="@color/texto_color_gris"
                     android:fontFamily="@font/sf_light"
                     android:text=""
-                    android:textColor="@color/TextColorSecundary"
-                    android:textColorHighlight="@color/TextColor"
-                    android:textColorHint="@color/TextColor"
-                    android:textColorLink="@color/TextColor"
+                    android:textColor="@color/texto_color_gris"
+                    android:textColorHighlight="@color/texto_color_negro"
+                    android:textColorHint="@color/texto_color_negro"
+                    android:textColorLink="@color/texto_color_negro"
                     android:textSize="14sp" />
             </LinearLayout>
 

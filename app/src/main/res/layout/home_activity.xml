@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/home_activity_foto_perfil_civ"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:civ_border="true"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/colorPrimary"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/home_activity_nombre_et"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Jeanne Maku de Greiwolf"
+        android:textAlignment="center"
+        android:textColor="@color/texto_color_negro"
+        android:textSize="@dimen/texto_default"
+        app:layout_constraintBottom_toBottomOf="@+id/home_activity_foto_perfil_civ"
+        app:layout_constraintEnd_toStartOf="@+id/home_activity_settings_iv"
+        app:layout_constraintStart_toEndOf="@+id/home_activity_foto_perfil_civ"
+        app:layout_constraintTop_toTopOf="@+id/home_activity_foto_perfil_civ" />
+
+    <ImageView
+        android:id="@+id/home_activity_settings_iv"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_conf2"
+        app:layout_constraintBottom_toBottomOf="@+id/home_activity_foto_perfil_civ"
+        app:layout_constraintEnd_toStartOf="@+id/home_activity_notificaciones_iv"
+        app:layout_constraintTop_toTopOf="@+id/home_activity_foto_perfil_civ"
+        app:tint="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/home_activity_notificaciones_iv"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_baseline_notifications_24"
+        app:layout_constraintBottom_toBottomOf="@+id/home_activity_settings_iv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/home_activity_settings_iv"
+        app:tint="@color/colorPrimary" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_activity_foto_perfil_civ" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/home_activity_add_pet_cv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="250dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_add_pet"
+                app:tint="@color/blanco"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/agregar_mascota_titulo"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/subtitulos"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_activity_listado_mascota_rv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_activity_add_pet_cv" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="@dimen/texto_default"
+        android:textColor="@color/texto_color_gris"
+        android:text="@string/adverticing"
+        app:layout_constraintStart_toStartOf="@+id/home_activity_listado_mascota_rv"
+        app:layout_constraintTop_toBottomOf="@+id/home_activity_listado_mascota_rv" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_activity_listado_publicidad_rv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="#000"
+        android:elevation="16dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_activity_listado_publicidad_rv">
+
+        <Button
+            android:id="@+id/home_activity_tienda_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/menu_mascotas"
+            android:drawableEnd="@drawable/ic_sos_menu"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:gravity="start|center"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
+            android:text="@string/tienda"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="@dimen/titulos" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="#000"
+        android:elevation="16dp"
+        android:onClick="lis_grupos"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardView2"
+        app:layout_constraintStart_toStartOf="@+id/cardView2"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+        <Button
+            android:id="@+id/home_activity_sos_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/menu_mascotas"
+            android:drawableEnd="@drawable/ic_sos_menu"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:gravity="start|center"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
+            android:text="@string/sos"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="@dimen/titulos" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

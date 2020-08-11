@@ -15,7 +15,7 @@
         android:fontFamily="@font/poppins_semi_bold"
         android:text="Marketplace"
         android:gravity="center"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -25,7 +25,7 @@
         android:layout_marginTop="30dp"
         android:fontFamily="@font/sf_regular"
         android:text="Buscar productos por mascota"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="13dp"
         android:textStyle="bold" />
 
@@ -183,7 +183,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/sf_regular"
         android:text="Los mejores descuentos del día"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="13dp"
         android:textStyle="bold" />
 
@@ -193,7 +193,7 @@
         android:layout_marginTop="90dp"
         android:fontFamily="@font/sf_regular"
         android:text="Descuentos exclusivos con el código: URPET20"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="13dp"
         android:textStyle="bold" />
 

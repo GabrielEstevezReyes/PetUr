@@ -15,7 +15,7 @@
         android:gravity="center"
         android:text="CITA MEDICA"
         android:textAllCaps="true"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
@@ -40,8 +40,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_regular"
                 android:text="Centro Veterinario Bichos"
-                android:textColor="@color/TextColor"
-                android:textColorHighlight="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_negro"
+                android:textColorHighlight="@color/texto_color_gris"
                 android:textSize="14sp" />
         </LinearLayout>
         <LinearLayout
@@ -86,14 +86,14 @@
                         android:id="@+id/edadMascotaIF"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/TextColorSecundary"
+                        android:backgroundTint="@color/texto_color_gris"
                         android:drawableRight="@drawable/ic_baseline_calendar_today_24"
                         android:fontFamily="@font/sf_regular"
                         android:hint="Fecha"
                         android:paddingRight="5dp"
                         android:textAllCaps="true"
-                        android:textColor="@color/TextColor"
-                        android:textColorHint="@color/TextColorSecundary"
+                        android:textColor="@color/texto_color_negro"
+                        android:textColorHint="@color/texto_color_gris"
                         android:textColorLink="#FFF"
                         android:textSize="14sp" />
 
@@ -101,13 +101,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:backgroundTint="@color/TextColorSecundary"
+                        android:backgroundTint="@color/texto_color_gris"
                         android:fontFamily="@font/sf_regular"
                         android:hint="Nombre del veterinario"
                         android:paddingRight="5dp"
                         android:textAllCaps="true"
-                        android:textColor="@color/TextColor"
-                        android:textColorHint="@color/TextColorSecundary"
+                        android:textColor="@color/texto_color_negro"
+                        android:textColorHint="@color/texto_color_gris"
                         android:textColorLink="#FFF"
                         android:textSize="14sp" />
 
@@ -115,13 +115,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:backgroundTint="@color/TextColorSecundary"
+                        android:backgroundTint="@color/texto_color_gris"
                         android:fontFamily="@font/sf_regular"
                         android:hint="Diagnostico"
                         android:paddingRight="10dp"
                         android:textAllCaps="true"
-                        android:textColor="@color/TextColor"
-                        android:textColorHint="@color/TextColorSecundary"
+                        android:textColor="@color/texto_color_negro"
+                        android:textColorHint="@color/texto_color_gris"
                         android:textColorLink="#FFF"
                         android:textSize="14sp" />
 
@@ -132,7 +132,7 @@
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/sf_regular"
                         android:text="Proxima visita"
-                        android:textColor="@color/TextColor"
+                        android:textColor="@color/texto_color_negro"
                         android:textSize="14sp" />
 
                     <LinearLayout
@@ -144,14 +144,14 @@
                         android:id="@+id/edadMascotaIFS"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/TextColorSecundary"
+                        android:backgroundTint="@color/texto_color_gris"
                         android:drawableRight="@drawable/ic_baseline_calendar_today_24"
                         android:fontFamily="@font/sf_regular"
                         android:hint="Fecha"
                         android:paddingRight="5dp"
                         android:textAllCaps="true"
-                        android:textColor="@color/TextColor"
-                        android:textColorHint="@color/TextColorSecundary"
+                        android:textColor="@color/texto_color_negro"
+                        android:textColorHint="@color/texto_color_gris"
                         android:textColorLink="#FFF"
                         android:textSize="14sp" />
 
@@ -159,13 +159,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:backgroundTint="@color/TextColorSecundary"
+                            android:backgroundTint="@color/texto_color_gris"
                             android:fontFamily="@font/sf_regular"
                             android:hint="Asunto"
                             android:paddingRight="10dp"
                             android:textAllCaps="true"
-                            android:textColor="@color/TextColor"
-                            android:textColorHint="@color/TextColorSecundary"
+                            android:textColor="@color/texto_color_negro"
+                            android:textColorHint="@color/texto_color_gris"
                             android:textColorLink="#FFF"
                             android:textSize="14sp" />
                     </LinearLayout>

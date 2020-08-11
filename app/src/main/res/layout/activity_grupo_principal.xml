@@ -42,7 +42,7 @@
                     android:id="@+id/isClosedText"
                     android:fontFamily="@font/poppins_semi_bold"
                     android:textAllCaps="true"
-                    android:textColor="@color/TextColor"
+                    android:textColor="@color/texto_color_negro"
                     android:textSize="9sp" />
                     <Button
                         android:id="@+id/whereToGoGroup"
@@ -66,7 +66,7 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/poppins_semi_bold"
                 android:id="@+id/nameOfGroupTextPrincipal"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="17sp"
                 />
         </LinearLayout>
@@ -84,7 +84,7 @@
                 android:fontFamily="@font/poppins_semi_bold"
                 android:text="DESCRIPCIÓN "
                 android:textAllCaps="true"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="9sp"
                 />
                 <TextView
@@ -94,7 +94,7 @@
                 android:autoSizeMaxTextSize="120dp"
                 android:fontFamily="@font/poppins_regular"
                 android:textAllCaps="false"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="10sp"
                 />
         </LinearLayout>

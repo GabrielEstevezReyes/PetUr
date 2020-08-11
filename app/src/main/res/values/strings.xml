@@ -45,6 +45,10 @@
     <string name="biom_btn_config">"Configurar "</string>
     <string name="biom_exito">Aceptar</string>
     <string name="biom_desc_exito">Huella digital activada con éxito</string>
+    <string name="proximos_eventos">Próximos eventos</string>
+    <string name="ver_mas">Ver más</string>
+    <string name="adverticing">Adverticing</string>
+    <string name="agregar_mascota_titulo">Agregar mascota</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>

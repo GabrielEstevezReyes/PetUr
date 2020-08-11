@@ -15,7 +15,7 @@
         android:fontFamily="@font/poppins_semi_bold"
         android:gravity="left"
         android:text="Cuidados"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="20sp" />
 
     <LinearLayout
@@ -47,7 +47,7 @@
                 android:fontFamily="@font/poppins_semi_bold"
                 android:text="Vacunas"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="12sp"
                 tools:ignore="HardcodedText" />
 
@@ -91,7 +91,7 @@
                 android:fontFamily="@font/poppins_semi_bold"
                 android:text="Alimentación"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="12sp"
                 tools:ignore="HardcodedText" />
 
@@ -128,7 +128,7 @@
                 android:text="Recorridos"
                 android:layout_marginLeft="3dp"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="12sp"
                 tools:ignore="HardcodedText" />
 

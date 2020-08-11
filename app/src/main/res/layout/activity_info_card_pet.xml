@@ -17,7 +17,7 @@
         android:gravity="center"
         android:text="NOMBRE DE LA MASCOTA"
         android:textAllCaps="true"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
@@ -53,17 +53,17 @@
                 android:fontFamily="@font/poppins_semi_bold"
                 android:text="Peso"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_gris"
                 android:textSize="10dp" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/TextColorSecundary"
+                android:backgroundTint="@color/texto_color_gris"
                 android:fontFamily="@font/sf_regular"
                 android:text="25 Kg"
                 android:textAllCaps="false"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14dp" />
 
 
@@ -74,7 +74,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="Guardar"
-            android:textColor="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_gris"
             android:textSize="12dp" />
 
 
@@ -99,18 +99,18 @@
                 android:fontFamily="@font/poppins_semi_bold"
                 android:text="Proxima comida"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_gris"
                 android:textSize="10dp" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="@color/TextColorSecundary"
+                android:backgroundTint="@color/texto_color_gris"
                 android:fontFamily="@font/sf_regular"
 
                 android:text="Purina DogChow Adulto"
                 android:textAllCaps="false"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14dp" />
 
             <LinearLayout
@@ -126,12 +126,12 @@
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="0dp"
-                        android:backgroundTint="@color/TextColorSecundary"
+                        android:backgroundTint="@color/texto_color_gris"
                         android:fontFamily="@font/sf_regular"
                         android:gravity="center"
                         android:text="250"
                         android:textAllCaps="false"
-                        android:textColor="@color/TextColor"
+                        android:textColor="@color/texto_color_negro"
                         android:textSize="14dp" />
 
                     <TextView
@@ -148,12 +148,12 @@
                     android:layout_width="85dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
-                    android:backgroundTint="@color/TextColorSecundary"
+                    android:backgroundTint="@color/texto_color_gris"
                     android:fontFamily="@font/sf_regular"
                     android:gravity="center"
                     android:text="13:16"
                     android:textAllCaps="false"
-                    android:textColor="@color/TextColor"
+                    android:textColor="@color/texto_color_negro"
                     android:textSize="14dp" />
 
 
@@ -161,7 +161,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
-                    android:backgroundTint="@color/TextColorSecundary"
+                    android:backgroundTint="@color/texto_color_gris"
                     android:fontFamily="@font/sf_regular"
                     android:gravity="center"
                     android:drawableRight="@drawable/ic_baseline_calendar_today_24"
@@ -169,7 +169,7 @@
                     android:inputType="date"
                     android:text=""
                     android:textAllCaps="false"
-                    android:textColor="@color/TextColor"
+                    android:textColor="@color/texto_color_negro"
                     android:textSize="14dp" />
 
             </LinearLayout>
@@ -182,7 +182,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="Guardar"
-            android:textColor="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_gris"
             android:textSize="12dp" />
 
 
@@ -207,17 +207,17 @@
                 android:fontFamily="@font/poppins_semi_bold"
                 android:text="SU PROXIMA CITA MEDICA"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_gris"
                 android:textSize="10dp" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/TextColorSecundary"
+                android:backgroundTint="@color/texto_color_gris"
                 android:fontFamily="@font/sf_regular"
                 android:text=""
                 android:textAllCaps="false"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14dp" />
         </LinearLayout>
 
@@ -227,7 +227,7 @@
             android:gravity="center"
             android:onClick="citas"
             android:text="+ Agendar"
-            android:textColor="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_gris"
             android:textSize="12dp" />
     </LinearLayout>
 

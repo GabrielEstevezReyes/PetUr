@@ -1,4 +1,4 @@
-package com.example.urpet.home.mascota;
+package com.example.urpet.home.mascota.detallesMascota;
 
 import androidx.appcompat.app.AppCompatActivity;
 

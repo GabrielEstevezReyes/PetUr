@@ -23,7 +23,7 @@
             android:gravity="center"
             android:text="Editar perfil"
             android:textAllCaps="true"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="14sp"
             tools:ignore="MissingConstraints" />
 
@@ -78,8 +78,8 @@
                     android:onClick="updateImage"
                     android:text="+ Subir foto"
                     android:textAllCaps="false"
-                    android:textColor="@color/TextColorSecundary"
-                    android:textColorHint="@color/TextColorSecundary"
+                    android:textColor="@color/texto_color_gris"
+                    android:textColorHint="@color/texto_color_gris"
                     android:textSize="12sp" />
 
 
@@ -95,18 +95,18 @@
                         android:fontFamily="@font/poppins_semi_bold"
                         android:text="Nombre"
                         android:textAllCaps="true"
-                        android:textColor="@color/TextColorSecundary"
+                        android:textColor="@color/texto_color_gris"
                         android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/fullnameInfoEdit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/TextColorSecundary"
+                        android:backgroundTint="@color/texto_color_gris"
                         android:fontFamily="@font/sf_light"
                         android:text=""
-                        android:textColor="@color/TextColorSecundary"
-                        android:textColorHint="@color/TextColorSecundary"
+                        android:textColor="@color/texto_color_gris"
+                        android:textColorHint="@color/texto_color_gris"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -123,19 +123,19 @@
                         android:fontFamily="@font/poppins_semi_bold"
                         android:text="Número de teléfono"
                         android:textAllCaps="true"
-                        android:textColor="@color/TextColorSecundary"
+                        android:textColor="@color/texto_color_gris"
                         android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/cellphoneInfoEdit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/TextColorSecundary"
+                        android:backgroundTint="@color/texto_color_gris"
                         android:fontFamily="@font/sf_light"
                         android:inputType="phone"
                         android:text=""
-                        android:textColor="@color/TextColorSecundary"
-                        android:textColorHint="@color/TextColorSecundary"
+                        android:textColor="@color/texto_color_gris"
+                        android:textColorHint="@color/texto_color_gris"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -151,19 +151,19 @@
                         android:fontFamily="@font/poppins_semi_bold"
                         android:text="Correo electrónico"
                         android:textAllCaps="true"
-                        android:textColor="@color/TextColorSecundary"
+                        android:textColor="@color/texto_color_gris"
                         android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/MailInfoEdit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/TextColorSecundary"
+                        android:backgroundTint="@color/texto_color_gris"
                         android:fontFamily="@font/sf_light"
                         android:inputType="textEmailAddress"
                         android:text=""
-                        android:textColor="@color/TextColorSecundary"
-                        android:textColorHint="@color/TextColorSecundary"
+                        android:textColor="@color/texto_color_gris"
+                        android:textColorHint="@color/texto_color_gris"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -179,21 +179,21 @@
                         android:fontFamily="@font/poppins_semi_bold"
                         android:text="Fecha de nacimiento"
                         android:textAllCaps="true"
-                        android:textColor="@color/TextColorSecundary"
+                        android:textColor="@color/texto_color_gris"
                         android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/userAgeEdit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/TextColorSecundary"
+                        android:backgroundTint="@color/texto_color_gris"
                         android:drawableRight="@drawable/ic_baseline_calendar_today_24"
                         android:fontFamily="@font/sf_light"
                         android:text=""
-                        android:textColor="@color/TextColorSecundary"
-                        android:textColorHighlight="@color/TextColor"
-                        android:textColorHint="@color/TextColorSecundary"
-                        android:textColorLink="@color/TextColor"
+                        android:textColor="@color/texto_color_gris"
+                        android:textColorHighlight="@color/texto_color_negro"
+                        android:textColorHint="@color/texto_color_gris"
+                        android:textColorLink="@color/texto_color_negro"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -210,18 +210,18 @@
                         android:shadowColor="#58676A"
                         android:text="Dirección"
                         android:textAllCaps="true"
-                        android:textColor="@color/TextColorSecundary"
+                        android:textColor="@color/texto_color_gris"
                         android:textSize="10sp" />
 
                     <EditText
                         android:id="@+id/addressInfoEdit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/TextColorSecundary"
+                        android:backgroundTint="@color/texto_color_gris"
                         android:fontFamily="@font/sf_light"
                         android:text=""
-                        android:textColor="@color/TextColorSecundary"
-                        android:textColorHint="@color/TextColorSecundary"
+                        android:textColor="@color/texto_color_gris"
+                        android:textColorHint="@color/texto_color_gris"
                         android:textSize="14sp" />
                 </LinearLayout>
 

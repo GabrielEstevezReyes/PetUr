@@ -15,7 +15,7 @@
         android:gravity="center"
         android:text="Tipo de visita"
         android:textAllCaps="true"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
@@ -39,7 +39,7 @@
             android:gravity="left|center"
             android:text="Cita médica"
             android:textAllCaps="false"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="12sp" />
 
         <Button
@@ -51,7 +51,7 @@
             android:gravity="left|center"
             android:text="Vacuna"
             android:textAllCaps="false"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="12sp" />
 
     </LinearLayout>

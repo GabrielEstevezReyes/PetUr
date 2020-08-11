@@ -1,8 +1,7 @@
-package com.example.urpet.home.mascota;
+package com.example.urpet.home.mascota.anadirMascota;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Build;
@@ -24,6 +23,7 @@ import com.example.urpet.R;
 import com.example.urpet.connections.Pet;
 import com.example.urpet.connections.PetRace;
 import com.example.urpet.connections.PetType;
+import com.example.urpet.home.mascota.ListaMascotas;
 
 import org.json.JSONException;
 

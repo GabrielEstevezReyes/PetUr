@@ -7,7 +7,7 @@
     android:background="#FFF"
     android:padding="20dp"
     android:orientation="vertical"
-    tools:context=".home.mascota.RegistroMascota">
+    tools:context=".home.mascota.anadirMascota.RegistroMascota">
 
     <TextView
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:gravity="center"
         android:text="Registrar Mascota"
         android:textAllCaps="true"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
@@ -41,7 +41,7 @@
                 android:fontFamily="@font/sf_bold"
                 android:text="Nombre"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_gris"
                 android:textSize="12sp" />
 
             <EditText
@@ -49,12 +49,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:backgroundTint="@color/TextColorSecundary"
+                android:backgroundTint="@color/texto_color_gris"
                 android:fontFamily="@font/sf_light"
                 android:paddingLeft="15dp"
                 android:paddingRight="10dp"
-                android:textColor="@color/TextColor"
-                android:textColorHint="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_negro"
+                android:textColorHint="@color/texto_color_gris"
                 android:textColorLink="#FFF"
                 android:textSize="14sp" />
 
@@ -65,7 +65,7 @@
                 android:fontFamily="@font/sf_bold"
                 android:text="Tipo"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_gris"
                 android:textSize="12sp" />
 
             <Spinner
@@ -99,7 +99,7 @@
                 android:fontFamily="@font/sf_bold"
                 android:text="Raza"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_gris"
                 android:textSize="12sp" />
 
             <Spinner
@@ -131,7 +131,7 @@
                 android:fontFamily="@font/sf_bold"
                 android:text="Color"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_gris"
                 android:textSize="12sp" />
 
 
@@ -140,12 +140,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:backgroundTint="@color/TextColorSecundary"
+                android:backgroundTint="@color/texto_color_gris"
                 android:fontFamily="@font/sf_light"
                 android:paddingLeft="5dp"
                 android:paddingRight="10dp"
-                android:textColor="@color/TextColor"
-                android:textColorHint="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_negro"
+                android:textColorHint="@color/texto_color_gris"
                 android:textColorLink="#FFF"
                 android:textSize="14sp" />
 
@@ -156,7 +156,7 @@
                 android:fontFamily="@font/sf_bold"
                 android:text="Fecha de nacimiento"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_gris"
                 android:textSize="12sp" />
 
             <EditText
@@ -164,13 +164,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:backgroundTint="@color/TextColorSecundary"
+                android:backgroundTint="@color/texto_color_gris"
                 android:fontFamily="@font/sf_light"
                 android:paddingLeft="5dp"
                 android:paddingRight="10dp"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:drawableRight="@drawable/ic_baseline_calendar_today_24"
-                android:textColorHint="@color/TextColorSecundary"
+                android:textColorHint="@color/texto_color_gris"
                 android:textColorLink="#FFF"
                 android:textSize="14sp" />
 
@@ -181,7 +181,7 @@
                 android:fontFamily="@font/sf_bold"
                 android:text="Descripción"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_gris"
                 android:textSize="12sp" />
 
             <EditText
@@ -189,12 +189,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:backgroundTint="@color/TextColorSecundary"
+                android:backgroundTint="@color/texto_color_gris"
                 android:fontFamily="@font/sf_light"
                 android:paddingLeft="5dp"
                 android:paddingRight="10dp"
-                android:textColor="@color/TextColor"
-                android:textColorHint="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_negro"
+                android:textColorHint="@color/texto_color_gris"
                 android:textColorLink="#FFF"
                 android:textSize="14sp" />
 
