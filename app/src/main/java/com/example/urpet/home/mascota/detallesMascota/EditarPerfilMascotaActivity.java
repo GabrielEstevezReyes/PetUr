@@ -1,4 +1,4 @@
-package com.example.urpet.home.perfil;
+package com.example.urpet.home.mascota.detallesMascota;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -18,6 +18,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.urpet.Utils.GeneralUtils;
 import com.example.urpet.home.mascota.ListaMascotas;
 import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
@@ -34,7 +35,7 @@ import org.json.JSONException;
 import java.text.ParseException;
 import java.util.Calendar;
 
-public class EditPerfilPet extends AppCompatActivity {
+public class EditarPerfilMascotaActivity extends AppCompatActivity {
     public EditText namePet =  null;
     public EditText typePet =  null;
     public EditText racePet =  null;
@@ -48,24 +49,6 @@ public class EditPerfilPet extends AppCompatActivity {
 
     FirebaseStorage storage = FirebaseStorage.getInstance();
 
-    public void getBitmapFromURL(String src, final CircularImageView circ) {
-        StorageReference storageRef = storage.getReference();
-        StorageReference islandRef = storageRef.child(src);
-
-        final long ONE_MEGABYTE = 1024 * 1024;
-        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-            @Override
-            public void onSuccess(byte[] b) {
-                Drawable image = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(b, 0, b.length));
-                circ.setImageDrawable(image);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle any errors
-            }
-        });
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +69,7 @@ public class EditPerfilPet extends AppCompatActivity {
         });
         petI = findViewById(R.id.petImageEdit);
         if(!PersonalInfo.clickedPet.getBase64Image().isEmpty()) {
-            getBitmapFromURL(PersonalInfo.clickedPet.getBase64Image(), petI);
+            GeneralUtils.getBitmapFromURL(PersonalInfo.clickedPet.getBase64Image(), petI, storage, this);
             PersonalInfo.registedPetImage = PersonalInfo.clickedPet.getBase64Image();
         }
         else{
@@ -102,7 +85,7 @@ public class EditPerfilPet extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(EditPerfilPet.this, ListaMascotas.class);
+        Intent siguiente = new Intent(EditarPerfilMascotaActivity.this, ListaMascotas.class);
         startActivity (siguiente);
         finish();
     }
@@ -124,14 +107,14 @@ public class EditPerfilPet extends AppCompatActivity {
             PersonalInfo.clickedPet.setBase64Image(encodedImage);
         }
         PersonalInfo.clickedPet.update(selectedImage);
-        Intent siguiente = new Intent(EditPerfilPet.this, ListaMascotas.class);
+        Intent siguiente = new Intent(EditarPerfilMascotaActivity.this, ListaMascotas.class);
         startActivity (siguiente);
         finish();
     }
 
     public void deletePet(View v){
         PersonalInfo.clickedPet.delete();
-        Intent siguiente = new Intent(EditPerfilPet.this, ListaMascotas.class);
+        Intent siguiente = new Intent(EditarPerfilMascotaActivity.this, ListaMascotas.class);
         startActivity (siguiente);
         finish();
     }
@@ -149,7 +132,7 @@ public class EditPerfilPet extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     PersonalInfo.clickedPet.setBase64Image("PET" + PersonalInfo.clickedPet.getID());
-                    Toast.makeText(EditPerfilPet.this, "File Uploaded", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditarPerfilMascotaActivity.this, "File Uploaded", Toast.LENGTH_SHORT).show();
                 }
             });
         }

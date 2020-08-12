@@ -163,7 +163,7 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/btn"
             android:fontFamily="@font/poppins_semi_bold"
-            android:text="Editar"
+            android:text="@string/editar"
             android:textAllCaps="true"
             android:textColor="#FFF"
             android:textSize="12sp" />

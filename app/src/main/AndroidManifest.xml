@@ -116,7 +116,7 @@
             android:name=".home.grupos.EditarGrupoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.perfil.EditPerfilPet"
+            android:name=".home.mascota.detallesMascota.EditarPerfilMascotaActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
@@ -131,7 +131,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".home.perfil.EditPerfilUserData"
+            android:name=".home.perfil.EditarPerfilActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />

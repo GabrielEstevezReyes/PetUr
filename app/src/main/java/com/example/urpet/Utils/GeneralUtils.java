@@ -5,6 +5,9 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
+import androidx.fragment.app.FragmentManager;
+
+import com.example.urpet.Utils.alert.SpinnerFechasDialogFragment;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -22,5 +25,11 @@ public class GeneralUtils {
         }).addOnFailureListener(exception -> {
             // Handle any errors
         });
+    }
+
+    public static void abrirCalendarioFecha(FragmentManager manager, SpinnerFechasDialogFragment.onDateSelected listener, String tag){
+        SpinnerFechasDialogFragment fechas = SpinnerFechasDialogFragment.newInstance();
+        fechas.setmListener(listener);
+        fechas.show(manager, tag);
     }
 }

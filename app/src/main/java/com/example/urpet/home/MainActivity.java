@@ -68,6 +68,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bindviews();
         configureViews();
         bindData();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(PersonalInfo.currentUser != null){
+            if(!PersonalInfo.currentUser.getBase64Image().isEmpty() && !PersonalInfo.currentUser.getBase64Image().equals("no-image.png")) {
+                getBitmapFromURL(PersonalInfo.currentUser.getBase64Image(), mFotoPerfilCIV);
+            }
+            else{
+                mFotoPerfilCIV.setImageResource(R.drawable.ic_user);
+            }
+            mNombreTV.setText(PersonalInfo.currentUser.getName().isEmpty() ? "" : PersonalInfo.currentUser.getName());
+        }
 
     }
 
@@ -101,17 +115,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAddPetBtn.setOnClickListener(this);
         mSettingBtn.setOnClickListener(this);
         mNotifBtn.setOnClickListener(this);
-
-        if(PersonalInfo.currentUser != null){
-            if(!PersonalInfo.currentUser.getBase64Image().isEmpty() && !PersonalInfo.currentUser.getBase64Image().equals("no-image.png")) {
-                getBitmapFromURL(PersonalInfo.currentUser.getBase64Image(), mFotoPerfilCIV);
-            }
-            else{
-                mFotoPerfilCIV.setImageResource(R.drawable.ic_user);
-            }
-            mNombreTV.setText(PersonalInfo.currentUser.getName().isEmpty() ? "" : PersonalInfo.currentUser.getName());
-        }
-
     }
 
     private void bindData(){

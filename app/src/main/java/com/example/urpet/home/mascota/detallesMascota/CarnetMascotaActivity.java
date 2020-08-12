@@ -6,16 +6,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.urpet.home.mascota.agenda.AgendarDialogFragment;
 import com.example.urpet.home.mascota.agenda.events.EventoAdapter;
 import com.example.urpet.home.mascota.agenda.events.EventoDTO;
-import com.example.urpet.home.perfil.EditPerfilPet;
-import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
@@ -81,7 +77,7 @@ public class CarnetMascotaActivity extends AppCompatActivity implements View.OnC
     }
 
     private void abrirAjustes(){
-        Intent siguiente = new Intent(this, EditPerfilPet.class);
+        Intent siguiente = new Intent(this, EditarPerfilMascotaActivity.class);
         startActivity (siguiente);
     }
 

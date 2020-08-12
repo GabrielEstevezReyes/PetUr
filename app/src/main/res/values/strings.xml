@@ -51,6 +51,20 @@
     <string name="agregar_mascota_titulo">Agregar mascota</string>
     <string name="sin_mascotas">No tienes mascotas registradas.</string>
     <string name="add_pet_no_pet">Haz click para registrar una nueva mascota.</string>
+    <string name="peso">Peso</string>
+    <string name="editar">Editar</string>
+    <string name="proxima_comida">Próxima comida</string>
+    <string name="gr">gr.</string>
+    <string name="cita_medica">Su próxima cita médica</string>
+    <string name="agendar">Agendar</string>
+    <string name="guardar">Guardar</string>
+    <string name="editar_perfil">Editar perfil</string>
+    <string name="nombre">Nombre</string>
+    <string name="numero_telefono">Número de teléfono</string>
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="direccion">Dirección</string>
+    <string name="editar_perfil_mascota">Editar perfil de mi mascota</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>

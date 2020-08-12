@@ -52,7 +52,7 @@ public class MiPerfilActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void irAEditarPerfil(){
-        Intent siguiente = new Intent(MiPerfilActivity.this, EditPerfilUserData.class);
+        Intent siguiente = new Intent(MiPerfilActivity.this, EditarPerfilActivity.class);
         startActivity (siguiente);
         finish();
     }
