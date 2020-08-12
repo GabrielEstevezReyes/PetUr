@@ -1,11 +1,9 @@
 package com.example.urpet.home;
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -28,6 +26,8 @@ import com.example.urpet.R;
 import com.example.urpet.SOS;
 import com.example.urpet.Utils.SharedPreferencesUtil;
 import com.example.urpet.connections.Pet;
+import com.example.urpet.home.ads.adapter.AdsAdapter;
+import com.example.urpet.home.ads.listado.AdsDTO;
 import com.example.urpet.home.grupos.ListadoGruposActivity;
 import com.example.urpet.home.marketplace.MarketplaceActivity;
 import com.example.urpet.home.mascota.ListaMascotas;
@@ -40,7 +40,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, LoginFingerprintAlert.initLogin, MascotaAdapter.onItemClicked{
@@ -53,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private MascotaAdapter mAdapterMascotas;
 
+    private AdsAdapter madapterAds;
+
     private TextView mNombreTV;
 
     private CircularImageView mFotoPerfilCIV;
@@ -64,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
-
         bindviews();
         configureViews();
         bindData();
@@ -116,6 +116,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void bindData(){
 
+        madapterAds = new AdsAdapter(this);
+        ArrayList<AdsDTO> mListadoAds = new ArrayList<>();
+        mListadoAds.add(new AdsDTO("Pedigree chico"));
+        mListadoAds.add(new AdsDTO("Pedigree cachorro"));
+        mListadoAds.add(new AdsDTO("Pedigree grande"));
+
         mAdapterMascotas = new MascotaAdapter(this);
         mAdapterMascotas.setmFirebaseStora(storage);
         mAdapterMascotas.setmListener(this);
@@ -125,9 +131,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 allPets = obtener.read();
-                mAdapterMascotas.setmListadoMascotas(allPets);
+               mAdapterMascotas.setmListadoMascotas(allPets);
             }
-        } catch (ParseException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -137,6 +143,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         PagerSnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(mListadoMascotasRV);
 
+        madapterAds.setmListadoAds(mListadoAds);
+        LinearLayoutManager mL2 = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+        mListadoPublicidadRV.setAdapter(madapterAds);
+        mListadoPublicidadRV.setLayoutManager(mL2);
     }
 
     @Override
@@ -164,19 +174,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void toLeft(int position) {
         int pos = position - 1;
         mListadoMascotasRV.scrollToPosition(pos >= 0 ? pos: position);
-    }
-
-    public void linker(View v){
-        String url1 = "amzn://apps/android?";
-        openURL(url1);
-    }
-
-    public void openURL(String url){
-        try{
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
-        } catch (ActivityNotFoundException ex){
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.amazon.com/gp/mas/dl/android?s=purina%20pro")));
-        }
     }
 
     private void addMascota(){

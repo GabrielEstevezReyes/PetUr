@@ -49,6 +49,8 @@
     <string name="ver_mas">Ver más</string>
     <string name="adverticing">Adverticing</string>
     <string name="agregar_mascota_titulo">Agregar mascota</string>
+    <string name="sin_mascotas">No tienes mascotas registradas.</string>
+    <string name="add_pet_no_pet">Haz click para registrar una nueva mascota.</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>
