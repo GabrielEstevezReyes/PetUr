@@ -1,4 +1,4 @@
-package com.example.urpet.home.social.grupos;
+package com.example.urpet.home.social.grupos.detalle;
 
 import androidx.appcompat.app.AppCompatActivity;
 

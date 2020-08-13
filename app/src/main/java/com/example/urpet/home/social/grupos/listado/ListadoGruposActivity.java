@@ -1,118 +1,165 @@
-package com.example.urpet.home.social.grupos;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
+package com.example.urpet.home.social.grupos.listado;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 
-import com.example.urpet.home.MainActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
+import com.example.urpet.Utils.LoaderFragment;
+import com.example.urpet.Utils.alert.AlertFragment;
+import com.example.urpet.Utils.alert.AlertManager;
 import com.example.urpet.connections.BelongGroup;
 import com.example.urpet.connections.Group;
+import com.example.urpet.home.social.grupos.CrearGrupoActivity;
+import com.google.firebase.storage.FirebaseStorage;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 
-public class ListadoGruposActivity extends AppCompatActivity {
+public class ListadoGruposActivity extends AppCompatActivity implements ListadoGruposView, View.OnClickListener {
 
     private Button mCrearBtn;
-    LinearLayout scroll = null;
-    ArrayList<Group> allGroups = null;
-    ArrayList<Group> userGroups = null;
-    ArrayList<Group> belongToGroups = null;
+    private TextView mTodosBtnTv, mMiosBtnTv, mUnidoBtnTv;
+    private RecyclerView mReciclerListadoRV;
+    private SearchView mBuscadorSV;
+    private GrupoAdapter mAdapter;
+
+    private ListadoGruposPresenter mPresenter;
+
+    private FirebaseStorage storage = FirebaseStorage.getInstance();
+
+    private LoaderFragment mLoader;
+
+    private ArrayList<Group> mListadoTodosGrupos = null;
+    private ArrayList<Group> mListadoMisGrupos = null;
+    private ArrayList<Group> mListadoGruposUnidos = null;
+    private ArrayList<Group> mListadoBusqueda = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grupos);
+        setContentView(R.layout.activity_listado_grupos);
         bindviews();
         configureviews();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
         PersonalInfo.selectedGroup = null;
-        scroll = findViewById(R.id.ListaGruposScroll);
         BelongGroup myBelongs = new BelongGroup(PersonalInfo.clickedPet.getID(), -1);
         PersonalInfo.belong = myBelongs.getFromUser();
-        Group obtener = new Group();
-        try {
-            allGroups = obtener.readAll();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        userGroups = getUserOwns();
-        belongToGroups = getBelongTo();
-        scroll.removeAllViews();
-        buildAllGroups();
+        mPresenter.onCallGrupos();
     }
 
     private void bindviews(){
-        mCrearBtn = findViewById(R.id.listado_grupos_crear_btn);
+        mCrearBtn = findViewById(R.id.activity_listado_grupos_crear_btn);
+        mTodosBtnTv = findViewById(R.id.activity_listado_grupos_todos_btn_tv);
+        mMiosBtnTv = findViewById(R.id.activity_listado_grupos_mios_btn_tv);
+        mUnidoBtnTv = findViewById(R.id.activity_listado_grupos_unidos_btn_tv);
+        mBuscadorSV = findViewById(R.id.activity_listado_grupos_buscador_sv);
+        mReciclerListadoRV = findViewById(R.id.activity_listado_grupos_recycler_grupos_rv);
+        mLoader = LoaderFragment.newInstance();
+        mListadoMisGrupos = new ArrayList<>();
+        mListadoGruposUnidos = new ArrayList<>();
+        mListadoTodosGrupos = new ArrayList<>();
+        mListadoBusqueda = new ArrayList<>();
     }
 
     private void configureviews(){
-        mCrearBtn.setOnClickListener(v-> onCrearGrupo());
-    }
+        mCrearBtn.setOnClickListener(this);
+        mTodosBtnTv.setOnClickListener(this);
+        mMiosBtnTv.setOnClickListener(this);
+        mUnidoBtnTv.setOnClickListener(this);
 
+        mAdapter = new GrupoAdapter(this, storage);
+        mPresenter = new ListadoGruposPresenter(this, new ListadoGrupsInteractor());
 
-
-    public ArrayList<Group> getUserOwns(){
-        ArrayList<Group> res = new ArrayList<Group>();
-        for (int i=0; i<allGroups.size(); i++){
-            Group check = allGroups.get(i);
-            if(check.getCreatorID() == PersonalInfo.clickedPet.getID()){
-                res.add(check);
+        LinearLayoutManager mManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+        mReciclerListadoRV.setLayoutManager(mManager);
+        mReciclerListadoRV.setAdapter(mAdapter);
+        mBuscadorSV.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                realizaBusqueda(query);
+                return true;
             }
-        }
-        return res;
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                realizaBusqueda(newText);
+                return false;
+            }
+        });
     }
 
-    public ArrayList<Group> getBelongTo(){
-        ArrayList<Group> res = new ArrayList<Group>();
+
+
+    private void fillGruposUnidos(ArrayList<Group> todos){
+        mListadoGruposUnidos.clear();
         if(PersonalInfo.belong != null) {
-            for (int i = 0; i < allGroups.size(); i++) {
-                Group check = allGroups.get(i);
-                if (PersonalInfo.belong.contains(check.getID())) {
-                    res.add(check);
+            for (int i = 0; i < todos.size(); i++) {
+                Group grupoActual = todos.get(i);
+                if (PersonalInfo.belong.contains(grupoActual.getID())) {
+                    mListadoGruposUnidos.add(grupoActual);
                 }
             }
         }
-        return res;
     }
 
-    public void buildUserGroups(){
-        Log.println(Log.INFO, "Grou", "UserGroups");
-        scroll.removeAllViews();
-        for (int i=0; i<userGroups.size(); i++){
-            scroll.addView(buildGroupItem(userGroups.get(i)));
-            Log.println(Log.INFO, "Grou", userGroups.get(i).toString());
+    private void fillMisGrupos(ArrayList<Group> todos){
+        mListadoMisGrupos.clear();
+        for (int i=0; i < todos.size(); i++){
+            if(todos.get(i).getCreatorID() == PersonalInfo.clickedPet.getID()){
+                mListadoMisGrupos.add(todos.get(i));
+            }
         }
     }
 
-    public void buildBelongGroups(){
-        Log.println(Log.INFO, "Grou", "BelongGroups");
-        scroll.removeAllViews();
-        for (int i=0; i<belongToGroups.size(); i++){
-            scroll.addView(buildGroupItem(belongToGroups.get(i)));
-            Log.println(Log.INFO, "Grou", belongToGroups.get(i).toString());
-        }
+    private void setTodosGrupos(){
+        mAdapter.setmListadoGrupos(mListadoTodosGrupos);
     }
 
-    public void buildAllGroups(){
-        Log.println(Log.INFO, "Grou", "AllGroups");
-        scroll.removeAllViews();
-        for (int i=0; i<allGroups.size(); i++){
-            scroll.addView(buildGroupItem(allGroups.get(i)));
-            Log.println(Log.INFO, "Grou", allGroups.get(i).toString());
+    private void setGruposMios(){
+        mAdapter.setmListadoGrupos(mListadoMisGrupos);
+    }
+
+    private void setGruposUnidos(){
+        mAdapter.setmListadoGrupos(mListadoGruposUnidos);
+    }
+
+    private void highlighButton(int tipo){
+        mTodosBtnTv.setBackground(ContextCompat.getDrawable(this, R.drawable.camp2));
+        mUnidoBtnTv.setBackground(ContextCompat.getDrawable(this, R.drawable.camp2));
+        mMiosBtnTv.setBackground(ContextCompat.getDrawable(this, R.drawable.camp2));
+
+        mTodosBtnTv.setTextColor(ContextCompat.getColor(this,R.color.texto_color_gris));
+        mUnidoBtnTv.setTextColor(ContextCompat.getColor(this,R.color.texto_color_gris));
+        mMiosBtnTv.setTextColor(ContextCompat.getColor(this,R.color.texto_color_gris));
+
+        switch (tipo){
+            case 1: //todos
+                mTodosBtnTv.setBackground(ContextCompat.getDrawable(this, R.drawable.camp_naranja));
+                mTodosBtnTv.setTextColor(ContextCompat.getColor(this,R.color.blanco));
+            break;
+            case 2: //unidos
+                mUnidoBtnTv.setBackground(ContextCompat.getDrawable(this, R.drawable.camp_naranja));
+                mUnidoBtnTv.setTextColor(ContextCompat.getColor(this,R.color.blanco));
+            break;
+            case 3: //mios
+                mMiosBtnTv.setBackground(ContextCompat.getDrawable(this, R.drawable.camp_naranja));
+                mMiosBtnTv.setTextColor(ContextCompat.getColor(this,R.color.blanco));
+            break;
         }
+
     }
 
     public void onCrearGrupo(){
@@ -120,65 +167,66 @@ public class ListadoGruposActivity extends AppCompatActivity {
         startActivity (siguiente);
     }
 
-    public void btn_All(View view){
-        buildAllGroups();
-    }
-
-    public void btn_User(View view){
-        buildUserGroups();
-    }
-
-    public void btn_Belong(View view){
-        buildBelongGroups();
+    private void realizaBusqueda(String cadena){
+        mListadoBusqueda.clear();
+        if(cadena.isEmpty()){
+            setTodosGrupos();
+            highlighButton(1);
+        }
+        else{
+            for(int i = 0; i < mListadoTodosGrupos.size(); i++){
+                Group actual = mListadoTodosGrupos.get(i);
+                if((actual.getName().toLowerCase()).contains(cadena.toLowerCase())){
+                    mListadoBusqueda.add(actual);
+                }
+            }
+            mAdapter.clearData();
+            mAdapter.setmListadoGrupos(mListadoBusqueda);
+        }
     }
 
     @Override
-    public void onBackPressed() {
-        Intent siguiente = new Intent(ListadoGruposActivity.this, MainActivity.class);
-        startActivity (siguiente);
-        finish();
+    public void onListadoPbtenido(ArrayList<Group> data) {
+        mAdapter.setmListadoGrupos(data);
+        mListadoTodosGrupos.addAll(data);
+        fillGruposUnidos(data);
+        fillMisGrupos(data);
     }
 
-    LinearLayout buildGroupItem(final Group groupToBuild){
-        LinearLayout parentGroup = new LinearLayout(this);
-        parentGroup.setPadding(0,10,0,10);
-        parentGroup.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        parentGroup.setOrientation(LinearLayout.HORIZONTAL);
-
-        LinearLayout textsPet = new LinearLayout(this);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        params.gravity = Gravity.CENTER;
-        textsPet.setLayoutParams(params);
-        textsPet.setOrientation(LinearLayout.VERTICAL);
-        textsPet.setPadding(15,0,0,0);
-
-        Typeface typeface = ResourcesCompat.getFont(this, R.font.sf_bold);
-
-        TextView nameOfGroup = new TextView(this);
-        nameOfGroup.setText(groupToBuild.getName());
-        nameOfGroup.setTextSize(17);
-        nameOfGroup.setTextColor(Color.parseColor("#58672A"));
-        nameOfGroup.setTypeface(typeface);
-
-        TextView groupDetails = new TextView(this);
-        groupDetails.setText("Ver detalles");
-        groupDetails.setTextSize(13);
-        groupDetails.setTextColor(Color.parseColor("#9958676A"));
-        Typeface typeface2 = ResourcesCompat.getFont(this, R.font.sf_bold);
-        groupDetails.setTypeface(typeface2);
-        nameOfGroup.setTypeface(typeface);
-        textsPet.addView(nameOfGroup);
-        textsPet.addView(groupDetails);
-        textsPet.setId(groupToBuild.getID());
-        parentGroup.addView(textsPet);
-        parentGroup.setOnClickListener(v -> goToPrincipalGroup(v, groupToBuild));
-        return parentGroup;
+    @Override
+    public void onErrorListado() {
+        AlertManager.muestraMensaje(getSupportFragmentManager(), "Error de post", AlertFragment.EnumTipoMensaje.ERROR,
+                getResources().getString(R.string.error_de_conexion), getResources().getString(R.string.error_conexion_desc), true,null);
     }
 
-    public void goToPrincipalGroup(View v1, Group petToEdit){
-        PersonalInfo.selectedGroup = petToEdit;
-        Log.println(Log.INFO, "kek2", PersonalInfo.selectedGroup.toString());
-        Intent siguiente = new Intent(ListadoGruposActivity.this, DetalleGrupoActivity.class);
-        startActivity (siguiente);
+    @Override
+    public void onShowLoader() {
+        mLoader.show(getSupportFragmentManager(), "Loader grupos");
+    }
+
+    @Override
+    public void onHideLoader() {
+        mLoader.dismiss();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.listado_grupos_crear_btn:
+                onCrearGrupo();
+            break;
+            case R.id.activity_listado_grupos_todos_btn_tv:
+                setTodosGrupos();
+                highlighButton(1);
+            break;
+            case R.id.activity_listado_grupos_mios_btn_tv:
+                setGruposMios();
+                highlighButton(3);
+            break;
+            case R.id.activity_listado_grupos_unidos_btn_tv:
+                setGruposUnidos();
+                highlighButton(2);
+            break;
+        }
     }
 }

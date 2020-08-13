@@ -1,4 +1,4 @@
-package com.example.urpet.home.social.grupos;
+package com.example.urpet.home.social.grupos.detalle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
@@ -24,6 +24,7 @@ import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
 import com.example.urpet.connections.BelongGroup;
 import com.example.urpet.connections.PairM;
+import com.example.urpet.home.social.grupos.listado.ListadoGruposActivity;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.mikhaellopez.circularimageview.CircularImageView;

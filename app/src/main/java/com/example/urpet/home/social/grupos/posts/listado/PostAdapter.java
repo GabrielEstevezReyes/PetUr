@@ -1,4 +1,4 @@
-package com.example.urpet.home.social.grupos.listado;
+package com.example.urpet.home.social.grupos.posts.listado;
 
 import android.content.Context;
 import android.view.LayoutInflater;
