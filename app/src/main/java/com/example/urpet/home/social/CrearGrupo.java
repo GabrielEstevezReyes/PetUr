@@ -1,12 +1,14 @@
-package com.example.urpet.home.grupos;
+package com.example.urpet.home.social;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -24,24 +26,41 @@ import org.json.JSONException;
 
 public class CrearGrupo extends AppCompatActivity {
 
-    public EditText nameGroup =  null;
-    public EditText descriptionGroup =  null;
-    public CheckBox isClosedCheckbox =  null;
-    public ImageButton imageB = null;
-    public boolean selectedImage = false;
-    public String encodedImage = "";
+    private Button mCrearGrupoBtn;
+    private EditText nameGroup =  null;
+    private EditText descriptionGroup =  null;
+    private CheckBox isClosedCheckbox =  null;
+    private ImageButton imageB = null;
+    private boolean selectedImage = false;
+    private String encodedImage = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_grupo);
+        bindviews();
+        configureviews();
+    }
+
+    private void bindviews(){
+        mCrearGrupoBtn = findViewById(R.id.crear_grupo_activity_crear_btn);
         nameGroup = findViewById(R.id.nameGroupCreate);
         descriptionGroup = findViewById(R.id.descriptionGroupCreate);
         isClosedCheckbox = findViewById(R.id.closedGroupCreate);
         imageB = findViewById(R.id.imgeGroupCreate);
     }
 
-    public void btn_sig(View view) throws JSONException {
+    private void configureviews(){
+        mCrearGrupoBtn.setOnClickListener(v-> {
+            try {
+                onCrearGrupo();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    public void onCrearGrupo() throws JSONException {
         if(allFieldsClean()) {
             int itIsClosed;
             if(isClosedCheckbox.isChecked()){
@@ -50,7 +69,6 @@ public class CrearGrupo extends AppCompatActivity {
             else{
                 itIsClosed = 0;
             }
-            Log.d("crear", "checked: " + itIsClosed);
             Group newGroup = new Group(nameGroup.getText().toString(), descriptionGroup.getText().toString(), itIsClosed);
             if(!encodedImage.isEmpty()){
                 newGroup.setImage(encodedImage);
@@ -81,18 +99,16 @@ public class CrearGrupo extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == this.RESULT_OK) {
+        if (resultCode == RESULT_OK) {
             //Image Uri will not be null for RESULT_OK
             final Uri fileUri = data.getData();
             imageB.setImageURI(fileUri);
             StorageReference Folder = FirebaseStorage.getInstance().getReference();
+            assert fileUri != null;
             final StorageReference file_name = Folder.child("GRP" + fileUri.getLastPathSegment());
-            file_name.putFile(fileUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    encodedImage = "GRP" + fileUri.getLastPathSegment();
-                    Toast.makeText(CrearGrupo.this, "File Uploaded", Toast.LENGTH_SHORT).show();
-                }
+            file_name.putFile(fileUri).addOnSuccessListener(taskSnapshot -> {
+                encodedImage = "GRP" + fileUri.getLastPathSegment();
+                Toast.makeText(CrearGrupo.this, "File Uploaded", Toast.LENGTH_SHORT).show();
             });
         }
     }

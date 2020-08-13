@@ -7,7 +7,7 @@
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".home.grupos.CrearGrupo">
+    tools:context=".home.social.CrearGrupo">
 
     <TextView
         android:layout_width="match_parent"
@@ -89,21 +89,21 @@
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/sf_regular"
-            android:text="Grupo cerrado"
+            android:text="@string/grupo_cerrado"
             android:textColor="@color/texto_color_gris"
             android:textColorHint="@color/texto_color_gris"
             android:textSize="14sp" />
 
         <Button
+            android:id="@+id/crear_grupo_activity_crear_btn"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/btn"
-            android:fontFamily="@font/poppins_semi_bold"
-            android:onClick="updateGroup"
-            android:text="Crear"
+            android:textAllCaps="false"
+            android:text="@string/crear_grupo"
             android:textColor="#FFF"
-            android:textSize="12sp" />
+            android:textSize="@dimen/texto_default" />
 
     </LinearLayout>
 </LinearLayout>

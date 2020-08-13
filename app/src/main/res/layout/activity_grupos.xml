@@ -7,7 +7,7 @@
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".home.grupos.ListadoGruposActivity">
+    tools:context=".home.social.ListadoGruposActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,14 +33,14 @@
             android:background="#DADADA" />
 
         <Button
+            android:id="@+id/listado_grupos_crear_btn"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/btn"
             android:fontFamily="@font/poppins_semi_bold"
-            android:onClick="updateGroup"
-            android:text="Crear grupo"
-            android:textAllCaps="true"
+            android:text="@string/crear_grupo"
+            android:textAllCaps="false"
             android:textColor="#FFF"
             android:textSize="12sp" />
 

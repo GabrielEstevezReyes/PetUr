@@ -1,10 +1,6 @@
 package com.example.urpet.connections;
 
 
-import android.util.Log;
-
-import org.json.JSONException;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 

@@ -1,4 +1,4 @@
-package com.example.urpet.home.grupos;
+package com.example.urpet.home.social;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 
 public class ListadoGruposActivity extends AppCompatActivity {
 
+    private Button mCrearBtn;
     LinearLayout scroll = null;
     ArrayList<Group> allGroups = null;
     ArrayList<Group> userGroups = null;
@@ -33,6 +35,9 @@ public class ListadoGruposActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grupos);
+        bindviews();
+        configureviews();
+
         PersonalInfo.selectedGroup = null;
         scroll = findViewById(R.id.ListaGruposScroll);
         BelongGroup myBelongs = new BelongGroup(PersonalInfo.clickedPet.getID(), -1);
@@ -48,6 +53,16 @@ public class ListadoGruposActivity extends AppCompatActivity {
         scroll.removeAllViews();
         buildAllGroups();
     }
+
+    private void bindviews(){
+        mCrearBtn = findViewById(R.id.listado_grupos_crear_btn);
+    }
+
+    private void configureviews(){
+        mCrearBtn.setOnClickListener(v-> onCrearGrupo());
+    }
+
+
 
     public ArrayList<Group> getUserOwns(){
         ArrayList<Group> res = new ArrayList<Group>();
@@ -100,10 +115,9 @@ public class ListadoGruposActivity extends AppCompatActivity {
         }
     }
 
-    public void btn_sig(View view){
-        Intent siguiente = new Intent(ListadoGruposActivity.this, CrearGrupo.class);
+    public void onCrearGrupo(){
+        Intent siguiente = new Intent(this, CrearGrupo.class);
         startActivity (siguiente);
-        finish();
     }
 
     public void btn_All(View view){

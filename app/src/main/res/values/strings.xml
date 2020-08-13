@@ -65,6 +65,13 @@
     <string name="fecha_nacimiento">Fecha de nacimiento</string>
     <string name="direccion">Dirección</string>
     <string name="editar_perfil_mascota">Editar perfil de mi mascota</string>
+    <string name="crear_grupo">Crear grupo</string>
+    <string name="grupo_cerrado">Grupo cerrado</string>
+    <string name="error_al_publicar">"Error de publicación "</string>
+    <string name="error_post_desc">Ocurrió un error al tratar de enviar el post, intenta de nuevo más tarde.</string>
+    <string name="post_creado">Post creado</string>
+    <string name="post_creado_desc">Tu publicación fue creada con éxito.</string>
+    <string name="postear">Publicar</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>

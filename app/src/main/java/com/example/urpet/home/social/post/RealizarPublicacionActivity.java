@@ -1,6 +1,8 @@
-package com.example.urpet.home.grupos;
+package com.example.urpet.home.social.post;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.loader.content.Loader;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -10,6 +12,8 @@ import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -17,63 +21,57 @@ import android.widget.Toast;
 
 import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
+import com.example.urpet.Utils.LoaderFragment;
+import com.example.urpet.Utils.alert.AlertFragment;
+import com.example.urpet.Utils.alert.AlertManager;
 import com.example.urpet.connections.Post;
+import com.example.urpet.home.social.DetalleGrupoActivity;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 
 import java.io.ByteArrayOutputStream;
 
-public class RealizarPublicacionActivity extends AppCompatActivity {
+public class RealizarPublicacionActivity extends AppCompatActivity implements PostView, AlertFragment.onAceptarClick {
 
     public EditText titlePost =  null;
     public EditText descriptionPost =  null;
     public ImageButton imageB = null;
+    private Button mPostearBtn;
     public boolean selectedImage = false;
     public String encodedImage = "";
     public CheckBox isForSale = null;
     public  EditText price = null;
+    private LoaderFragment mLoader;
+    private PostPresenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_post);
+        bindviews();
+        configureViews();
+    }
+
+    private void bindviews(){
         titlePost = findViewById(R.id.namePostCreate);
         descriptionPost = findViewById(R.id.descriptionPostCreate);
         imageB = findViewById(R.id.imgePostCreate);
         isForSale = findViewById(R.id.saledPstCreate);
+        mPostearBtn = findViewById(R.id.crear_post_activity_aceptar_btn);
         price = findViewById(R.id.pricePostCreate);
+        mPresenter = new PostPresenter(this, new PostInteractor());
+        mLoader = LoaderFragment.newInstance();
+    }
+
+    private void configureViews(){
+        mPostearBtn.setOnClickListener(v-> onHacerPost());
         price.setVisibility(View.INVISIBLE);
         price.setText("0");
     }
 
-    public void post(View view){
+    public void onHacerPost(){
         if(allFieldsClean()) {
-            Post newGroup = new Post(PersonalInfo.selectedGroup.getID());
-            int itIsClosed;
-            if(isForSale.isChecked()){
-                itIsClosed = 1;
-                newGroup.setForSale(1);
-            }
-            else{
-                itIsClosed = 0;
-            }
-            Log.d("crear", "checked: " + itIsClosed);
-            newGroup.setName(titlePost.getText().toString());
-            newGroup.setDescription(descriptionPost.getText().toString());
-            newGroup.setPrice(Float.parseFloat(price.getText().toString()));
-            if(selectedImage && !encodedImage.isEmpty()){
-                newGroup.setImage(encodedImage);
-            }
-            if(newGroup.create()) {
-                Toast toast = Toast.makeText(this, "Grupo Creado", Toast.LENGTH_SHORT);
-                toast.show();
-            }
-            else {
-                Toast toast = Toast.makeText(this, "Error, intente de nuevo más tarde", Toast.LENGTH_LONG);
-                toast.show();
-            }
-            Intent siguiente = new Intent(RealizarPublicacionActivity.this, DetalleGrupoActivity.class);
-            startActivity(siguiente);
-            finish();
+            mPresenter.onHacerPost(PersonalInfo.selectedGroup.getID(), isForSale.isChecked(), titlePost.getText().toString(),
+            descriptionPost.getText().toString(), Float.parseFloat(price.getText().toString()), encodedImage);
         }
     }
 
@@ -92,12 +90,6 @@ public class RealizarPublicacionActivity extends AppCompatActivity {
         return !titlePost.getText().toString().isEmpty() && !descriptionPost.getText().toString().isEmpty();
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent siguiente = new Intent(RealizarPublicacionActivity.this, DetalleGrupoActivity.class);
-        startActivity (siguiente);
-        finish();
-    }
 
     public void updateImage(View v){
         String[] mimes = {"image/png", "image/jpg", "image/jpeg"};
@@ -107,7 +99,7 @@ public class RealizarPublicacionActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == this.RESULT_OK) {
+        if (resultCode == RESULT_OK) {
             Uri fileUri = data.getData();
             imageB.setImageURI(fileUri);
             try {
@@ -122,8 +114,39 @@ public class RealizarPublicacionActivity extends AppCompatActivity {
                     Toast.makeText(RealizarPublicacionActivity.this, "Conversion Done", Toast.LENGTH_SHORT).show();
                     selectedImage = true;
                 }
-            } catch (Exception e) {
+            } catch (Exception ignored) {
             }
+        }
+    }
+
+    @Override
+    public void onPostCreado() {
+        AlertManager.muestraMensaje(getSupportFragmentManager(), "Error de post", AlertFragment.EnumTipoMensaje.ERROR,
+                getResources().getString(R.string.post_creado), getResources().getString(R.string.post_creado_desc), false,this);
+    }
+
+    @Override
+    public void onPostError() {
+        AlertManager.muestraMensaje(getSupportFragmentManager(), "Error de post", AlertFragment.EnumTipoMensaje.ERROR,
+        getResources().getString(R.string.error_al_publicar), getResources().getString(R.string.error_post_desc), false,this);
+    }
+
+    @Override
+    public void onShowLoader() {
+        mLoader.show(getSupportFragmentManager(),"Loader");
+    }
+
+    @Override
+    public void onHideLoader() {
+        mLoader.dismiss();
+    }
+
+    @Override
+    public void onAceptado(boolean exito) {
+        if(exito){
+            Intent siguiente = new Intent(this, DetalleGrupoActivity.class);
+            startActivity(siguiente);
+            finish();
         }
     }
 }

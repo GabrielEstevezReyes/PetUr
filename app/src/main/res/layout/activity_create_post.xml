@@ -7,7 +7,7 @@
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".home.grupos.RealizarPublicacionActivity">
+    tools:context=".home.social.post.RealizarPublicacionActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -102,13 +102,13 @@
             android:textSize="14sp" />
 
         <Button
+            android:id="@+id/crear_post_activity_aceptar_btn"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/btn"
             android:fontFamily="@font/poppins_semi_bold"
-            android:onClick="post"
-            android:text="Postear"
+            android:text="@string/postear"
             android:textColor="#FFF"
             android:textSize="12sp" />
 

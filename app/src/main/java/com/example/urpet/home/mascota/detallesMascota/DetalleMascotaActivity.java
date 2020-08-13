@@ -4,14 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.urpet.PersonalInfo;
@@ -20,12 +16,10 @@ import com.example.urpet.R;
 import com.example.urpet.Utils.GeneralUtils;
 import com.example.urpet.Utils.alert.SpinnerFechasDialogFragment;
 import com.example.urpet.connections.Pet;
-import com.example.urpet.home.MainActivity;
-import com.example.urpet.home.grupos.ListadoGruposActivity;
+import com.example.urpet.home.social.ListadoGruposActivity;
 import com.example.urpet.home.medico.Clinicas;
 import com.example.urpet.home.medico.MenuCuidados;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 public class DetalleMascotaActivity extends AppCompatActivity implements View.OnClickListener, SpinnerFechasDialogFragment.onDateSelected {

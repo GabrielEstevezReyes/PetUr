@@ -1,4 +1,4 @@
-package com.example.urpet.home.grupos;
+package com.example.urpet.home.social;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +26,7 @@ import com.example.urpet.R;
 import com.example.urpet.connections.BelongGroup;
 import com.example.urpet.connections.Post;
 import com.example.urpet.connections.User;
+import com.example.urpet.home.social.post.RealizarPublicacionActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
