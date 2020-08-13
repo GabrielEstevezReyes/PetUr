@@ -1,10 +1,5 @@
-package com.example.urpet.home.social.post;
+package com.example.urpet.home.social.publicar;
 
-import android.os.StrictMode;
-import android.util.Log;
-import android.widget.Toast;
-
-import com.example.urpet.PersonalInfo;
 import com.example.urpet.connections.Post;
 
 import org.json.JSONException;
@@ -20,9 +15,7 @@ public class PostInteractor {
     public void onEnviarPost(onInteractorInmterface listener, int idGrupo, boolean isForSale, String titulo,
                              String descripcion, float precio, String encodedImage, int idMascota){
         Post newPost = new Post(idGrupo);
-        if(isForSale){
-            newPost.setForSale(1);
-        }
+        newPost.setForSale(isForSale ? 1 : 0);
         newPost.setName(titulo);
         newPost.setDescription(descripcion);
         newPost.setPrice(precio);

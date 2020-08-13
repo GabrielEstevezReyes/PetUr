@@ -5,7 +5,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
@@ -50,12 +49,34 @@ public class Post extends BasicObject {
         return res;
     }
 
-    public ArrayList<Post> readFromGroup() {
+    public ArrayList<Post> getAllPosts(int idGrupo) {
+        ArrayList<Post> mListadoPosts = new ArrayList<>();
+        ArrayList<JSONObject> listadoJson;
+        listadoJson = ApiPetition.getDataList("posts", "", "");
+        if(listadoJson == null){
+            mListadoPosts = null;
+        }
+        else{
+            for(int i = 0; i < listadoJson.size(); i++){
+                JSONObject post = listadoJson.get(i);
+                if(post.optInt("idgrupos") == idGrupo){
+                    mListadoPosts.add(new Post(post));
+                }
+            }
+        }
 
-        ArrayList<Post> listaParentesco = new ArrayList<Post>();
-        Post parentesco = null;
+        return mListadoPosts;
+    }
 
-        return listaParentesco;
+    public Post(JSONObject data) {
+        name = data.optString("tittle");
+        description = data.optString("descripcion");
+        image= data.optString("");
+        price = data.optInt("price");
+        forSale = data.optInt("for_sale");
+        idMascota = data.optInt("id_mascota");
+        fecha = data.optString("fecha");
+        groupBelong = data.optInt("idgrupo");
     }
 
     public String getImage() {

@@ -72,6 +72,14 @@
     <string name="post_creado">Post creado</string>
     <string name="post_creado_desc">Tu publicación fue creada con éxito.</string>
     <string name="postear">Publicar</string>
+    <string name="ver_miembros">Ver todos los miembros</string>
+    <string name="publicar">Publicar</string>
+    <string name="grupo_abierto">Grupo abierto</string>
+    <string name="unirse">Unirse</string>
+    <string name="union_exitosa">Te has unido a este grupo.</string>
+    <string name="solicitud_union">Tu solicitud para unirte ha sido enviada.</string>
+    <string name="error_de_conexion">Error de conexión</string>
+    <string name="error_conexion_desc">Ha ocurrido un error, intenta de nuevo más tarde.</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>

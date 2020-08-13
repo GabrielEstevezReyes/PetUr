@@ -80,7 +80,7 @@ public class ApiPetition {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        URL url = null;
+        URL url;
         HttpURLConnection connection;
 
         try {
@@ -89,31 +89,29 @@ public class ApiPetition {
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();
+            int responseCode = connection.getResponseCode(); // para ver si la conexion resulto bien
+            if(responseCode == HttpURLConnection.HTTP_OK){
+                BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String inputLine;
+                StringBuffer response = new StringBuffer();
+                String json = "";
 
-            BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
-            String json = "";
+                while((inputLine = br.readLine()) != null){
+                    response.append(inputLine);
+                }
+                json = response.toString();
+                JSONArray jsonArray = new JSONArray(json);
+                for(int i=0; i<jsonArray.length(); i++){
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    objects.add(jsonObject);
+                }
+                return objects;
+            }
+            return null;
 
-            while((inputLine = br.readLine()) != null){
-                response.append(inputLine);
-            }
-            json = response.toString();
-            JSONArray jsonArray = new JSONArray(json);
-            for(int i=0; i<jsonArray.length(); i++){
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                objects.add(jsonObject);
-            }
-            return objects;
-        } catch (MalformedURLException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
-            return objects;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return objects;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return objects;
+            return null;
         }
     }
 

@@ -1,4 +1,4 @@
-package com.example.urpet.home.social.post;
+package com.example.urpet.home.social.publicar;
 
 import com.example.urpet.Utils.ViewInterface;
 

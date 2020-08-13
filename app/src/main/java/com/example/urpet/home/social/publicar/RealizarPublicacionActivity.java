@@ -1,4 +1,4 @@
-package com.example.urpet.home.social.post;
+package com.example.urpet.home.social.publicar;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -20,7 +20,6 @@ import com.example.urpet.R;
 import com.example.urpet.Utils.LoaderFragment;
 import com.example.urpet.Utils.alert.AlertFragment;
 import com.example.urpet.Utils.alert.AlertManager;
-import com.example.urpet.home.social.DetalleGrupoActivity;
 import com.example.urpet.home.social.ListadoGruposActivity;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 

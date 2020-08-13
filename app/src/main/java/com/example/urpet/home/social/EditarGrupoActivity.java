@@ -25,6 +25,7 @@ import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
 import com.example.urpet.connections.BelongGroup;
 import com.example.urpet.connections.PairM;
+import com.example.urpet.home.social.listado.DetalleGrupoActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;

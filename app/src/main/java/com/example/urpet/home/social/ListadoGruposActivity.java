@@ -19,6 +19,7 @@ import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
 import com.example.urpet.connections.BelongGroup;
 import com.example.urpet.connections.Group;
+import com.example.urpet.home.social.listado.DetalleGrupoActivity;
 
 import java.text.ParseException;
 import java.util.ArrayList;
