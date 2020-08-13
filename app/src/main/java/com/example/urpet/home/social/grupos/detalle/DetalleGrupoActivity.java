@@ -25,7 +25,7 @@ import com.example.urpet.home.social.grupos.posts.listado.ListaPostInteractor;
 import com.example.urpet.home.social.grupos.posts.listado.ListaPostPresenter;
 import com.example.urpet.home.social.grupos.posts.listado.ListaPostView;
 import com.example.urpet.home.social.grupos.posts.listado.PostAdapter;
-import com.example.urpet.home.social.publicar.RealizarPublicacionActivity;
+import com.example.urpet.home.social.grupos.posts.listado.publicar.RealizarPublicacionActivity;
 import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;

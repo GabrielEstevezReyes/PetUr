@@ -19,7 +19,7 @@ import com.example.urpet.Utils.alert.AlertFragment;
 import com.example.urpet.Utils.alert.AlertManager;
 import com.example.urpet.connections.BelongGroup;
 import com.example.urpet.connections.Group;
-import com.example.urpet.home.social.grupos.CrearGrupoActivity;
+import com.example.urpet.home.social.grupos.crear.CrearGrupoActivity;
 import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
@@ -212,7 +212,7 @@ public class ListadoGruposActivity extends AppCompatActivity implements ListadoG
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.listado_grupos_crear_btn:
+            case R.id.activity_listado_grupos_crear_btn:
                 onCrearGrupo();
             break;
             case R.id.activity_listado_grupos_todos_btn_tv:

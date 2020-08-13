@@ -1,4 +1,4 @@
-package com.example.urpet.home.social.grupos;
+package com.example.urpet.home.social.grupos.crear;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,9 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.urpet.R;
+import com.example.urpet.Utils.LoaderFragment;
+import com.example.urpet.Utils.alert.AlertFragment;
+import com.example.urpet.Utils.alert.AlertManager;
 import com.example.urpet.connections.Group;
 import com.example.urpet.home.social.grupos.listado.ListadoGruposActivity;
 import com.github.dhaval2404.imagepicker.ImagePicker;
@@ -21,8 +24,9 @@ import com.google.firebase.storage.StorageReference;
 
 import org.json.JSONException;
 
-public class CrearGrupoActivity extends AppCompatActivity {
+public class CrearGrupoActivity extends AppCompatActivity implements CrearGrupoView, AlertFragment.onAceptarClick{
 
+    private LoaderFragment mLoader;
     private Button mCrearGrupoBtn;
     private EditText nameGroup =  null;
     private EditText descriptionGroup =  null;
@@ -30,6 +34,7 @@ public class CrearGrupoActivity extends AppCompatActivity {
     private ImageButton imageB = null;
     private boolean selectedImage = false;
     private String encodedImage = "";
+    private CrearGrupoPresenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +50,8 @@ public class CrearGrupoActivity extends AppCompatActivity {
         descriptionGroup = findViewById(R.id.descriptionGroupCreate);
         isClosedCheckbox = findViewById(R.id.closedGroupCreate);
         imageB = findViewById(R.id.imgeGroupCreate);
+        mLoader = LoaderFragment.newInstance();
+        mPresenter = new CrearGrupoPresenter(this, new CrearGrupoInteractor());
     }
 
     private void configureviews(){
@@ -70,18 +77,9 @@ public class CrearGrupoActivity extends AppCompatActivity {
             if(!encodedImage.isEmpty()){
                 newGroup.setImage(encodedImage);
             }
-            newGroup.create();
-            Intent siguiente = new Intent(this, ListadoGruposActivity.class);
-            startActivity(siguiente);
-            finish();
-        }
-    }
 
-    @Override
-    public void onBackPressed() {
-        Intent siguiente = new Intent(CrearGrupoActivity.this, ListadoGruposActivity.class);
-        startActivity (siguiente);
-        finish();
+            mPresenter.onCrearGrupo(newGroup);
+        }
     }
 
     private Boolean allFieldsClean(){
@@ -107,6 +105,37 @@ public class CrearGrupoActivity extends AppCompatActivity {
                 encodedImage = "GRP" + fileUri.getLastPathSegment();
                 Toast.makeText(CrearGrupoActivity.this, "File Uploaded", Toast.LENGTH_SHORT).show();
             });
+        }
+    }
+
+    @Override
+    public void onGrupoCreado() {
+        AlertManager.muestraMensaje(getSupportFragmentManager(), "sucess de grupo", AlertFragment.EnumTipoMensaje.EXITO,
+                getResources().getString(R.string.grupo_creado), getResources().getString(R.string.grupo_creado_desc), false,this);
+    }
+
+    @Override
+    public void onGrupoError() {
+        AlertManager.muestraMensaje(getSupportFragmentManager(), "Error de grupo", AlertFragment.EnumTipoMensaje.ERROR,
+                getResources().getString(R.string.error_al_publicar), getResources().getString(R.string.error_grupo_desc), false,this);
+    }
+
+    @Override
+    public void onShowLoader() {
+        mLoader.show(getSupportFragmentManager(),"Loader");
+    }
+
+    @Override
+    public void onHideLoader() {
+        mLoader.dismiss();
+    }
+
+    @Override
+    public void onAceptado(boolean exito) {
+        if(exito){
+            Intent siguiente = new Intent(this, ListadoGruposActivity.class);
+            startActivity(siguiente);
+            finish();
         }
     }
 }

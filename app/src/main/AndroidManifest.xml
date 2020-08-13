@@ -65,7 +65,7 @@
             android:name=".home.social.grupos.ChatGrupo"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.publicar.RealizarPublicacionActivity"
+            android:name=".home.social.grupos.posts.listado.publicar.RealizarPublicacionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <!--
@@ -201,7 +201,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".home.social.grupos.CrearGrupoActivity"
+            android:name=".home.social.grupos.crear.CrearGrupoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />

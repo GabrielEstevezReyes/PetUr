@@ -1,4 +1,4 @@
-package com.example.urpet.home.social.publicar;
+package com.example.urpet.home.social.grupos.posts.listado.publicar;
 
 public class PostPresenter implements PostInteractor.onInteractorInmterface {
 

@@ -105,10 +105,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView5">
@@ -116,20 +118,6 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-
-                        <androidx.constraintlayout.widget.Guideline
-                            android:id="@+id/guideline7"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintGuide_percent="0.33" />
-
-                        <androidx.constraintlayout.widget.Guideline
-                            android:id="@+id/guideline8"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintGuide_percent="0.66" />
 
                         <TextView
                             android:id="@+id/activity_listado_grupos_todos_btn_tv"
@@ -206,6 +194,20 @@
                             app:layout_constraintEnd_toEndOf="@+id/activity_listado_grupos_unidos_btn_tv"
                             app:layout_constraintStart_toStartOf="@+id/activity_listado_grupos_todos_btn_tv"
                             app:layout_constraintTop_toBottomOf="@+id/activity_listado_grupos_mios_btn_tv" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.33" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.66" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/activity_listado_grupos_recycler_grupos_rv"
