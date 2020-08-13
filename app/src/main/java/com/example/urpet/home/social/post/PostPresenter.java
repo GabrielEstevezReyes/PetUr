@@ -11,10 +11,11 @@ public class PostPresenter implements PostInteractor.onInteractorInmterface {
     }
 
     @Override
-    public void onHacerPost(int idGrupo, boolean isForSale, String titulo, String descripcion, float precio, String encodedImage) {
+    public void onHacerPost(int idGrupo, boolean isForSale, String titulo, String descripcion,
+                            float precio, String encodedImage, int idmascota) {
         if(mView != null){
             mView.onShowLoader();
-            mInteractor.onEnviarPost(this, idGrupo, isForSale, titulo, descripcion, precio, encodedImage);
+            mInteractor.onEnviarPost(this, idGrupo, isForSale, titulo, descripcion, precio, encodedImage, idmascota);
         }
     }
 

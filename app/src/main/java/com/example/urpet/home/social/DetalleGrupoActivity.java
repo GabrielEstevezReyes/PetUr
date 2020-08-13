@@ -52,17 +52,11 @@ public class DetalleGrupoActivity extends AppCompatActivity {
         StorageReference islandRef = storageRef.child(src);
 
         final long ONE_MEGABYTE = 1024 * 1024;
-        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-            @Override
-            public void onSuccess(byte[] b) {
-                Drawable image = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(b, 0, b.length));
-                circ.setImageDrawable(image);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle any errors
-            }
+        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(b -> {
+            Drawable image = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(b, 0, b.length));
+            circ.setImageDrawable(image);
+        }).addOnFailureListener(exception -> {
+            // Handle any errors
         });
     }
 
@@ -90,12 +84,7 @@ public class DetalleGrupoActivity extends AppCompatActivity {
         }
         if(PersonalInfo.selectedGroup.getCreatorID() == PersonalInfo.clickedPet.getID()){
             whereTo.setText("Editar");
-            whereTo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    goToEditGroup(v);
-                }
-            });
+            whereTo.setOnClickListener(v -> goToEditGroup(v));
         }
         else{
             if(PersonalInfo.belong.contains(PersonalInfo.selectedGroup.getID())){
@@ -104,20 +93,10 @@ public class DetalleGrupoActivity extends AppCompatActivity {
             else{
                 whereTo.setText("Unirse");
                 if(PersonalInfo.selectedGroup.getIsClosed() == 0) {
-                    whereTo.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            joinGroup();
-                        }
-                    });
+                    whereTo.setOnClickListener(v -> joinGroup());
                 }
                 else{
-                    whereTo.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            requestJoinGroup();
-                        }
-                    });
+                    whereTo.setOnClickListener(v -> requestJoinGroup());
                 }
             }
         }
@@ -198,7 +177,7 @@ public class DetalleGrupoActivity extends AppCompatActivity {
     }
 
     public void onRealizarPublicacion(View v1){
-        Intent siguiente = new Intent(DetalleGrupoActivity.this, RealizarPublicacionActivity.class);
+        Intent siguiente = new Intent(this, RealizarPublicacionActivity.class);
         startActivity (siguiente);
         finish();
     }

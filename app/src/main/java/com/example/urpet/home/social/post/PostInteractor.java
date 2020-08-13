@@ -7,16 +7,18 @@ import android.widget.Toast;
 import com.example.urpet.PersonalInfo;
 import com.example.urpet.connections.Post;
 
+import org.json.JSONException;
+
 public class PostInteractor {
 
     public interface onInteractorInmterface{
-        void onHacerPost(int idGrupo, boolean isForSale, String titulo, String descripcion, float precio, String encodedImage);
+        void onHacerPost(int idGrupo, boolean isForSale, String titulo, String descripcion, float precio, String encodedImage, int idMascota);
         void onPostExitoso();
         void onPostError();
     }
 
     public void onEnviarPost(onInteractorInmterface listener, int idGrupo, boolean isForSale, String titulo,
-                             String descripcion, float precio, String encodedImage){
+                             String descripcion, float precio, String encodedImage, int idMascota){
         Post newPost = new Post(idGrupo);
         if(isForSale){
             newPost.setForSale(1);
@@ -24,13 +26,19 @@ public class PostInteractor {
         newPost.setName(titulo);
         newPost.setDescription(descripcion);
         newPost.setPrice(precio);
+        newPost.setIdMascota(idMascota);
+        newPost.setID(idGrupo);
         if(!encodedImage.isEmpty()){
             newPost.setImage(encodedImage);
         }
-        if(newPost.create()) {
-            listener.onPostExitoso();
-        }
-        else {
+        try {
+            if(newPost.create()) {
+                listener.onPostExitoso();
+            }
+            else {
+                listener.onPostError();
+            }
+        } catch (JSONException e) {
             listener.onPostError();
         }
     }

@@ -1,31 +1,27 @@
 package com.example.urpet.home.social.post;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.loader.content.Loader;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
 import com.example.urpet.Utils.LoaderFragment;
 import com.example.urpet.Utils.alert.AlertFragment;
 import com.example.urpet.Utils.alert.AlertManager;
-import com.example.urpet.connections.Post;
 import com.example.urpet.home.social.DetalleGrupoActivity;
+import com.example.urpet.home.social.ListadoGruposActivity;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 
 import java.io.ByteArrayOutputStream;
@@ -71,7 +67,7 @@ public class RealizarPublicacionActivity extends AppCompatActivity implements Po
     public void onHacerPost(){
         if(allFieldsClean()) {
             mPresenter.onHacerPost(PersonalInfo.selectedGroup.getID(), isForSale.isChecked(), titlePost.getText().toString(),
-            descriptionPost.getText().toString(), Float.parseFloat(price.getText().toString()), encodedImage);
+            descriptionPost.getText().toString(), Float.parseFloat(price.getText().toString()), encodedImage, PersonalInfo.clickedPet.getID());
         }
     }
 
@@ -121,7 +117,7 @@ public class RealizarPublicacionActivity extends AppCompatActivity implements Po
 
     @Override
     public void onPostCreado() {
-        AlertManager.muestraMensaje(getSupportFragmentManager(), "Error de post", AlertFragment.EnumTipoMensaje.ERROR,
+        AlertManager.muestraMensaje(getSupportFragmentManager(), "Error de post", AlertFragment.EnumTipoMensaje.EXITO,
                 getResources().getString(R.string.post_creado), getResources().getString(R.string.post_creado_desc), false,this);
     }
 
@@ -144,7 +140,7 @@ public class RealizarPublicacionActivity extends AppCompatActivity implements Po
     @Override
     public void onAceptado(boolean exito) {
         if(exito){
-            Intent siguiente = new Intent(this, DetalleGrupoActivity.class);
+            Intent siguiente = new Intent(this, ListadoGruposActivity.class);
             startActivity(siguiente);
             finish();
         }
