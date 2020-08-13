@@ -106,7 +106,7 @@ public class RealizarPublicacionActivity extends AppCompatActivity implements Po
                     byteArray = stream.toByteArray();
                     encodedImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
                     System.out.println("Guardando: " + encodedImage);
-                    Toast.makeText(RealizarPublicacionActivity.this, "Conversion Done", Toast.LENGTH_SHORT).show();
+
                     selectedImage = true;
                 }
             } catch (Exception ignored) {
