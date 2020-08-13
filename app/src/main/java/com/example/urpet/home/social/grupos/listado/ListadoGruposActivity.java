@@ -1,4 +1,4 @@
-package com.example.urpet.home.social;
+package com.example.urpet.home.social.grupos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
@@ -19,7 +19,6 @@ import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
 import com.example.urpet.connections.BelongGroup;
 import com.example.urpet.connections.Group;
-import com.example.urpet.home.social.listado.DetalleGrupoActivity;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -117,7 +116,7 @@ public class ListadoGruposActivity extends AppCompatActivity {
     }
 
     public void onCrearGrupo(){
-        Intent siguiente = new Intent(this, CrearGrupo.class);
+        Intent siguiente = new Intent(this, CrearGrupoActivity.class);
         startActivity (siguiente);
     }
 
@@ -172,12 +171,7 @@ public class ListadoGruposActivity extends AppCompatActivity {
         textsPet.addView(groupDetails);
         textsPet.setId(groupToBuild.getID());
         parentGroup.addView(textsPet);
-        parentGroup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToPrincipalGroup(v, groupToBuild);
-            }
-        });
+        parentGroup.setOnClickListener(v -> goToPrincipalGroup(v, groupToBuild));
         return parentGroup;
     }
 
@@ -186,6 +180,5 @@ public class ListadoGruposActivity extends AppCompatActivity {
         Log.println(Log.INFO, "kek2", PersonalInfo.selectedGroup.toString());
         Intent siguiente = new Intent(ListadoGruposActivity.this, DetalleGrupoActivity.class);
         startActivity (siguiente);
-        finish();
     }
 }

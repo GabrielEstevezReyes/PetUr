@@ -71,7 +71,7 @@ public class Post extends BasicObject {
     public Post(JSONObject data) {
         name = data.optString("tittle");
         description = data.optString("descripcion");
-        image= data.optString("");
+        image= data.optString("imagen");
         price = data.optInt("price");
         forSale = data.optInt("for_sale");
         idMascota = data.optInt("id_mascota");

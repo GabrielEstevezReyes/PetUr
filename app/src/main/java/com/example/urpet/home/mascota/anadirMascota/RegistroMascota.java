@@ -18,7 +18,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.urpet.PersonalInfo;
-import com.example.urpet.PromoPublicidad;
+import com.example.urpet.home.mascota.PromoPostRegistroActivity;
 import com.example.urpet.R;
 import com.example.urpet.connections.Pet;
 import com.example.urpet.connections.PetRace;
@@ -185,7 +185,7 @@ public class RegistroMascota extends AppCompatActivity {
             llenar.create(nameInput.getText().toString(), PersonalInfo.currentUser.getID(), String.valueOf(race),
                     String.valueOf(type), colorInput.getText().toString(), descriptionInput.getText().toString(), "", ageInput.getText().toString());
             PersonalInfo.registedPetName = nameInput.getText().toString();
-            Intent siguiente = new Intent(RegistroMascota.this, PromoPublicidad.class);
+            Intent siguiente = new Intent(RegistroMascota.this, PromoPostRegistroActivity.class);
             startActivity(siguiente);
             finish();
             Toast toast = Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT);

@@ -7,7 +7,7 @@
     android:background="#FFF"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".PromoPublicidad">
+    tools:context=".home.mascota.PromoPostRegistroActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -106,13 +106,13 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/promo_activity_aceptar_btn"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="40dp"
             android:background="@drawable/btn"
             android:fontFamily="@font/poppins_semi_bold"
             android:gravity="center"
-            android:onClick="updateGroup"
             android:text="Aceptar"
             android:textAllCaps="true"
             android:textColor="#FFF"

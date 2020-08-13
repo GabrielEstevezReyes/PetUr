@@ -7,7 +7,7 @@
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".home.social.CrearGrupo">
+    tools:context=".home.social.grupos.CrearGrupoActivity">
 
     <TextView
         android:layout_width="match_parent"

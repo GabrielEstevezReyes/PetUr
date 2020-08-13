@@ -62,7 +62,7 @@
             android:name=".CardChats"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.ChatGrupo"
+            android:name=".home.social.grupos.ChatGrupo"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".home.social.publicar.RealizarPublicacionActivity"
@@ -104,16 +104,16 @@
             android:label="@string/title_activity_places"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.GrupoSolicitudes"
+            android:name=".home.social.grupos.GrupoSolicitudes"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.GrupoVerMiembros"
+            android:name=".home.social.grupos.detalle.GrupoVerMiembros"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.listado.DetalleGrupoActivity"
+            android:name=".home.social.grupos.detalle.DetalleGrupoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.EditarGrupoActivity"
+            android:name=".home.social.grupos.detalle.EditarGrupoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".home.mascota.detallesMascota.EditarPerfilMascotaActivity"
@@ -177,7 +177,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".PromoPublicidad"
+            android:name=".home.mascota.PromoPostRegistroActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
@@ -196,12 +196,12 @@
             android:name=".login.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.ListadoGruposActivity"
+            android:name=".home.social.grupos.listado.ListadoGruposActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".home.social.CrearGrupo"
+            android:name=".home.social.grupos.CrearGrupoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />

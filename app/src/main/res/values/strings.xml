@@ -80,6 +80,12 @@
     <string name="solicitud_union">Tu solicitud para unirte ha sido enviada.</string>
     <string name="error_de_conexion">Error de conexión</string>
     <string name="error_conexion_desc">Ha ocurrido un error, intenta de nuevo más tarde.</string>
+    <string name="post_recientes">Posts recientes</string>
+    <string name="grupos">Grupos</string>
+    <string name="todos">Todos</string>
+    <string name="mios">Mis grupos</string>
+    <string name="unidos">Unidos</string>
+    <string name="ver_detalles">Ver detalles</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>

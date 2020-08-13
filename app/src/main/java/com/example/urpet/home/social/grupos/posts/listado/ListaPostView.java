@@ -1,4 +1,4 @@
-package com.example.urpet.home.social.listado;
+package com.example.urpet.home.social.grupos.listado;
 
 import com.example.urpet.Utils.ViewInterface;
 import com.example.urpet.connections.Post;

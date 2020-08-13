@@ -1,12 +1,10 @@
-package com.example.urpet.home.social;
+package com.example.urpet.home.social.grupos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -16,15 +14,14 @@ import android.widget.Toast;
 
 import com.example.urpet.R;
 import com.example.urpet.connections.Group;
+import com.example.urpet.home.social.grupos.listado.ListadoGruposActivity;
 import com.github.dhaval2404.imagepicker.ImagePicker;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import org.json.JSONException;
 
-public class CrearGrupo extends AppCompatActivity {
+public class CrearGrupoActivity extends AppCompatActivity {
 
     private Button mCrearGrupoBtn;
     private EditText nameGroup =  null;
@@ -74,7 +71,7 @@ public class CrearGrupo extends AppCompatActivity {
                 newGroup.setImage(encodedImage);
             }
             newGroup.create();
-            Intent siguiente = new Intent(CrearGrupo.this, ListadoGruposActivity.class);
+            Intent siguiente = new Intent(this, ListadoGruposActivity.class);
             startActivity(siguiente);
             finish();
         }
@@ -82,7 +79,7 @@ public class CrearGrupo extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(CrearGrupo.this, ListadoGruposActivity.class);
+        Intent siguiente = new Intent(CrearGrupoActivity.this, ListadoGruposActivity.class);
         startActivity (siguiente);
         finish();
     }
@@ -108,7 +105,7 @@ public class CrearGrupo extends AppCompatActivity {
             final StorageReference file_name = Folder.child("GRP" + fileUri.getLastPathSegment());
             file_name.putFile(fileUri).addOnSuccessListener(taskSnapshot -> {
                 encodedImage = "GRP" + fileUri.getLastPathSegment();
-                Toast.makeText(CrearGrupo.this, "File Uploaded", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CrearGrupoActivity.this, "File Uploaded", Toast.LENGTH_SHORT).show();
             });
         }
     }

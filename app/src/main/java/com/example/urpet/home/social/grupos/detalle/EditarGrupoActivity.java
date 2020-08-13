@@ -1,6 +1,5 @@
-package com.example.urpet.home.social;
+package com.example.urpet.home.social.grupos;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
@@ -25,9 +24,6 @@ import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
 import com.example.urpet.connections.BelongGroup;
 import com.example.urpet.connections.PairM;
-import com.example.urpet.home.social.listado.DetalleGrupoActivity;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -54,17 +50,11 @@ public class EditarGrupoActivity extends AppCompatActivity {
         StorageReference islandRef = storageRef.child(src);
 
         final long ONE_MEGABYTE = 1024 * 1024;
-        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-            @Override
-            public void onSuccess(byte[] b) {
-                Drawable image = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(b, 0, b.length));
-                circ.setImageDrawable(image);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle any errors
-            }
+        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(b -> {
+            Drawable image = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(b, 0, b.length));
+            circ.setImageDrawable(image);
+        }).addOnFailureListener(exception -> {
+            // Handle any errors
         });
     }
 

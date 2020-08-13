@@ -28,7 +28,7 @@ import com.example.urpet.Utils.SharedPreferencesUtil;
 import com.example.urpet.connections.Pet;
 import com.example.urpet.home.ads.adapter.AdsAdapter;
 import com.example.urpet.home.ads.listado.AdsDTO;
-import com.example.urpet.home.social.ListadoGruposActivity;
+import com.example.urpet.home.social.grupos.listado.ListadoGruposActivity;
 import com.example.urpet.home.marketplace.MarketplaceActivity;
 import com.example.urpet.home.mascota.ListaMascotas;
 import com.example.urpet.home.mascota.anadirMascota.RegistroMascota;

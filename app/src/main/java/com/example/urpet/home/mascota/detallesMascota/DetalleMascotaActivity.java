@@ -16,7 +16,7 @@ import com.example.urpet.R;
 import com.example.urpet.Utils.GeneralUtils;
 import com.example.urpet.Utils.alert.SpinnerFechasDialogFragment;
 import com.example.urpet.connections.Pet;
-import com.example.urpet.home.social.ListadoGruposActivity;
+import com.example.urpet.home.social.grupos.listado.ListadoGruposActivity;
 import com.example.urpet.home.medico.Clinicas;
 import com.example.urpet.home.medico.MenuCuidados;
 import com.google.firebase.storage.FirebaseStorage;
@@ -80,8 +80,8 @@ public class DetalleMascotaActivity extends AppCompatActivity implements View.On
 
         mNombreMasacotaTv.setText(PersonalInfo.clickedPet.getName());
 
-        if(!PersonalInfo.currentUser.getBase64Image().isEmpty() && !PersonalInfo.currentUser.getBase64Image().equals("no-image.png")) {
-            getBitmapFromURL(PersonalInfo.currentUser.getBase64Image(), mFotoMascotaCIV);
+        if(!PersonalInfo.clickedPet.getBase64Image().isEmpty() && !PersonalInfo.clickedPet.getBase64Image().equals("no-image.png")) {
+            getBitmapFromURL(PersonalInfo.clickedPet.getBase64Image(), mFotoMascotaCIV);
         }
         else{
             mFotoMascotaCIV.setImageResource(R.drawable.ic_mascotas_1);

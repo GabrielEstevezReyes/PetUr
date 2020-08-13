@@ -1,4 +1,4 @@
-package com.example.urpet.home.social.listado;
+package com.example.urpet.home.social.grupos;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,7 +21,10 @@ import com.example.urpet.Utils.alert.AlertFragment;
 import com.example.urpet.Utils.alert.AlertManager;
 import com.example.urpet.connections.BelongGroup;
 import com.example.urpet.connections.Post;
-import com.example.urpet.home.social.EditarGrupoActivity;
+import com.example.urpet.home.social.grupos.listado.ListaPostInteractor;
+import com.example.urpet.home.social.grupos.listado.ListaPostPresenter;
+import com.example.urpet.home.social.grupos.listado.ListaPostView;
+import com.example.urpet.home.social.grupos.listado.PostAdapter;
 import com.example.urpet.home.social.publicar.RealizarPublicacionActivity;
 import com.google.firebase.storage.FirebaseStorage;
 
@@ -56,7 +59,6 @@ public class DetalleGrupoActivity extends AppCompatActivity implements View.OnCl
                 editarGrupo();
             break;
             case R.id.activity_detalle_grupo_miembros_cv:
-
             break;
             case R.id.activity_detalle_grupo_publicar_cv:
                 onRealizarPublicacion();

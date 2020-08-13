@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -102,49 +102,60 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <ImageView
-                            android:id="@+id/activity_detalle_grupo_imagen_bg"
-                            android:layout_width="0dp"
-                            android:layout_height="300dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:adjustViewBounds="true"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/peluqueria_canina"
-                            android:minHeight="500dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/activity_detalle_grupo_descripcipn_tv"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
 
-                        <ImageView
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/activity_detalle_grupo_imagen_cv"
                             android:layout_width="0dp"
                             android:layout_height="300dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
-                            android:adjustViewBounds="true"
-                            android:scaleType="centerCrop"
-                            android:src="@color/texto_color_negro"
-                            android:alpha="0.5"
                             android:minHeight="500dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
                             app:layout_constraintBottom_toBottomOf="@+id/activity_detalle_grupo_descripcipn_tv"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/activity_detalle_grupo_imagen_bg"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:adjustViewBounds="true"
+                                android:minHeight="500dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/peluqueria_canina"
+                                app:layout_constraintBottom_toBottomOf="@+id/activity_detalle_grupo_descripcipn_tv"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:adjustViewBounds="true"
+                                android:alpha="0.5"
+                                android:minHeight="500dp"
+                                android:scaleType="centerCrop"
+                                android:src="@color/texto_color_negro"
+                                app:layout_constraintBottom_toBottomOf="@+id/activity_detalle_grupo_descripcipn_tv"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:id="@+id/activity_detalle_grupo_nomrbe_grupo_tv"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginStart="8dp"
-                            android:layout_marginTop="8dp"
+                            android:layout_marginTop="16dp"
                             android:layout_marginEnd="8dp"
                             android:text="@string/grupo_abierto"
+                            android:textAlignment="center"
                             android:textColor="@color/blanco"
                             android:textSize="@dimen/big_titulos"
-                            android:textAlignment="center"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -154,6 +165,7 @@
                             android:layout_width="0dp"
                             android:layout_height="2dp"
                             android:layout_marginStart="8dp"
+                            android:layout_marginTop="4dp"
                             android:layout_marginEnd="8dp"
                             android:background="@color/colorPrimary"
                             app:layout_constraintEnd_toEndOf="@+id/activity_detalle_grupo_nomrbe_grupo_tv"
@@ -296,6 +308,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/post_recientes"
+                                android:textAlignment="center"
+                                android:padding="5dp"
+                                android:textColor="@color/texto_color_negro"
+                                android:textSize="@dimen/titulos" />
+                        </androidx.cardview.widget.CardView>
+
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/activity_detalle_grupo_listado_posts_rv"
                             android:layout_width="0dp"
@@ -306,7 +339,7 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toBottomOf="@+id/cardView3" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -314,4 +347,4 @@
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

@@ -1,17 +1,13 @@
 package com.example.urpet.home.social.publicar;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,10 +16,10 @@ import com.example.urpet.R;
 import com.example.urpet.Utils.LoaderFragment;
 import com.example.urpet.Utils.alert.AlertFragment;
 import com.example.urpet.Utils.alert.AlertManager;
-import com.example.urpet.home.social.ListadoGruposActivity;
+import com.example.urpet.home.social.grupos.listado.ListadoGruposActivity;
 import com.github.dhaval2404.imagepicker.ImagePicker;
-
-import java.io.ByteArrayOutputStream;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class RealizarPublicacionActivity extends AppCompatActivity implements PostView, AlertFragment.onAceptarClick {
 
@@ -95,22 +91,30 @@ public class RealizarPublicacionActivity extends AppCompatActivity implements Po
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            Uri fileUri = data.getData();
+//            Uri fileUri = data.getData();
+//            imageB.setImageURI(fileUri);
+//            try {
+//                Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), fileUri);
+//                byte[] byteArray;
+//                if (bitmap != null) {
+//                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//                    byteArray = stream.toByteArray();
+//                    encodedImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
+//                    System.out.println("Guardando: " + encodedImage);
+//
+//                    selectedImage = true;
+//                }
+//            } catch (Exception ignored) {
+//            }
+            final Uri fileUri = data.getData();
             imageB.setImageURI(fileUri);
-            try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), fileUri);
-                byte[] byteArray;
-                if (bitmap != null) {
-                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                    byteArray = stream.toByteArray();
-                    encodedImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
-                    System.out.println("Guardando: " + encodedImage);
-
-                    selectedImage = true;
-                }
-            } catch (Exception ignored) {
-            }
+            StorageReference Folder = FirebaseStorage.getInstance().getReference();
+            assert fileUri != null;
+            final StorageReference file_name = Folder.child("POST" + fileUri.getLastPathSegment());
+            file_name.putFile(fileUri).addOnSuccessListener(taskSnapshot -> {
+                encodedImage = "POST" + fileUri.getLastPathSegment();
+            });
         }
     }
 

@@ -1,4 +1,4 @@
-package com.example.urpet;
+package com.example.urpet.home.mascota;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,11 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 
+import com.example.urpet.PersonalInfo;
+import com.example.urpet.R;
 import com.example.urpet.connections.Marketing;
-import com.example.urpet.home.mascota.ListaMascotas;
-import com.example.urpet.home.mascota.SuccesRegPet;
 
-public class PromoPublicidad extends AppCompatActivity {
+public class PromoPostRegistroActivity extends AppCompatActivity {
 
     public CheckBox all;
     public CheckBox vet;
@@ -33,11 +33,12 @@ public class PromoPublicidad extends AppCompatActivity {
         stores = findViewById(R.id.storesCheckbox);
         events = findViewById(R.id.eventsCheckbox);
         tips = findViewById(R.id.tipsCheckbox);
+        findViewById(R.id.promo_activity_aceptar_btn).setOnClickListener(v-> aceptarPromo());
         mark = new Marketing(PersonalInfo.currentUser.getID());
         mark.get();
     }
 
-    public void btn_sig(View view){
+    public void aceptarPromo(){
         if(all.isChecked()){
             mark.turnAll();
         }
@@ -68,15 +69,9 @@ public class PromoPublicidad extends AppCompatActivity {
         {
             mark.create();
         }
-        Intent siguiente = new Intent(PromoPublicidad.this, SuccesRegPet.class);
+        Intent siguiente = new Intent(PromoPostRegistroActivity.this, SuccesRegPet.class);
         startActivity (siguiente);
         finish();
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent siguiente = new Intent(PromoPublicidad.this, ListaMascotas.class);
-        startActivity (siguiente);
-        finish();
-    }
 }
