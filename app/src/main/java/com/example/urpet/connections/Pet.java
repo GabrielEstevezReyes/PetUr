@@ -66,13 +66,15 @@ public class Pet extends BasicObject {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public ArrayList<Pet> read() throws ParseException {
-        ArrayList<Pet> listaParentesco = new ArrayList<Pet>();
-        Pet parentesco = null;
-        ArrayList<JSONObject> serverPets = ApiPetition.getDataList("mascotas", "IDUsuario", String.valueOf(PersonalInfo.currentUser.getID()));
-        for (int i=0 ; i<serverPets.size(); i++){
-            parentesco = new Pet();
-            parentesco.fromJson(serverPets.get(i));
-            listaParentesco.add(parentesco);
+        ArrayList<Pet> listaParentesco = new ArrayList<>();
+        Pet parentesco;
+        if(PersonalInfo.currentUser != null){
+            ArrayList<JSONObject> serverPets = ApiPetition.getDataList("mascotas", "IDUsuario", String.valueOf(PersonalInfo.currentUser.getID()));
+            for (int i=0 ; i<serverPets.size(); i++){
+                parentesco = new Pet();
+                parentesco.fromJson(serverPets.get(i));
+                listaParentesco.add(parentesco);
+            }
         }
         return listaParentesco;
     }

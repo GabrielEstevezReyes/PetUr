@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="25dp"
-    tools:context=".AnadirAlimento">
+    tools:context=".home.alimentos.AnadirAlimento">
 
     <TextView
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:gravity="center"
         android:text="COMIDAS"
         android:textAllCaps="true"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
@@ -58,7 +58,7 @@
             android:gravity="left"
             android:text="Última compra"
             android:textAllCaps="true"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="14sp" />
 
         <TextView
@@ -68,7 +68,7 @@
             android:gravity="left"
             android:text="16/02/2019"
             android:textAllCaps="true"
-            android:textColor="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_gris"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -85,7 +85,7 @@
             android:gravity="left"
             android:text="Dosis diaria"
             android:textAllCaps="true"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="14sp" />
 
         <TextView
@@ -95,7 +95,7 @@
             android:gravity="left"
             android:text="300 gr."
             android:textAllCaps="true"
-            android:textColor="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_gris"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -113,7 +113,7 @@
             android:gravity="left"
             android:text="Marca"
             android:textAllCaps="true"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="14sp" />
 
         <TextView
@@ -123,7 +123,7 @@
             android:gravity="center|left"
             android:text="Dog Chow"
             android:textAllCaps="true"
-            android:textColor="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_gris"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -138,7 +138,7 @@
             android:layout_height="wrap_content"
             android:text="Más Recientes"
             android:fontFamily="@font/sf_bold"
-            android:textColor="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_gris"
             android:textSize="12dp"
             android:textAllCaps="true" />
 

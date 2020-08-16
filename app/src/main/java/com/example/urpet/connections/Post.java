@@ -1,8 +1,13 @@
 package com.example.urpet.connections;
 
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class Post extends BasicObject {
 
@@ -12,6 +17,7 @@ public class Post extends BasicObject {
     private float price = 0;
     private int forSale = 0;
     private int groupBelong = 0;
+    private int idMascota;
     private int poster = 0;
     private String fecha = "";
 
@@ -23,26 +29,54 @@ public class Post extends BasicObject {
         setGroupBelong(group);
     }
 
-    public boolean create(){
-        boolean resultado = false;
-        final Calendar cldr = Calendar.getInstance();
-        int day = cldr.get(Calendar.DAY_OF_MONTH);
-        int month = cldr.get(Calendar.MONTH);
-        int year = cldr.get(Calendar.YEAR);
-        int hours = cldr.get(Calendar.HOUR_OF_DAY);
-        int minutes = cldr.get(Calendar.MINUTE);
-        int seconds = cldr.get(Calendar.SECOND);
-        String date = day + "/" + (month + 1) + "/" + year + "." + hours + ":" + minutes + ":" + seconds;
-
-        return resultado;
+    public boolean create() throws JSONException {
+        return ApiPetition.insertDatar("posts", toJson());
     }
 
-    public ArrayList<Post> readFromGroup() {
 
-        ArrayList<Post> listaParentesco = new ArrayList<Post>();
-        Post parentesco = null;
+    public JSONObject toJson() throws JSONException {
+        SimpleDateFormat date = new SimpleDateFormat("dd/MMM/yyyy", Locale.getDefault());
+        JSONObject res = new JSONObject();
+        res.put("tittle", getName());
+        res.put("descripcion", getDescription());
+        res.put("price", getPrice() * 1.0d);
+        res.put("for_sale", getForSale());
+        res.put("pinned", 0);
+        res.put("fecha", date.format(Calendar.getInstance().getTime()));
+        res.put("imagen", getImage());
+        res.put("idgrupos", getID());
+        res.put("id_mascota", getIdMascota());
+        return res;
+    }
 
-        return listaParentesco;
+    public ArrayList<Post> getAllPosts(int idGrupo) {
+        ArrayList<Post> mListadoPosts = new ArrayList<>();
+        ArrayList<JSONObject> listadoJson;
+        listadoJson = ApiPetition.getDataList("posts", "", "");
+        if(listadoJson == null){
+            mListadoPosts = null;
+        }
+        else{
+            for(int i = 0; i < listadoJson.size(); i++){
+                JSONObject post = listadoJson.get(i);
+                if(post.optInt("idgrupos") == idGrupo){
+                    mListadoPosts.add(new Post(post));
+                }
+            }
+        }
+
+        return mListadoPosts;
+    }
+
+    public Post(JSONObject data) {
+        name = data.optString("tittle");
+        description = data.optString("descripcion");
+        image= data.optString("imagen");
+        price = data.optInt("price");
+        forSale = data.optInt("for_sale");
+        idMascota = data.optInt("id_mascota");
+        fecha = data.optString("fecha");
+        groupBelong = data.optInt("idgrupo");
     }
 
     public String getImage() {
@@ -63,6 +97,14 @@ public class Post extends BasicObject {
 
     public String getDescription() {
         return description;
+    }
+
+    public int getIdMascota() {
+        return idMascota;
+    }
+
+    public void setIdMascota(int idMascota) {
+        this.idMascota = idMascota;
     }
 
     public void setName(String name) {

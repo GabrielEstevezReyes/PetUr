@@ -7,7 +7,7 @@
     android:background="#FFF"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".SuccesRegPet">
+    tools:context=".home.mascota.SuccesRegPet">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
             android:gravity="center"
             android:text="Resgitro exitóso."
             android:textAllCaps="true"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="18sp" />
 
         <Button

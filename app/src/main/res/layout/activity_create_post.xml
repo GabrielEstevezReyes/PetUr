@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".CreatePost">
+    tools:context=".home.social.grupos.posts.listado.publicar.RealizarPublicacionActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -16,7 +15,7 @@
         android:gravity="center"
         android:text="CREAR POST"
         android:textAllCaps="true"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
@@ -57,12 +56,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:backgroundTint="@color/TextColorSecundary"
+            android:backgroundTint="@color/texto_color_gris"
             android:fontFamily="@font/sf_regular"
             android:hint="Título"
             android:includeFontPadding="false"
-            android:textColor="@color/TextColor"
-            android:textColorHint="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_negro"
+            android:textColorHint="@color/texto_color_gris"
             android:textSize="14sp" />
 
         <EditText
@@ -72,8 +71,8 @@
             android:layout_marginTop="5dp"
             android:fontFamily="@font/sf_regular"
             android:hint="Descripción"
-            android:textColor="@color/TextColor"
-            android:textColorHint="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_negro"
+            android:textColorHint="@color/texto_color_gris"
             android:textSize="14sp" />
 
         <CheckBox
@@ -84,8 +83,8 @@
             android:fontFamily="@font/sf_regular"
             android:onClick="showPrice"
             android:text="En venta"
-            android:textColor="@color/TextColorSecundary"
-            android:textColorHint="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_gris"
+            android:textColorHint="@color/texto_color_gris"
             android:textSize="14sp" />
 
         <EditText
@@ -97,18 +96,18 @@
             android:fontFamily="@font/sf_regular"
             android:hint="Precio"
             android:inputType="numberDecimal"
-            android:textColor="@color/TextColor"
-            android:textColorHint="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_negro"
+            android:textColorHint="@color/texto_color_gris"
             android:textSize="14sp" />
 
         <Button
+            android:id="@+id/crear_post_activity_aceptar_btn"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/btn"
             android:fontFamily="@font/poppins_semi_bold"
-            android:onClick="post"
-            android:text="Postear"
+            android:text="@string/postear"
             android:textColor="#FFF"
             android:textSize="12sp" />
 

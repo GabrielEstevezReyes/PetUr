@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.urpet.home.medico.ListaVisitasMedicas;
+
 public class VisitaVeterinario extends AppCompatActivity {
 
     @Override

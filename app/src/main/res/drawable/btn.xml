@@ -2,12 +2,12 @@
     android:shape="rectangle" >
     <!-- View background color -->
     <solid
-        android:color="#F36B54">
+        android:color="@color/colorPrimary">
     </solid>
     <!-- View border color and width -->
 
     <!-- The radius makes the corners rounded -->
     <corners
-        android:radius="500dp">
+        android:radius="10dp">
     </corners>
 </shape>

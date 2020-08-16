@@ -1,250 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_patron"
-    android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".EditPerfilUserData">
-
-
-    <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints">
+        android:background="@drawable/ic_patron"
+        android:layout_height="wrap_content">
 
-        <TextView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semi_bold"
-            android:gravity="center"
-            android:text="Editar perfil"
-            android:textAllCaps="true"
-            android:textColor="@color/TextColor"
-            android:textSize="14sp"
-            tools:ignore="MissingConstraints" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginTop="5dp"
-            android:background="#DADADA"
-            tools:ignore="MissingConstraints" />
-
-    </LinearLayout>
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="20dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical">
-
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardElevation="5dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:orientation="vertical"
-                tools:ignore="ExtraText">
-
-                <com.mikhaellopez.circularimageview.CircularImageView
-                    android:id="@+id/userImageEdit"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:onClick="updateImage"
-                    android:src="@drawable/ic_user"
-
-                    app:civ_shadow_color="#E9EBF4"
-                    app:civ_shadow_radius="1dp" />
-
-                <TextView
+                android:padding="20dp"
+                tools:context=".home.perfil.EditarPerfilActivity">
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="MissingConstraints">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:gravity="center"
+                        android:text="@string/editar_perfil"
+                        android:textColor="@color/texto_color_negro"
+                        android:textSize="@dimen/titulos"
+                        tools:ignore="MissingConstraints" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/colorPrimary" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.mikhaellopez.circularimageview.CircularImageView
+                                android:id="@+id/editar_perfil_activity_foto_civ"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_user"
+                                app:civ_border_color="@color/colorPrimary"
+                                app:civ_border_width="3dp"
+                                app:civ_shadow_color="#E9EBF4"
+                                app:civ_shadow_radius="1dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/editar_perfil_activity_edit_foto_iv"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_editar"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/editar_perfil_activity_foto_civ"
+                                app:tint="@color/colorPrimaryDark" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_marginStart="3dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:text="@string/nombre"
+                                android:textColor="@color/texto_color_negro"
+                                android:textSize="@dimen/texto_default" />
+
+                            <EditText
+                                android:id="@+id/editar_perfil_activity_nombre_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/texto_color_negro"
+                                android:fontFamily="@font/sf_light"
+                                android:inputType="text"
+                                android:textColor="@color/texto_color_negro"
+                                android:textColorHint="@color/texto_color_negro"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:layout_marginStart="3dp"
+                                android:text="@string/numero_telefono"
+                                android:textColor="@color/texto_color_negro"
+                                android:textSize="@dimen/texto_default" />
+
+                            <EditText
+                                android:id="@+id/editar_perfil_activity_telefono_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/texto_color_negro"
+                                android:fontFamily="@font/sf_light"
+                                android:inputType="phone"
+                                android:textColor="@color/texto_color_negro"
+                                android:textColorHint="@color/texto_color_negro"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:layout_marginStart="3dp"
+                                android:text="@string/correo_electronico"
+                                android:textColor="@color/texto_color_negro"
+                                android:textSize="@dimen/texto_default" />
+
+                            <EditText
+                                android:id="@+id/editar_perfil_activity_mail_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/texto_color_negro"
+                                android:fontFamily="@font/sf_light"
+                                android:inputType="textEmailAddress"
+                                android:textColor="@color/texto_color_negro"
+                                android:textColorHint="@color/texto_color_negro"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:layout_marginStart="3dp"
+                                android:text="@string/fecha_nacimiento"
+                                android:textColor="@color/texto_color_negro"
+                                android:textSize="@dimen/texto_default" />
+
+                            <EditText
+                                android:id="@+id/editar_perfil_activity_fecha_nacimiento_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/texto_color_negro"
+                                android:fontFamily="@font/sf_light"
+                                android:inputType="none"
+                                android:focusable="false"
+                                android:textColor="@color/texto_color_negro"
+                                android:textColorHighlight="@color/texto_color_negro"
+                                android:textColorHint="@color/texto_color_negro"
+                                android:textColorLink="@color/texto_color_negro"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:shadowColor="#58676A"
+                                android:layout_marginStart="3dp"
+                                android:text="@string/direccion"
+                                android:textColor="@color/texto_color_negro"
+                                android:textSize="@dimen/texto_default" />
+
+                            <EditText
+                                android:id="@+id/editar_perfil_activity_addr_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/texto_color_negro"
+                                android:fontFamily="@font/sf_light"
+                                android:text=""
+                                android:textColor="@color/texto_color_negro"
+                                android:textColorHint="@color/texto_color_negro"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/editar_perfil_activity_save_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
                     android:layout_gravity="bottom"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/sf_regular"
-                    android:gravity="center"
-                    android:onClick="updateImage"
-                    android:text="+ Subir foto"
-                    android:textAllCaps="false"
-                    android:textColor="@color/TextColorSecundary"
-                    android:textColorHint="@color/TextColorSecundary"
-                    android:textSize="12sp" />
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_semi_bold"
-                        android:text="Nombre"
-                        android:textAllCaps="true"
-                        android:textColor="@color/TextColorSecundary"
-                        android:textSize="10sp" />
-
-                    <EditText
-                        android:id="@+id/fullnameInfoEdit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/TextColorSecundary"
-                        android:fontFamily="@font/sf_light"
-                        android:text=""
-                        android:textColor="@color/TextColorSecundary"
-                        android:textColorHint="@color/TextColorSecundary"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_semi_bold"
-                        android:text="Número de teléfono"
-                        android:textAllCaps="true"
-                        android:textColor="@color/TextColorSecundary"
-                        android:textSize="10sp" />
-
-                    <EditText
-                        android:id="@+id/cellphoneInfoEdit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/TextColorSecundary"
-                        android:fontFamily="@font/sf_light"
-                        android:inputType="phone"
-                        android:text=""
-                        android:textColor="@color/TextColorSecundary"
-                        android:textColorHint="@color/TextColorSecundary"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_semi_bold"
-                        android:text="Correo electrónico"
-                        android:textAllCaps="true"
-                        android:textColor="@color/TextColorSecundary"
-                        android:textSize="10sp" />
-
-                    <EditText
-                        android:id="@+id/MailInfoEdit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/TextColorSecundary"
-                        android:fontFamily="@font/sf_light"
-                        android:inputType="textEmailAddress"
-                        android:text=""
-                        android:textColor="@color/TextColorSecundary"
-                        android:textColorHint="@color/TextColorSecundary"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_semi_bold"
-                        android:text="Fecha de nacimiento"
-                        android:textAllCaps="true"
-                        android:textColor="@color/TextColorSecundary"
-                        android:textSize="10sp" />
-
-                    <EditText
-                        android:id="@+id/userAgeEdit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/TextColorSecundary"
-                        android:drawableRight="@drawable/ic_baseline_calendar_today_24"
-                        android:fontFamily="@font/sf_light"
-                        android:text=""
-                        android:textColor="@color/TextColorSecundary"
-                        android:textColorHighlight="@color/TextColor"
-                        android:textColorHint="@color/TextColorSecundary"
-                        android:textColorLink="@color/TextColor"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_semi_bold"
-                        android:shadowColor="#58676A"
-                        android:text="Dirección"
-                        android:textAllCaps="true"
-                        android:textColor="@color/TextColorSecundary"
-                        android:textSize="10sp" />
-
-                    <EditText
-                        android:id="@+id/addressInfoEdit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/TextColorSecundary"
-                        android:fontFamily="@font/sf_light"
-                        android:text=""
-                        android:textColor="@color/TextColorSecundary"
-                        android:textColorHint="@color/TextColorSecundary"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
+                    android:background="@drawable/btn"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:text="@string/guardar"
+                    android:textColor="#FFF"
+                    android:layout_marginTop="20dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
             </LinearLayout>
 
-        </LinearLayout>
-    </ScrollView>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_gravity="bottom"
-        android:background="@drawable/btn"
-        android:fontFamily="@font/poppins_semi_bold"
-        android:onClick="updateGroup"
-        android:text="Guardar"
-        android:textAllCaps="true"
-        android:textColor="#FFF"
-        android:layout_marginTop="20dp"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

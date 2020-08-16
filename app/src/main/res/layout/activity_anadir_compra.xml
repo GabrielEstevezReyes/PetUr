@@ -15,26 +15,26 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:backgroundTint="@color/TextColorSecundary"
+            android:backgroundTint="@color/texto_color_gris"
             android:fontFamily="@font/sf_light"
             android:hint="Dosis"
             android:paddingLeft="5dp"
             android:paddingBottom="0dp"
-            android:textColor="@color/TextColor"
-            android:textColorHint="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_negro"
+            android:textColorHint="@color/texto_color_gris"
             android:textSize="14sp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
-            android:backgroundTint="@color/TextColorSecundary"
+            android:backgroundTint="@color/texto_color_gris"
             android:fontFamily="@font/sf_light"
             android:hint="Marca"
             android:paddingLeft="5dp"
             android:paddingBottom="0dp"
-            android:textColor="@color/TextColor"
-            android:textColorHint="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_negro"
+            android:textColorHint="@color/texto_color_gris"
             android:textSize="14sp" />
 
         <EditText
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
-            android:backgroundTint="@color/TextColorSecundary"
+            android:backgroundTint="@color/texto_color_gris"
             android:ems="10"
             android:fontFamily="@font/sf_light"
             android:hint="DD/MM/AAAA"
@@ -50,8 +50,8 @@
             android:inputType="date"
             android:paddingLeft="5dp"
             android:paddingBottom="0dp"
-            android:textColor="@color/TextColor"
-            android:textColorHint="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_negro"
+            android:textColorHint="@color/texto_color_gris"
             android:textSize="14sp" />
 
         <Button

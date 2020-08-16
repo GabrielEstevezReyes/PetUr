@@ -7,7 +7,7 @@
     android:background="#FFF"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".PromoPublicidad">
+    tools:context=".home.mascota.PromoPostRegistroActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
             android:fontFamily="@font/poppins_semi_bold"
             android:gravity="center"
             android:text="Dejanos ayudarte"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="20sp" />
 
         <CheckBox
@@ -33,7 +33,7 @@
             android:layout_marginTop="40dp"
             android:fontFamily="@font/poppins_regular"
             android:text="Recibir promociones y publicidad"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="14sp" />
 
         <LinearLayout
@@ -50,7 +50,7 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Veterinarios"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14sp" />
 
             <CheckBox
@@ -60,7 +60,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Tiendas para mascotas"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14sp" />
 
             <CheckBox
@@ -70,7 +70,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Alimentos"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14sp" />
 
             <CheckBox
@@ -80,7 +80,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Mascotas cercanas"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14sp" />
 
             <CheckBox
@@ -90,7 +90,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Eventos"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14sp" />
 
             <CheckBox
@@ -100,19 +100,19 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Tips"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="14sp" />
 
         </LinearLayout>
 
         <Button
+            android:id="@+id/promo_activity_aceptar_btn"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="40dp"
             android:background="@drawable/btn"
             android:fontFamily="@font/poppins_semi_bold"
             android:gravity="center"
-            android:onClick="updateGroup"
             android:text="Aceptar"
             android:textAllCaps="true"
             android:textColor="#FFF"

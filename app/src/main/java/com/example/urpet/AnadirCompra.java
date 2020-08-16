@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.urpet.home.MainActivity;
+import com.example.urpet.home.mascota.SuccesRegPet;
+
 public class AnadirCompra extends AppCompatActivity {
 
     @Override

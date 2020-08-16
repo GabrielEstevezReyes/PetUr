@@ -16,7 +16,7 @@
         android:gravity="center"
         android:text="Notificaciones"
         android:textAllCaps="true"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Baño"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:fontFamily="@font/poppins_semi_bold"
                 />
 
@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Se aproximá la hora del baño de Zeus"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:fontFamily="@font/sf_regular"
                 />
 

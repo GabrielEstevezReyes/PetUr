@@ -16,14 +16,14 @@
         android:gravity="center"
         android:text="Chats"
         android:textAllCaps="true"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_marginTop="5dp"
-        android:background="@color/TextColorSecundary" />
+        android:background="@color/texto_color_gris" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -52,7 +52,7 @@
                     android:fontFamily="@font/sf_bold"
                     android:gravity="left|center"
                     android:text="Urpet México Oficial"
-                    android:textColor="@color/TextColor"
+                    android:textColor="@color/texto_color_negro"
                     android:textSize="14sp" />
 
 
@@ -64,7 +64,7 @@
                     android:fontFamily="@font/sf_light"
                     android:gravity="left|center"
                     android:text="Hola Juan, bienvenido al grupo"
-                    android:textColor="@color/TextColorSecundary"
+                    android:textColor="@color/texto_color_gris"
                     android:textSize="13sp" />
             </LinearLayout>
 

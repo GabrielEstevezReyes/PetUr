@@ -20,7 +20,7 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:id="@+id/petCardSettings"
+                android:id="@+id/item_home_mascota_setting_iv"
                 android:layout_gravity="right"
                 android:text="Configurar"
                 android:textSize="10dp" />
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="20dp" />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"
                     android:text="Agregar mascota"
-                    android:textColor="@color/TextColor"
+                    android:textColor="@color/texto_color_negro"
                     android:textSize="10dp" />
 
                 <TextView
@@ -63,7 +63,7 @@
                     android:fontFamily="@font/poppins_regular"
                     android:id="@+id/petCardVac"
                     android:gravity="center"
-                    android:textColor="@color/TextColorSecundary"
+                    android:textColor="@color/texto_color_gris"
                     android:textSize="10dp" />
             </LinearLayout>
 
@@ -77,7 +77,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"
-                    android:textColor="@color/TextColor"
+                    android:textColor="@color/texto_color_negro"
                     android:textSize="10dp" />
 
                 <TextView
@@ -85,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_regular"
                     android:gravity="center"
-                    android:textColor="@color/TextColorSecundary"
+                    android:textColor="@color/texto_color_gris"
                     android:textSize="10dp" />
             </LinearLayout>
 
@@ -99,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="center"
-                    android:textColor="@color/TextColor"
+                    android:textColor="@color/texto_color_negro"
                     android:textSize="10dp" />
 
                 <TextView
@@ -107,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_regular"
                     android:gravity="center"
-                    android:textColor="@color/TextColorSecundary"
+                    android:textColor="@color/texto_color_gris"
                     android:textSize="10dp" />
             </LinearLayout>
 

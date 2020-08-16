@@ -7,7 +7,7 @@
     android:padding="20dp"
     android:background="#FFF"
     android:orientation="vertical"
-    tools:context=".SaludMascota">
+    tools:context=".home.mascota.SaludMascota">
 
     <TextView
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:gravity="center"
         android:text="Salud"
         android:textAllCaps="true"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
@@ -39,7 +39,7 @@
             android:fontFamily="@font/poppins_medium"
             android:gravity="left|center"
             android:text="Comidas"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="12sp" />
 
         <Button
@@ -50,7 +50,7 @@
             android:fontFamily="@font/poppins_medium"
             android:gravity="left|center"
             android:text="Visitas veterinario"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="12sp" />
 
         <Button
@@ -61,7 +61,7 @@
             android:fontFamily="@font/poppins_medium"
             android:gravity="left|center"
             android:text="Vacunas"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="12sp" />
 
 

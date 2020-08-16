@@ -80,7 +80,7 @@ public class ApiPetition {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        URL url = null;
+        URL url;
         HttpURLConnection connection;
 
         try {
@@ -89,31 +89,29 @@ public class ApiPetition {
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();
+            int responseCode = connection.getResponseCode(); // para ver si la conexion resulto bien
+            if(responseCode == HttpURLConnection.HTTP_OK){
+                BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String inputLine;
+                StringBuffer response = new StringBuffer();
+                String json = "";
 
-            BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
-            String json = "";
+                while((inputLine = br.readLine()) != null){
+                    response.append(inputLine);
+                }
+                json = response.toString();
+                JSONArray jsonArray = new JSONArray(json);
+                for(int i=0; i<jsonArray.length(); i++){
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    objects.add(jsonObject);
+                }
+                return objects;
+            }
+            return null;
 
-            while((inputLine = br.readLine()) != null){
-                response.append(inputLine);
-            }
-            json = response.toString();
-            JSONArray jsonArray = new JSONArray(json);
-            for(int i=0; i<jsonArray.length(); i++){
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                objects.add(jsonObject);
-            }
-            return objects;
-        } catch (MalformedURLException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
-            return objects;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return objects;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return objects;
+            return null;
         }
     }
 
@@ -124,7 +122,7 @@ public class ApiPetition {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        URL url = null;
+        URL url;
         HttpURLConnection connection;
 
         try {
@@ -147,28 +145,72 @@ public class ApiPetition {
             wr.close();
 
             int responseCode = connection.getResponseCode(); // para ver si la conexion resulto bien
-            if(responseCode==HttpURLConnection.HTTP_OK){
+            if(responseCode == HttpURLConnection.HTTP_OK){
                 BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                StringBuffer sb = new StringBuffer("");
-                String linea = "";
+                StringBuilder sb = new StringBuilder("");
+                String linea;
                 while((linea = in.readLine()) != null){
                     sb.append(linea);
                     break;
                 }
                 in.close();
                 result = sb.toString();
-                System.out.println(result);
             }else{
-                result = new String("Error: " + responseCode);
-                System.out.println(result);
+                result = "Error: " + responseCode;
             }
+            System.out.println(result);
 
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static boolean insertDatar(String table, JSONObject obj){
+
+        // Para dar permisos
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        URL url;
+        HttpURLConnection connection;
+
+        try {
+            // creación de la conexión
+            url = new URL(apiURl + table);
+            Log.println(Log.DEBUG, "PetitionURLS:", url.toString());
+            connection = (HttpURLConnection) url.openConnection();
+
+            // definición de los parametros de conexion
+            connection.setDoInput(true);
+            connection.setDoOutput(true);
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setUseCaches(false);
+
+            // Obtener el desultado del request
+            DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
+            wr.writeBytes(obj.toString());
+            wr.flush();
+            wr.close();
+
+            int responseCode = connection.getResponseCode(); // para ver si la conexion resulto bien
+            if(responseCode == HttpURLConnection.HTTP_OK){
+                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                StringBuilder sb = new StringBuilder("");
+                String linea;
+                while((linea = in.readLine()) != null){
+                    sb.append(linea);
+                    break;
+                }
+                in.close();
+                return  true;
+            }else{
+                return false;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
     }
 

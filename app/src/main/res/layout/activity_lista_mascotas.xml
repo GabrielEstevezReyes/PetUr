@@ -7,7 +7,7 @@
     android:background="#FFF"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".ListaMascotas">
+    tools:context=".home.mascota.ListaMascotas">
 
     <Button
         android:layout_width="match_parent"

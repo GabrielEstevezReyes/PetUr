@@ -7,7 +7,7 @@
     android:background="#FFF"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".PerfilDatosUser">
+    tools:context=".home.perfil.MiPerfilActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:gravity="center"
         android:text="Editar cuenta"
         android:textAllCaps="true"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
@@ -53,8 +53,8 @@
                 android:fontFamily="@font/sf_bold"
                 android:text="Nombre"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColorSecundary"
-                android:textColorHint="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_gris"
+                android:textColorHint="@color/texto_color_gris"
                 android:textSize="12sp" />
 
             <TextView
@@ -64,8 +64,8 @@
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/sf_light"
                 android:text=""
-                android:textColor="@color/TextColor"
-                android:textColorHint="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_negro"
+                android:textColorHint="@color/texto_color_gris"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -81,8 +81,8 @@
                 android:fontFamily="@font/sf_bold"
                 android:text="Número de teléfono"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColorSecundary"
-                android:textColorHint="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_gris"
+                android:textColorHint="@color/texto_color_gris"
                 android:textSize="12sp" />
 
             <TextView
@@ -92,8 +92,8 @@
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/sf_light"
                 android:text=""
-                android:textColor="@color/TextColor"
-                android:textColorHint="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_negro"
+                android:textColorHint="@color/texto_color_gris"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -109,8 +109,8 @@
                 android:fontFamily="@font/sf_bold"
                 android:text="Correo electrónico"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColorSecundary"
-                android:textColorHint="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_gris"
+                android:textColorHint="@color/texto_color_gris"
                 android:textSize="12sp" />
 
             <TextView
@@ -120,8 +120,8 @@
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/sf_light"
                 android:text=""
-                android:textColor="@color/TextColor"
-                android:textColorHint="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_negro"
+                android:textColorHint="@color/texto_color_gris"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -138,8 +138,8 @@
                 android:shadowColor="#58676A"
                 android:text="Dirección"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColorSecundary"
-                android:textColorHint="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_gris"
+                android:textColorHint="@color/texto_color_gris"
                 android:textSize="12sp" />
 
             <TextView
@@ -149,39 +149,39 @@
                 android:layout_marginTop="15dp"
                 android:fontFamily="sans-serif"
                 android:hint="Edita tus datos para agregar tu dirección"
-                android:textColor="@color/TextColor"
-                android:textColorHint="@color/TextColorSecundary"
+                android:textColor="@color/texto_color_negro"
+                android:textColorHint="@color/texto_color_gris"
                 android:textSize="14sp" />
         </LinearLayout>
 
 
 
         <Button
+            android:id="@+id/editar_perfil_editar_btn"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/btn"
             android:fontFamily="@font/poppins_semi_bold"
-            android:onClick="updateGroup"
-            android:text="Editar"
+            android:text="@string/editar"
             android:textAllCaps="true"
             android:textColor="#FFF"
             android:textSize="12sp" />
 
         <Button
+            android:id="@+id/perfil_activity_cerrar_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/poppins_semi_bold"
-            android:onClick="btn_sig2"
             android:background="#FFFFFF"
             android:text="Cerrar sesión"
             android:padding="10dp"
             android:gravity="left|center"
             android:drawableRight="@drawable/ic_baseline_exit_to_app_24"
             android:textAllCaps="true"
-            android:textColor="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_gris"
             android:textSize="12sp" />
 
     </LinearLayout>

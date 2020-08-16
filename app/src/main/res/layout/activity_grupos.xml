@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".Grupos">
+    tools:context=".home.social.grupos.listado.ListadoGruposActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +22,7 @@
             android:gravity="center"
             android:text="Grupos"
             android:textAllCaps="true"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="14sp" />
 
         <View
@@ -33,14 +32,14 @@
             android:background="#DADADA" />
 
         <Button
+            android:id="@+id/listado_grupos_crear_btn"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/btn"
             android:fontFamily="@font/poppins_semi_bold"
-            android:onClick="updateGroup"
-            android:text="Crear grupo"
-            android:textAllCaps="true"
+            android:text="@string/crear_grupo"
+            android:textAllCaps="false"
             android:textColor="#FFF"
             android:textSize="12sp" />
 

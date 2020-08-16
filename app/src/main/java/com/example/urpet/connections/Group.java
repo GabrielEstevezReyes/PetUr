@@ -57,8 +57,15 @@ public class Group extends BasicObject {
     }
 
     public void create() throws JSONException {
-        Log.println(Log.DEBUG, "grupo", toJson(false).toString());
-        ApiPetition.insertData("grupos", toJson(false));
+        ApiPetition.insertDatar("grupos", toJson(false));
+    }
+
+    public boolean createGroup() {
+        try{
+            return ApiPetition.insertDatar("grupos", toJson(false));
+        } catch (Exception ex){
+            return false;
+        }
     }
 
     public void update() throws JSONException {

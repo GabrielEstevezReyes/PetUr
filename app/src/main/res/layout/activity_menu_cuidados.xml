@@ -7,7 +7,7 @@
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="25dp"
-    tools:context=".MenuCuidados">
+    tools:context=".home.medico.MenuCuidados">
 
     <TextView
         android:layout_width="match_parent"
@@ -15,14 +15,13 @@
         android:fontFamily="@font/poppins_semi_bold"
         android:gravity="left"
         android:text="Cuidados"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:onClick="updateGroup"
         android:orientation="horizontal"
         tools:ignore="MissingConstraints">
 
@@ -30,7 +29,6 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:foregroundGravity="center"
-            android:onClick="updateGroup"
             android:src="@drawable/ic_jeringa"
             tools:ignore="ContentDescription" />
 
@@ -38,19 +36,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:onClick="updateGroup"
             android:orientation="vertical"
             android:paddingLeft="10dp">
 
             <TextView
+                android:id="@+id/cuidados_activity_vacunas_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:fontFamily="@font/poppins_semi_bold"
-                android:onClick="updateGroup"
                 android:text="Vacunas"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="12sp"
                 tools:ignore="HardcodedText" />
 
@@ -69,7 +66,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:onClick="btn_alimentos"
         android:orientation="horizontal"
         tools:ignore="MissingConstraints">
 
@@ -77,7 +73,6 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:foregroundGravity="center"
-            android:onClick="btn_alimentos"
             android:src="@drawable/ic_alimento"
             tools:ignore="ContentDescription" />
 
@@ -85,19 +80,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:onClick="btn_alimentos"
             android:orientation="vertical"
             android:paddingLeft="10dp">
 
             <TextView
+                android:id="@+id/cuidados_activity_aliments_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:fontFamily="@font/poppins_semi_bold"
-                android:onClick="btn_alimentos"
                 android:text="Alimentación"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="12sp"
                 tools:ignore="HardcodedText" />
 
@@ -109,7 +103,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:onClick="btn_recorr"
         android:orientation="horizontal"
         tools:ignore="MissingConstraints">
 
@@ -117,7 +110,6 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:foregroundGravity="center"
-            android:onClick="btn_recorr"
             android:src="@drawable/ic_collar"
             tools:ignore="ContentDescription" />
 
@@ -125,19 +117,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:onClick="btn_recorr"
             android:orientation="vertical"
             android:paddingLeft="10dp">
 
             <TextView
+                android:id="@+id/cuidados_activity_recorrido_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semi_bold"
-                android:onClick="btn_recorr"
                 android:text="Recorridos"
                 android:layout_marginLeft="3dp"
                 android:textAllCaps="true"
-                android:textColor="@color/TextColor"
+                android:textColor="@color/texto_color_negro"
                 android:textSize="12sp"
                 tools:ignore="HardcodedText" />
 

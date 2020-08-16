@@ -1,283 +1,295 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/ic_patron"
-    android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".EditPerfilPet">
-
-    <TextView
+    android:background="@drawable/ic_patron">
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semi_bold"
-        android:gravity="center"
-        android:text="EDITAR PERFIL MASCOTA"
-        android:textAllCaps="true"
-        android:textColor="@color/TextColor"
-        android:textSize="14sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginTop="5dp"
-        android:background="#DADADA" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="8dp"
+        android:elevation="5dp"
+        android:layout_height="wrap_content">
         <LinearLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20dp"
+            tools:context=".home.mascota.detallesMascota.EditarPerfilMascotaActivity">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:gravity="center"
+                android:text="@string/editar_perfil_mascota"
+                android:textColor="@color/texto_color_negro"
+                android:textSize="@dimen/titulos"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/colorPrimary"
+                android:layout_height="1dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_marginTop="0dp"
                 android:orientation="vertical">
-
-                <com.mikhaellopez.circularimageview.CircularImageView
-                    android:id="@+id/petImageEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:adjustViewBounds="true"
-                    android:onClick="updateImage"
-                    android:src="@drawable/ic_user"
-                    app:civ_shadow="true"
-                    app:civ_shadow_color="#DFDFDF" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/petImageEdit"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:adjustViewBounds="true"
+                        android:onClick="updateImage"
+                        android:src="@drawable/ic_mascotas_1"
+                        app:civ_border_color="@color/colorPrimary"
+                        app:civ_border_width="3dp"
+                        app:civ_shadow="true"
+                        app:civ_shadow_color="#DFDFDF" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:background="@drawable/camp2"
-                        android:fontFamily="@font/poppins_regular"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:text="Seleccionar imagen"
-                        android:textAllCaps="false"
-                        android:textColor="@color/TextColor"
-                        android:textSize="10sp" />
+                        android:layout_marginTop="10dp"
+                        android:gravity="center">
 
-                    <Button
-                        android:id="@+id/button4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="25dp"
-                        android:background="@drawable/camp2"
-                        android:fontFamily="@font/poppins_regular"
-                        android:gravity="center"
-                        android:onClick="deletePet"
-                        android:text="Eliminar perfil"
-                        android:textAllCaps="false"
-                        android:textColor="@color/TextColor"
-                        android:textSize="10sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/camp2"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Seleccionar imagen"
+                            android:textAllCaps="false"
+                            android:textColor="@color/texto_color_negro"
+                            android:textSize="10sp" />
+
+                        <Button
+                            android:id="@+id/button4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="25dp"
+                            android:background="@drawable/camp2"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:onClick="deletePet"
+                            android:text="Eliminar perfil"
+                            android:textAllCaps="false"
+                            android:textColor="@color/texto_color_negro"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
-
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:text="Nombre"
+                        android:textAllCaps="true"
+                        android:textColor="@color/texto_color_gris"
+                        android:textSize="12sp" />
+
+
+                    <EditText
+                        android:id="@+id/petNameEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:backgroundTint="@color/texto_color_gris"
+                        android:fontFamily="@font/sf_light"
+                        android:text=""
+                        android:textColor="@color/texto_color_negro"
+                        android:textColorHighlight="@color/texto_color_negro"
+                        android:textColorHint="@color/texto_color_negro"
+                        android:textColorLink="@color/texto_color_negro"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:text="Tipo"
+                        android:textAllCaps="true"
+                        android:textColor="@color/texto_color_gris"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/petTypeEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:backgroundTint="@color/texto_color_gris"
+                        android:fontFamily="@font/sf_light"
+                        android:text=""
+                        android:textColor="@color/texto_color_negro"
+                        android:textColorHighlight="@color/texto_color_negro"
+                        android:textColorHint="@color/texto_color_negro"
+                        android:textColorLink="@color/texto_color_negro"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:text="Raza"
+                        android:textAllCaps="true"
+                        android:textColor="@color/texto_color_gris"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/petRaceEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/texto_color_gris"
+                        android:fontFamily="@font/sf_light"
+                        android:text=""
+                        android:textColor="@color/texto_color_negro"
+                        android:textColorHighlight="@color/texto_color_negro"
+                        android:textColorHint="@color/texto_color_negro"
+                        android:textColorLink="@color/texto_color_negro"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:shadowColor="#58676A"
+                        android:text="Color"
+                        android:textAllCaps="true"
+                        android:textColor="@color/texto_color_gris"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/petColorEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/texto_color_gris"
+                        android:fontFamily="@font/sf_light"
+                        android:text=""
+                        android:textColor="@color/texto_color_negro"
+                        android:textColorHighlight="@color/texto_color_negro"
+                        android:textColorHint="@color/texto_color_negro"
+                        android:textColorLink="@color/texto_color_negro"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:text="Fecha de nacimiento"
+                        android:textAllCaps="true"
+                        android:textColor="@color/texto_color_gris"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/petAgeEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/texto_color_gris"
+                        android:fontFamily="@font/sf_light"
+                        android:text=""
+                        android:textColor="@color/texto_color_negro"
+                        android:textColorHighlight="@color/texto_color_negro"
+                        android:textColorHint="@color/texto_color_negro"
+                        android:textColorLink="@color/texto_color_negro"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:shadowColor="@color/texto_color_gris"
+                        android:text="Descripción"
+                        android:textAllCaps="true"
+                        android:textColor="@color/texto_color_gris"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/petDescriptionEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/texto_color_gris"
+                        android:fontFamily="@font/sf_light"
+                        android:text=""
+                        android:textColor="@color/texto_color_gris"
+                        android:textColorHighlight="@color/texto_color_negro"
+                        android:textColorHint="@color/texto_color_negro"
+                        android:textColorLink="@color/texto_color_negro"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/petSaveEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="60dp"
+                    android:background="@drawable/btn"
                     android:fontFamily="@font/poppins_semi_bold"
-                    android:text="Nombre"
+                    android:onClick="save"
+                    android:text="Guardar"
                     android:textAllCaps="true"
-                    android:textColor="@color/TextColorSecundary"
+                    android:textColor="#FFF"
                     android:textSize="12sp" />
-
-
-                <EditText
-                    android:id="@+id/petNameEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:backgroundTint="@color/TextColorSecundary"
-                    android:fontFamily="@font/sf_light"
-                    android:text=""
-                    android:textColor="@color/TextColor"
-                    android:textColorHighlight="@color/TextColor"
-                    android:textColorHint="@color/TextColor"
-                    android:textColorLink="@color/TextColor"
-                    android:textSize="14sp" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:text="Tipo"
-                    android:textAllCaps="true"
-                    android:textColor="@color/TextColorSecundary"
-                    android:textSize="12sp" />
-
-                <EditText
-                    android:id="@+id/petTypeEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:backgroundTint="@color/TextColorSecundary"
-                    android:fontFamily="@font/sf_light"
-                    android:text=""
-                    android:textColor="@color/TextColor"
-                    android:textColorHighlight="@color/TextColor"
-                    android:textColorHint="@color/TextColor"
-                    android:textColorLink="@color/TextColor"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:text="Raza"
-                    android:textAllCaps="true"
-                    android:textColor="@color/TextColorSecundary"
-                    android:textSize="12sp" />
-
-                <EditText
-                    android:id="@+id/petRaceEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/TextColorSecundary"
-                    android:fontFamily="@font/sf_light"
-                    android:text=""
-                    android:textColor="@color/TextColor"
-                    android:textColorHighlight="@color/TextColor"
-                    android:textColorHint="@color/TextColor"
-                    android:textColorLink="@color/TextColor"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:shadowColor="#58676A"
-                    android:text="Color"
-                    android:textAllCaps="true"
-                    android:textColor="@color/TextColorSecundary"
-                    android:textSize="12sp" />
-
-                <EditText
-                    android:id="@+id/petColorEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/TextColorSecundary"
-                    android:fontFamily="@font/sf_light"
-                    android:text=""
-                    android:textColor="@color/TextColor"
-                    android:textColorHighlight="@color/TextColor"
-                    android:textColorHint="@color/TextColor"
-                    android:textColorLink="@color/TextColor"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:text="Fecha de nacimiento"
-                    android:textAllCaps="true"
-                    android:textColor="@color/TextColorSecundary"
-                    android:textSize="12sp" />
-
-                <EditText
-                    android:id="@+id/petAgeEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/TextColorSecundary"
-                    android:fontFamily="@font/sf_light"
-                    android:text=""
-                    android:textColor="@color/TextColor"
-                    android:textColorHighlight="@color/TextColor"
-                    android:textColorHint="@color/TextColor"
-                    android:textColorLink="@color/TextColor"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:shadowColor="@color/TextColorSecundary"
-                    android:text="Descripción"
-                    android:textAllCaps="true"
-                    android:textColor="@color/TextColorSecundary"
-                    android:textSize="12sp" />
-
-                <EditText
-                    android:id="@+id/petDescriptionEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/TextColorSecundary"
-                    android:fontFamily="@font/sf_light"
-                    android:text=""
-                    android:textColor="@color/TextColorSecundary"
-                    android:textColorHighlight="@color/TextColor"
-                    android:textColorHint="@color/TextColor"
-                    android:textColorLink="@color/TextColor"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/petSaveEdit"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="60dp"
-                android:background="@drawable/btn"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:onClick="save"
-                android:text="Guardar"
-                android:textAllCaps="true"
-                android:textColor="#FFF"
-                android:textSize="12sp" />
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</ScrollView>

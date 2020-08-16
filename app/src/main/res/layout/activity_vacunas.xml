@@ -16,7 +16,7 @@
         android:fontFamily="@font/poppins_semi_bold"
         android:text="Vacunas caninas"
         android:textAllCaps="false"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="20dp" />
 
     <CheckBox
@@ -25,7 +25,7 @@
         android:layout_marginTop="40dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Parvovirus 1ra dosis"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <CheckBox
@@ -34,14 +34,14 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Trivalente 1ra dosis"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_marginTop="15dp"
-        android:background="@color/TextColorSecundary" />
+        android:background="@color/texto_color_gris" />
 
     <CheckBox
         android:layout_width="match_parent"
@@ -49,7 +49,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Parvovirus 2da dosis"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <CheckBox
@@ -58,14 +58,14 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Trivalente 2da dosis"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_marginTop="15dp"
-        android:background="@color/TextColorSecundary" />
+        android:background="@color/texto_color_gris" />
 
     <CheckBox
         android:layout_width="match_parent"
@@ -73,7 +73,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Coronavirus 1ra dosis"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <CheckBox
@@ -82,14 +82,14 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Coronavirus 2da dosis"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_marginTop="15dp"
-        android:background="@color/TextColorSecundary" />
+        android:background="@color/texto_color_gris" />
 
     <CheckBox
         android:layout_width="match_parent"
@@ -97,7 +97,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Rabia"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <TextView

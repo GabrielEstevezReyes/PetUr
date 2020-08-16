@@ -7,7 +7,7 @@
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".CrearGrupo">
+    tools:context=".home.social.grupos.crear.CrearGrupoActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:gravity="center"
         android:text="Crear Grupo"
         android:textAllCaps="true"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/texto_color_negro"
         android:textSize="14sp" />
 
     <View
@@ -57,13 +57,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:backgroundTint="@color/TextColorSecundary"
+            android:backgroundTint="@color/texto_color_gris"
             android:fontFamily="@font/sf_regular"
             android:hint="Nombre del grupo"
             android:paddingRight="5dp"
             android:textAllCaps="true"
-            android:textColor="@color/TextColor"
-            android:textColorHint="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_negro"
+            android:textColorHint="@color/texto_color_gris"
             android:textColorLink="#FFF"
             android:textSize="14sp" />
 
@@ -72,13 +72,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:backgroundTint="@color/TextColorSecundary"
+            android:backgroundTint="@color/texto_color_gris"
             android:fontFamily="@font/sf_regular"
             android:hint="Descripción"
             android:paddingRight="5dp"
             android:textAllCaps="true"
-            android:textColor="@color/TextColor"
-            android:textColorHint="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_negro"
+            android:textColorHint="@color/texto_color_gris"
             android:textColorLink="#FFF"
             android:textSize="14sp" />
 
@@ -89,21 +89,21 @@
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/sf_regular"
-            android:text="Grupo cerrado"
-            android:textColor="@color/TextColorSecundary"
-            android:textColorHint="@color/TextColorSecundary"
+            android:text="@string/grupo_cerrado"
+            android:textColor="@color/texto_color_gris"
+            android:textColorHint="@color/texto_color_gris"
             android:textSize="14sp" />
 
         <Button
+            android:id="@+id/crear_grupo_activity_crear_btn"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/btn"
-            android:fontFamily="@font/poppins_semi_bold"
-            android:onClick="updateGroup"
-            android:text="Crear"
+            android:textAllCaps="false"
+            android:text="@string/crear_grupo"
             android:textColor="#FFF"
-            android:textSize="12sp" />
+            android:textSize="@dimen/texto_default" />
 
     </LinearLayout>
 </LinearLayout>

@@ -8,6 +8,87 @@
     <string name="facebook_app_id">239538950814156</string>
     <string name="fb_login_protocol_scheme">fb5745e4891f72f93a3b8939a5d921d1</string>
     <string name="advertising">Advertising</string>
+    <string name="fingerprint">Inicia sesión con tu huella digital</string>
+    <string name="agendar_titulo">Agendar</string>
+    <string name="agendar_instrucciones">Registra el nombre del evento y las fechas en las que ocurrirá.</string>
+    <string name="agendar_hint_nombre">Nombre del evento</string>
+    <string name="agendar_inicio">Fecha de inicio</string>
+    <string name="agendar_fin">Fecha fin</string>
+    <string name="agendar_btn">Agendar</string>
+    <string name="calendar_instrucciones">Desliza para elegir la fecha</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="fecha_format">%s/%s/%s</string>
+    <string name="eventos_titulo">Eventos</string>
+    <string name="cuidados_titulo">Cuidados</string>
+    <string name="veterinario_titulo">Veterinario</string>
+    <string name="escanear_titulo">Escanear</string>
+    <string name="ajustes_titulo">Ajustes</string>
+    <string name="agregar_evento_titulo">Agregar evento</string>
+    <string name="medico_titulo">Médico</string>
+    <string name="item_evento_nombre">Nombre del evento</string>
+    <string name="item_evento_inicio">Fecha inicio</string>
+    <string name="item_evento_fin">Fecha fin</string>
+    <string name="unicacion_real">Ubicación real</string>
+    <string name="casa">Casa</string>
+    <string name="social">Social</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="tienda">Tienda</string>
+    <string name="sos">S.O.S</string>
+    <string name="biom_acceso">Accede a tu cuenta</string>
+    <string name="biom_subt">Inicia sesión con tus datos biometricos.</string>
+    <string name="biom_fail">Utiliza tu contraseña</string>
+    <string name="biom_deseas">¿Deseas activar el desbloqueo por huella digital?</string>
+    <string name="biom_si">Si, activar</string>
+    <string name="biom_no">Ahora no</string>
+    <string name="biom_desc_conf">Configura una huella digital en tu dispositivo</string>
+    <string name="biom_btn_config">"Configurar "</string>
+    <string name="biom_exito">Aceptar</string>
+    <string name="biom_desc_exito">Huella digital activada con éxito</string>
+    <string name="proximos_eventos">Próximos eventos</string>
+    <string name="ver_mas">Ver más</string>
+    <string name="adverticing">Adverticing</string>
+    <string name="agregar_mascota_titulo">Agregar mascota</string>
+    <string name="sin_mascotas">No tienes mascotas registradas.</string>
+    <string name="add_pet_no_pet">Haz click para registrar una nueva mascota.</string>
+    <string name="peso">Peso</string>
+    <string name="editar">Editar</string>
+    <string name="proxima_comida">Próxima comida</string>
+    <string name="gr">gr.</string>
+    <string name="cita_medica">Su próxima cita médica</string>
+    <string name="agendar">Agendar</string>
+    <string name="guardar">Guardar</string>
+    <string name="editar_perfil">Editar perfil</string>
+    <string name="nombre">Nombre</string>
+    <string name="numero_telefono">Número de teléfono</string>
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="direccion">Dirección</string>
+    <string name="editar_perfil_mascota">Editar perfil de mi mascota</string>
+    <string name="crear_grupo">Crear grupo</string>
+    <string name="grupo_cerrado">Grupo cerrado</string>
+    <string name="error_al_publicar">Error de publicación</string>
+    <string name="error_post_desc">Ocurrió un error al tratar de enviar el post, intenta de nuevo más tarde.</string>
+    <string name="error_grupo_desc">Ocurrió un error al tratar de crear el grupo, intenta de nuevo más tarde.</string>
+    <string name="post_creado">Post creado</string>
+    <string name="post_creado_desc">Tu publicación fue creada con éxito.</string>
+    <string name="grupo_creado_desc">Tu grupo fue creado con éxito.</string>
+    <string name="postear">Publicar</string>
+    <string name="ver_miembros">Ver todos los miembros</string>
+    <string name="publicar">Publicar</string>
+    <string name="grupo_abierto">Grupo abierto</string>
+    <string name="unirse">Unirse</string>
+    <string name="union_exitosa">Te has unido a este grupo.</string>
+    <string name="solicitud_union">Tu solicitud para unirte ha sido enviada.</string>
+    <string name="error_de_conexion">Error de conexión</string>
+    <string name="error_conexion_desc">Ha ocurrido un error, intenta de nuevo más tarde.</string>
+    <string name="post_recientes">Posts recientes</string>
+    <string name="grupos">Grupos</string>
+    <string name="todos">Todos</string>
+    <string name="mios">Mis grupos</string>
+    <string name="unidos">Unidos</string>
+    <string name="ver_detalles">Ver detalles</string>
+    <string name="grupo_creado">Grupo Creado</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>
@@ -26,7 +107,6 @@
         <item>Terrier</item>
         <item>Whippet</item>
         <item>Xoloitzcuintle</item>
-
     </string-array>
 
 </resources>

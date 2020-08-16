@@ -7,7 +7,7 @@
     android:foregroundGravity="center"
     android:orientation="vertical"
     android:background="@drawable/ic_patron"
-    tools:context=".MainActivity">
+    tools:context=".home.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,12 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:onClick="updateGroup"
             android:orientation="horizontal"
             tools:ignore="MissingConstraints">
 
             <com.mikhaellopez.circularimageview.CircularImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/home_activity_foto_perfil_civ"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:foregroundGravity="center"
@@ -51,7 +50,7 @@
                         android:fontFamily="@font/poppins_medium"
                         android:text="Giovanni"
                         android:textAllCaps="false"
-                        android:textColor="@color/TextColor"
+                        android:textColor="@color/texto_color_negro"
                         android:textSize="14sp"
                         tools:ignore="HardcodedText" />
 
@@ -106,7 +105,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif"
-                android:shadowColor="@color/TextColor"
+                android:shadowColor="@color/texto_color_negro"
                 android:text="@string/advertising"
                 android:textAllCaps="true"
                 android:textSize="8sp" />
@@ -131,8 +130,6 @@
                         android:layout_height="wrap_content"
                         android:onClick="linker"
                         app:cardCornerRadius="15dp">
-
-
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -289,22 +286,49 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         app:cardCornerRadius="10dp"
+                        android:elevation="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#000"
+                        >
+                        <Button
+                            android:id="@+id/home_activity_tienda_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/menu_mascotas"
+                            android:drawableEnd="@drawable/ic_sos_menu"
+                            android:text="@string/tienda"
+                            android:gravity="start|center"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="0dp"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:textAllCaps="false"
+                            android:textColor="#FFF"
+                            android:textSize="@dimen/titulos"
+                            />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        app:cardCornerRadius="10dp"
                         android:onClick="lis_grupos"
                         android:elevation="16dp"
                         android:background="#000"
                         >
                         <Button
+                            android:id="@+id/home_activity_sos_btn"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:background="@drawable/menu_mascotas"
-                            android:drawableRight="@drawable/ic_sos_menu"
-                            android:text="S.O.S"
-                            android:gravity="left|center"
-                            android:paddingLeft="20dp"
+                            android:drawableEnd="@drawable/ic_sos_menu"
+                            android:text="@string/sos"
+                            android:gravity="start|center"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="0dp"
                             android:fontFamily="@font/poppins_semi_bold"
                             android:textAllCaps="false"
                             android:textColor="#FFF"
-                            android:textSize="18dp"
+                            android:textSize="@dimen/titulos"
                             />
                     </androidx.cardview.widget.CardView>
 

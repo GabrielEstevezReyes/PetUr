@@ -6,7 +6,7 @@
     android:padding="0dp"
     android:background="#FFF"
     android:orientation="vertical"
-    tools:context=".ChatGrupo">
+    tools:context=".home.social.grupos.ChatGrupo">
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             android:fontFamily="@font/poppins_semi_bold"
             android:gravity="left|center"
             android:text="Urpet México"
-            android:textColor="@color/TextColor"
+            android:textColor="@color/texto_color_negro"
             android:textSize="16dp" />
     </LinearLayout>
 
@@ -70,8 +70,8 @@
             android:layout_weight="1"
             android:fontFamily="sans-serif-light"
             android:hint="Escribe un mensaje..."
-            android:textColor="@color/TextColor"
-            android:textColorHint="@color/TextColorSecundary"
+            android:textColor="@color/texto_color_negro"
+            android:textColorHint="@color/texto_color_gris"
             android:textSize="14sp" />
 
     <ImageButton
