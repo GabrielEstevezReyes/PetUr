@@ -205,6 +205,8 @@ public class ApiPetition {
                 in.close();
                 return  true;
             }else{
+                String error = connection.getResponseMessage();
+                Log.d("ApiConn", "Error " + error);
                 return false;
             }
 

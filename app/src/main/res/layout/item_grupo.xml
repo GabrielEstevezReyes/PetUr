@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     app:cardElevation="5dp"
     app:cardCornerRadius="10dp"
-    android:layout_marginHorizontal="8dp"
+    android:layout_marginHorizontal="2dp"
     android:layout_marginBottom="8dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -88,15 +88,15 @@
 
         <ImageView
             android:id="@+id/item_grupo_cerrado_iv"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_marginStart="8dp"
             android:adjustViewBounds="true"
             android:src="@drawable/ic_lock"
             app:layout_constraintBottom_toBottomOf="@+id/item_grupo_cerrado_tv"
             app:layout_constraintStart_toEndOf="@+id/item_grupo_img_cv"
             app:layout_constraintTop_toTopOf="@+id/item_grupo_cerrado_tv"
-            app:tint="@color/colorPrimary" />
+            app:tint="@color/texto_color_gris" />
 
         <TextView
             android:id="@+id/item_grupo_cerrado_tv"
@@ -105,7 +105,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:textAlignment="textStart"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/texto_color_gris"
             android:textStyle="bold"
             android:textSize="@dimen/texto_small"
             app:layout_constraintBottom_toBottomOf="@+id/item_grupo_img_cv"

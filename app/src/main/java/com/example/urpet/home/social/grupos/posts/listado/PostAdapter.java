@@ -1,6 +1,7 @@
 package com.example.urpet.home.social.grupos.posts.listado;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,11 +9,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.urpet.R;
 import com.example.urpet.Utils.GeneralUtils;
 import com.example.urpet.connections.Post;
+import com.example.urpet.home.social.grupos.posts.DetallePostActivity;
 import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
@@ -22,6 +25,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     private ArrayList<Post> mListadoPosts;
     private Context mContext;
     private FirebaseStorage storage;
+    public static final String POST_KEY = "post";
 
     public PostAdapter(Context mContext, FirebaseStorage mstorage) {
         this.mContext = mContext;
@@ -54,6 +58,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             GeneralUtils.getBitmapFromURL(mListadoPosts.get(position).getImage(),
                     holder.mImagen, storage, mContext);
         }
+        holder.mRootCV.setOnClickListener(v->{
+            Intent post = new Intent(mContext, DetallePostActivity.class);
+            post.putExtra(POST_KEY, mListadoPosts.get(position));
+            mContext.startActivity(post);
+        });
     }
 
     @Override
@@ -64,6 +73,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     static class PostViewHolder extends RecyclerView.ViewHolder{
         TextView mTitulo, mDescr, mPrecio, mFecha;
         ImageView mImagen, mIconVenta;
+        CardView mRootCV;
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
                 mTitulo = itemView.findViewById(R.id.item_post_titulo_tv);
@@ -72,7 +82,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
                 mFecha = itemView.findViewById(R.id.item_post_fecha_tv);
                 mImagen = itemView.findViewById(R.id.item_post_img_iv);
                 mIconVenta = itemView.findViewById(R.id.item_post_precio_iv);
-
+                mRootCV = itemView.findViewById(R.id.item_post_root_cv);
         }
     }
 }

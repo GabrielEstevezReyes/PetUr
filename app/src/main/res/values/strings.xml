@@ -89,6 +89,8 @@
     <string name="unidos">Unidos</string>
     <string name="ver_detalles">Ver detalles</string>
     <string name="grupo_creado">Grupo Creado</string>
+    <string name="comentarios">Comentarios</string>
+    <string name="publicado_el">Publicado el %s</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>
