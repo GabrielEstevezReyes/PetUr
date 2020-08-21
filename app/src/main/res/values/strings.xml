@@ -91,6 +91,12 @@
     <string name="grupo_creado">Grupo Creado</string>
     <string name="comentarios">Comentarios</string>
     <string name="publicado_el">Publicado el %s</string>
+    <string name="crear_comentario">Crear comentario</string>
+    <string name="comentar">Enviar comentario</string>
+    <string name="error_al_comentar">Error al comentar</string>
+    <string name="error_coment_desc">No se pudo realizar el comentario, intenta de nuevo más tarde.</string>
+    <string name="coment_dice">%s dice:</string>
+    <string name="sin_comentarios">No hay comentarios.</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>

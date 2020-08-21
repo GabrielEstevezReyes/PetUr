@@ -18,7 +18,7 @@ import com.example.urpet.Utils.LoaderFragment;
 import com.example.urpet.Utils.alert.AlertFragment;
 import com.example.urpet.Utils.alert.AlertManager;
 import com.example.urpet.connections.BelongGroup;
-import com.example.urpet.connections.Group;
+import com.example.urpet.connections.social.Group;
 import com.example.urpet.home.social.grupos.crear.CrearGrupoActivity;
 import com.google.firebase.storage.FirebaseStorage;
 
@@ -188,6 +188,7 @@ public class ListadoGruposActivity extends AppCompatActivity implements ListadoG
     @Override
     public void onListadoPbtenido(ArrayList<Group> data) {
         mAdapter.setmListadoGrupos(data);
+        mListadoTodosGrupos.clear();
         mListadoTodosGrupos.addAll(data);
         fillGruposUnidos(data);
         fillMisGrupos(data);

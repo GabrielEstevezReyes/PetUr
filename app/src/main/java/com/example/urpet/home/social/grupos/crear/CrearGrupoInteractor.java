@@ -1,6 +1,6 @@
 package com.example.urpet.home.social.grupos.crear;
 
-import com.example.urpet.connections.Group;
+import com.example.urpet.connections.social.Group;
 
 public class CrearGrupoInteractor {
 

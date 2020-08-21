@@ -2,7 +2,6 @@ package com.example.urpet.home.social.grupos.listado;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
 import com.example.urpet.Utils.GeneralUtils;
-import com.example.urpet.connections.Group;
+import com.example.urpet.connections.social.Group;
 import com.example.urpet.home.social.grupos.detalle.DetalleGrupoActivity;
 import com.google.firebase.storage.FirebaseStorage;
 

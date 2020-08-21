@@ -1,7 +1,7 @@
 package com.example.urpet.home.social.grupos.listado;
 
 import com.example.urpet.Utils.ViewInterface;
-import com.example.urpet.connections.Group;
+import com.example.urpet.connections.social.Group;
 
 import java.util.ArrayList;
 

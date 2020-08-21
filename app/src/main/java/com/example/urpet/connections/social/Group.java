@@ -1,8 +1,8 @@
-package com.example.urpet.connections;
-
-import android.util.Log;
+package com.example.urpet.connections.social;
 
 import com.example.urpet.PersonalInfo;
+import com.example.urpet.connections.ApiPetition;
+import com.example.urpet.connections.BasicObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;

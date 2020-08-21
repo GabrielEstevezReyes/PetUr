@@ -20,7 +20,7 @@ import com.example.urpet.Utils.LoaderFragment;
 import com.example.urpet.Utils.alert.AlertFragment;
 import com.example.urpet.Utils.alert.AlertManager;
 import com.example.urpet.connections.BelongGroup;
-import com.example.urpet.connections.Post;
+import com.example.urpet.connections.social.Post;
 import com.example.urpet.home.social.grupos.posts.listado.ListaPostInteractor;
 import com.example.urpet.home.social.grupos.posts.listado.ListaPostPresenter;
 import com.example.urpet.home.social.grupos.posts.listado.ListaPostView;

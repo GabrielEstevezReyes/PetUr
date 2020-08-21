@@ -26,9 +26,11 @@
         <activity android:name=".home.marketplace.MkpCatMascota"/>
         <activity android:name=".home.marketplace.MarketplaceActivity" />
         <activity android:name=".Post" />
+
         <activity
             android:name=".home.social.grupos.posts.DetallePostActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
             />
         <activity
             android:name=".Notifications"
@@ -37,12 +39,15 @@
         <activity
             android:name=".home.mascota.detallesMascota.DetalleMascotaActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
             />
         <activity
             android:name=".home.mascota.detallesMascota.MascotaSettingActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".home.mascota.detallesMascota.CarnetMascotaActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".home.medico.ListaVisitasMedicas"

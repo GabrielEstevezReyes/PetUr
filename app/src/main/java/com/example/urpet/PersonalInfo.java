@@ -1,21 +1,12 @@
 package com.example.urpet;
 
 import android.content.Context;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.Base64;
 
-import androidx.annotation.NonNull;
-
-import com.example.urpet.connections.Group;
+import com.example.urpet.connections.social.Group;
 import com.example.urpet.connections.Pet;
 import com.example.urpet.connections.User;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

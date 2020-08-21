@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.urpet.R;
 import com.example.urpet.Utils.GeneralUtils;
-import com.example.urpet.connections.Post;
+import com.example.urpet.connections.social.Post;
 import com.example.urpet.home.social.grupos.posts.DetallePostActivity;
 import com.google.firebase.storage.FirebaseStorage;
 

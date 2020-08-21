@@ -1,6 +1,6 @@
 package com.example.urpet.home.social.grupos.posts.listado.publicar;
 
-import com.example.urpet.connections.Post;
+import com.example.urpet.connections.social.Post;
 
 import org.json.JSONException;
 

@@ -16,7 +16,7 @@ import com.example.urpet.R;
 import com.example.urpet.Utils.LoaderFragment;
 import com.example.urpet.Utils.alert.AlertFragment;
 import com.example.urpet.Utils.alert.AlertManager;
-import com.example.urpet.connections.Group;
+import com.example.urpet.connections.social.Group;
 import com.example.urpet.home.social.grupos.listado.ListadoGruposActivity;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.firebase.storage.FirebaseStorage;

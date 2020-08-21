@@ -1,5 +1,8 @@
-package com.example.urpet.connections;
+package com.example.urpet.connections.social;
 
+
+import com.example.urpet.connections.ApiPetition;
+import com.example.urpet.connections.BasicObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,6 +15,7 @@ import java.util.Locale;
 
 public class Post extends BasicObject implements Serializable {
 
+    private int idPost;
     private String name = "";
     private String description = "";
     private String image= "";
@@ -70,6 +74,7 @@ public class Post extends BasicObject implements Serializable {
     }
 
     public Post(JSONObject data) {
+        idPost = data.optInt("id_post");
         name = data.optString("tittle");
         description = data.optString("descripcion");
         image= data.optString("imagen");
@@ -150,5 +155,9 @@ public class Post extends BasicObject implements Serializable {
 
     public void setGroupBelong(int groupBelong) {
         this.groupBelong = groupBelong;
+    }
+
+    public int getIdPost() {
+        return idPost;
     }
 }

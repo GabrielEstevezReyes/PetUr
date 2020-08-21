@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/item_comentario_root_cv"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="10dp"
+    android:layout_marginHorizontal="2dp"
+    android:layout_marginBottom="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/item_comentario_img_cv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="@color/blanco"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/item_comentario_img_iv"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:civ_border_color="@color/colorPrimary"
+                app:civ_border="true"
+                android:src="@drawable/ic_mascotas_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.cardview.widget.CardView>
+
+
+
+        <TextView
+            android:id="@+id/item_comentario_titulo_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/texto_color_negro"
+            android:textSize="@dimen/texto_default"
+            android:text="@string/coment_dice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_comentario_img_cv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/item_comentario_descripcion_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:textColor="@color/texto_color_negro"
+            android:textSize="@dimen/texto_default"
+            app:layout_constraintBottom_toTopOf="@+id/item_comentario_fecha_tv"
+            app:layout_constraintEnd_toEndOf="@+id/item_comentario_titulo_tv"
+            app:layout_constraintStart_toStartOf="@+id/item_comentario_titulo_tv"
+            app:layout_constraintTop_toBottomOf="@+id/item_comentario_titulo_tv" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="288dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7"
+            app:layout_constraintStart_toEndOf="@id/item_comentario_img_cv" />
+
+        <TextView
+            android:id="@+id/item_comentario_fecha_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:textColor="@color/texto_color_negro"
+            android:textSize="@dimen/texto_small"
+            app:layout_constraintBottom_toBottomOf="@+id/item_comentario_img_cv"
+            app:layout_constraintEnd_toEndOf="@+id/item_comentario_titulo_tv"
+            app:layout_constraintStart_toStartOf="@+id/guideline6" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
