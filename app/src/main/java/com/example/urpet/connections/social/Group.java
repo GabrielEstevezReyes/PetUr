@@ -23,7 +23,7 @@ public class Group extends BasicObject {
     }
 
     public Group(){
-        setCreatorID(PersonalInfo.currentUser.getID());
+        setIDMascota(PersonalInfo.currentUser.getID());
     }
 
     public Group(String newName, String newDescription, int closed){
@@ -31,7 +31,7 @@ public class Group extends BasicObject {
         setDescription(newDescription);
         setIsClosed(closed);
         setImage("");
-        setCreatorID(PersonalInfo.clickedPet.getID());
+        setIDMascota(PersonalInfo.clickedPet.getID());
     }
 
     public JSONObject toJson(boolean ID) throws JSONException {
@@ -53,7 +53,7 @@ public class Group extends BasicObject {
         setIsClosed(Integer.parseInt(obj.optString("esCerrado")));
         setImage(obj.optString("image"));
         setID(Integer.parseInt(obj.optString("id_grupos")));
-        setCreatorID(Integer.parseInt(obj.optString("id_mascota")));
+        setIDMascota(Integer.parseInt(obj.optString("id_mascota")));
     }
 
     public void create() throws JSONException {
@@ -117,11 +117,11 @@ public class Group extends BasicObject {
         this.isClosed = isClosed;
     }
 
-    public int getCreatorID() {
+    public int getIDMascota() {
         return creatorID;
     }
 
-    public void setCreatorID(int creatorID) {
+    public void setIDMascota(int creatorID) {
         this.creatorID = creatorID;
     }
 

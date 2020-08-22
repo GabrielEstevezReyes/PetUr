@@ -55,10 +55,8 @@ public class DetalleGrupoActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.activity_detalle_grupo_editar_btn:
-                editarGrupo();
-            break;
             case R.id.activity_detalle_grupo_miembros_cv:
+                verListadoMiembros();
             break;
             case R.id.activity_detalle_grupo_publicar_cv:
                 onRealizarPublicacion();
@@ -86,7 +84,6 @@ public class DetalleGrupoActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void configureviews(){
-        mEditarBtn.setOnClickListener(this);
         mMiembrosBtn.setOnClickListener(this);
         mPublicarBtn.setOnClickListener(this);
 
@@ -103,24 +100,25 @@ public class DetalleGrupoActivity extends AppCompatActivity implements View.OnCl
             mFotoGrupoIv.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.peluqueria_canina));
         }
 
-        if(PersonalInfo.selectedGroup.getCreatorID() == PersonalInfo.clickedPet.getID()){
+        if(PersonalInfo.selectedGroup.getIDMascota() == PersonalInfo.clickedPet.getID()){
             mEditarBtn.setText(R.string.editar);
             mEditarBtn.setOnClickListener(v -> editarGrupo());
         }
-        else{
-            if(PersonalInfo.belong.contains(PersonalInfo.selectedGroup.getID())){
-                mEditarBtn.setVisibility(View.GONE);
-            }
-            else{
-                mEditarBtn.setText(R.string.unirse);
-                if(PersonalInfo.selectedGroup.getIsClosed() == 0) {
-                    mEditarBtn.setOnClickListener(v -> unirseAGrupo());
+        else
+            {
+                if(PersonalInfo.belong.contains(PersonalInfo.selectedGroup.getID())){
+                    mEditarBtn.setVisibility(View.GONE);
                 }
                 else{
-                    mEditarBtn.setOnClickListener(v -> solicitarUnirseAGrupo());
+                    mEditarBtn.setText(R.string.unirse);
+                    if(PersonalInfo.selectedGroup.getIsClosed() == 0) {
+                        mEditarBtn.setOnClickListener(v -> unirseAGrupo());
+                    }
+                    else{
+                        mEditarBtn.setOnClickListener(v -> solicitarUnirseAGrupo());
+                    }
                 }
             }
-        }
 
         mPostsAdapter = new PostAdapter(this, storage);
 
@@ -130,6 +128,10 @@ public class DetalleGrupoActivity extends AppCompatActivity implements View.OnCl
         mListadoPostsRV.setLayoutManager(manager);
 
         mPresenter.onTraerPosts(PersonalInfo.selectedGroup.getID());
+    }
+
+    private void verListadoMiembros(){
+
     }
 
     public void editarGrupo(){

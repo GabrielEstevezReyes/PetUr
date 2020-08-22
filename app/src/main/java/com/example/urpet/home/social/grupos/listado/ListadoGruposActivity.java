@@ -118,7 +118,7 @@ public class ListadoGruposActivity extends AppCompatActivity implements ListadoG
     private void fillMisGrupos(ArrayList<Group> todos){
         mListadoMisGrupos.clear();
         for (int i=0; i < todos.size(); i++){
-            if(todos.get(i).getCreatorID() == PersonalInfo.clickedPet.getID()){
+            if(todos.get(i).getIDMascota() == PersonalInfo.clickedPet.getID()){
                 mListadoMisGrupos.add(todos.get(i));
             }
         }
