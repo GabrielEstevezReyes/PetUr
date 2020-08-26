@@ -6,7 +6,7 @@
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".home.social.grupos.listado.ListadoGruposActivity">
+    tools:context=".home.mascota.opciones.grupos.listado.ListadoGruposActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -16,9 +16,9 @@ import com.example.urpet.R;
 import com.example.urpet.Utils.GeneralUtils;
 import com.example.urpet.Utils.alert.SpinnerFechasDialogFragment;
 import com.example.urpet.connections.Pet;
-import com.example.urpet.home.social.grupos.listado.ListadoGruposActivity;
-import com.example.urpet.home.medico.Clinicas;
-import com.example.urpet.home.medico.MenuCuidados;
+import com.example.urpet.home.mascota.opciones.grupos.listado.ListadoGruposActivity;
+import com.example.urpet.home.mascota.opciones.medico.Clinicas;
+import com.example.urpet.home.mascota.opciones.medico.MenuCuidados;
 import com.google.firebase.storage.FirebaseStorage;
 import com.mikhaellopez.circularimageview.CircularImageView;
 

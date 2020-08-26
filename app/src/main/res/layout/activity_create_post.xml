@@ -6,7 +6,7 @@
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".home.social.grupos.posts.listado.publicar.RealizarPublicacionActivity">
+    tools:context=".home.mascota.opciones.grupos.posts.listado.publicar.RealizarPublicacionActivity">
 
     <TextView
         android:layout_width="match_parent"

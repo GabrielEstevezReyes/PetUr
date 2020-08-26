@@ -25,6 +25,11 @@ public class SharedPreferencesUtil {
     private static final String BIOM_ENABLED_KEY = "tieneBiometrico";
     private static final String TIPO_LOGIN_KEY = "loginTipo";
 
+    private static final String ULTIMA_COMPRA_PRODUCTO_KEY = "uc_producto";
+    private static final String ULTIMA_COMPRA_DOSIS_KEY = "uc_dosis";
+    private static final String ULTIMA_COMPRA_FECHA_KEY = "uc_fecha";
+
+
     private static SharedPreferencesUtil mSingleton;
     private static SharedPreferences.Editor mEditor;
     private SharedPreferences mSharedPreferences;
@@ -93,6 +98,10 @@ public class SharedPreferencesUtil {
         mEditor.putString(PASSWORD_BIOM_KEY, pass);
         mEditor.putBoolean(BIOM_ENABLED_KEY, true);
         mEditor.apply();
+    }
+
+    public final void createCompraReciente(String producto, String fecha, int dosis){
+
     }
 
 //    public final void set() {

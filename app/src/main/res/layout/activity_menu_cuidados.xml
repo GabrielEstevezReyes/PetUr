@@ -7,7 +7,7 @@
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="25dp"
-    tools:context=".home.medico.MenuCuidados">
+    tools:context=".home.mascota.opciones.medico.MenuCuidados">
 
     <TextView
         android:layout_width="match_parent"

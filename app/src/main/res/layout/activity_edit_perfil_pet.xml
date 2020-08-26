@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="20dp"
-            tools:context=".home.mascota.detallesMascota.EditarPerfilMascotaActivity">
+            tools:context=".home.mascota.opciones.perfil.EditarPerfilMascotaActivity">
 
             <TextView
                 android:layout_width="match_parent"

@@ -13,6 +13,7 @@ import com.example.urpet.home.mascota.agenda.AgendarDialogFragment;
 import com.example.urpet.home.mascota.agenda.events.EventoAdapter;
 import com.example.urpet.home.mascota.agenda.events.EventoDTO;
 import com.example.urpet.R;
+import com.example.urpet.home.mascota.opciones.perfil.EditarPerfilMascotaActivity;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;

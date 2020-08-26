@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.urpet.R;
-import com.example.urpet.home.medico.MenuCuidados;
+import com.example.urpet.home.mascota.opciones.medico.MenuCuidados;
 import com.example.urpet.home.mascota.detallesMascota.DetalleMascotaActivity;
 
 public class HistorialRecorridos extends AppCompatActivity {

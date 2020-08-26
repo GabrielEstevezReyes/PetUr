@@ -28,7 +28,7 @@
         <activity android:name=".Post" />
 
         <activity
-            android:name=".home.social.grupos.posts.DetallePostActivity"
+            android:name=".home.mascota.opciones.grupos.posts.DetallePostActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait"
             />
@@ -50,19 +50,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.medico.ListaVisitasMedicas"
+            android:name=".home.mascota.opciones.medico.ListaVisitasMedicas"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".TipoVisita"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.medico.Clinicas"
+            android:name=".home.mascota.opciones.medico.Clinicas"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".VisitaVeterinario"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".home.alimentos.AddComida"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".home.mascota.SaludMascota"
@@ -71,10 +68,10 @@
             android:name=".CardChats"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.grupos.ChatGrupo"
+            android:name=".home.mascota.opciones.grupos.ChatGrupo"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.grupos.posts.listado.publicar.RealizarPublicacionActivity"
+            android:name=".home.mascota.opciones.grupos.posts.listado.publicar.RealizarPublicacionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <!--
@@ -113,19 +110,19 @@
             android:label="@string/title_activity_places"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.grupos.GrupoSolicitudes"
+            android:name=".home.mascota.opciones.grupos.GrupoSolicitudes"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.grupos.detalle.GrupoVerMiembros"
+            android:name=".home.mascota.opciones.grupos.detalle.GrupoVerMiembros"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.grupos.detalle.DetalleGrupoActivity"
+            android:name=".home.mascota.opciones.grupos.detalle.DetalleGrupoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.grupos.detalle.EditarGrupoActivity"
+            android:name=".home.mascota.opciones.grupos.detalle.EditarGrupoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.mascota.detallesMascota.EditarPerfilMascotaActivity"
+            android:name=".home.mascota.opciones.perfil.EditarPerfilMascotaActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
@@ -160,7 +157,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".home.medico.MenuCuidados"
+            android:name=".home.mascota.opciones.medico.MenuCuidados"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
@@ -170,7 +167,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".Vacunas"
+            android:name=".home.mascota.opciones.casa.vacunas.Vacunas"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
@@ -205,12 +202,12 @@
             android:name=".login.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".home.social.grupos.listado.ListadoGruposActivity"
+            android:name=".home.mascota.opciones.grupos.listado.ListadoGruposActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".home.social.grupos.crear.CrearGrupoActivity"
+            android:name=".home.mascota.opciones.grupos.crear.CrearGrupoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
@@ -220,7 +217,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".home.alimentos.AnadirAlimento"
+            android:name=".home.mascota.opciones.casa.alimentacion.ListadoComidasActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />

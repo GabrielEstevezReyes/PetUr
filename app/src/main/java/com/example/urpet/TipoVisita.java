@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.urpet.home.medico.ListaVisitasMedicas;
+import com.example.urpet.home.mascota.opciones.medico.ListaVisitasMedicas;
 
 public class TipoVisita extends AppCompatActivity {
 

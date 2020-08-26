@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="25dp"
     android:background="#FFF"
-    tools:context=".Vacunas"
+    tools:context=".home.mascota.opciones.casa.vacunas.Vacunas"
     android:orientation="vertical">
 
     <TextView
