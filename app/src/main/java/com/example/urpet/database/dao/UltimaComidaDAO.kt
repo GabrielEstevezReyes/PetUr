@@ -1,6 +1,5 @@
 package com.example.urpet.database.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -13,8 +12,11 @@ interface UltimaComidaDAO{
     fun insertUltimaComida(comida: UltimaComidaEntity)
 
     @Query("SELECT * FROM " + UltimaComidaEntity.nombreTabla)
-    fun getAllComidas(): LiveData<List<UltimaComidaEntity>>
+    fun getAllComidas(): List<UltimaComidaEntity>
 
     @Query("SELECT * FROM " + UltimaComidaEntity.nombreTabla + " ORDER BY ID DESC LIMIT 1")
-    fun getUltimaComida(): LiveData<UltimaComidaEntity>
+    fun getUltimaComida(): UltimaComidaEntity
+
+    @Query("DELETE FROM " + UltimaComidaEntity.nombreTabla)
+    fun clearTable()
 }

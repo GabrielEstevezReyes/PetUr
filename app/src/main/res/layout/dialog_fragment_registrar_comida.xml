@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -19,7 +18,7 @@
 
             <ImageView
                 android:id="@+id/fragment_comida_cerrar_iv"
-                android:layout_width="25dp"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
@@ -61,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@null"
+                android:inputType="text"
                 android:hint="@string/comida_hint_nombre"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="@+id/textView2"
@@ -94,9 +94,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@null"
-                android:focusable="false"
                 android:hint="@string/presentacion_comida"
-                android:inputType="none"
+                android:inputType="numberDecimal"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="@+id/fragment_nueva_comida_nombre_et"
                 app:layout_constraintStart_toStartOf="@+id/fragment_nueva_comida_descr_et"
@@ -108,9 +107,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@null"
-                android:focusable="false"
                 android:hint="@string/descripcion_nueva_comida"
-                android:inputType="none"
+                android:inputType="textLongMessage"
                 android:minLines="3"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="@+id/fragment_nueva_comida_nombre_et"

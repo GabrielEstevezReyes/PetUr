@@ -1,147 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="25dp"
-    tools:context=".home.mascota.opciones.medico.MenuCuidados">
+    tools:context=".home.mascota.opciones.casa.CasaActivity">
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semi_bold"
-        android:gravity="left"
-        android:text="Cuidados"
+        android:text="@string/cuidados"
+        android:textAlignment="center"
         android:textColor="@color/texto_color_negro"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints">
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:foregroundGravity="center"
-            android:src="@drawable/ic_jeringa"
-            tools:ignore="ContentDescription" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingLeft="10dp">
-
-            <TextView
-                android:id="@+id/cuidados_activity_vacunas_et"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:text="Vacunas"
-                android:textAllCaps="true"
-                android:textColor="@color/texto_color_negro"
-                android:textSize="12sp"
-                tools:ignore="HardcodedText" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingLeft="5dp" />
-    </LinearLayout>
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:foregroundGravity="center"
+        android:src="@drawable/ic_jeringa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        tools:ignore="ContentDescription" />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/cuidados_activity_vacunas_et"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints">
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="@string/vacunas"
+        android:textAllCaps="false"
+        android:textColor="@color/texto_color_negro"
+        android:textSize="@dimen/texto_mid"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        tools:ignore="HardcodedText" />
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:foregroundGravity="center"
-            android:src="@drawable/ic_alimento"
-            tools:ignore="ContentDescription" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingLeft="10dp">
-
-            <TextView
-                android:id="@+id/cuidados_activity_aliments_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:text="Alimentación"
-                android:textAllCaps="true"
-                android:textColor="@color/texto_color_negro"
-                android:textSize="12sp"
-                tools:ignore="HardcodedText" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints">
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:foregroundGravity="center"
-            android:src="@drawable/ic_collar"
-            tools:ignore="ContentDescription" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingLeft="10dp">
-
-            <TextView
-                android:id="@+id/cuidados_activity_recorrido_et"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:text="Recorridos"
-                android:layout_marginLeft="3dp"
-                android:textAllCaps="true"
-                android:textColor="@color/texto_color_negro"
-                android:textSize="12sp"
-                tools:ignore="HardcodedText" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingLeft="5dp" />
+        android:layout_marginTop="24dp"
+        android:adjustViewBounds="true"
+        android:foregroundGravity="center"
+        android:src="@drawable/ic_alimento"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11"
+        tools:ignore="ContentDescription" />
 
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/cuidados_activity_aliments_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="@string/alimentacion"
+        android:textAllCaps="false"
+        android:textColor="@color/texto_color_negro"
+        android:textSize="@dimen/texto_mid"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/cuidados_activity_vacunas_et"
+        app:layout_constraintTop_toTopOf="@+id/imageView12"
+        tools:ignore="HardcodedText" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:adjustViewBounds="true"
+        android:foregroundGravity="center"
+        android:src="@drawable/ic_collar"
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12"
+        tools:ignore="ContentDescription" />
+
+
+    <TextView
+        android:id="@+id/cuidados_activity_recorrido_et"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="@string/recorridos"
+        android:textAllCaps="false"
+        android:textColor="@color/texto_color_negro"
+        android:textSize="@dimen/texto_mid"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/cuidados_activity_aliments_tv"
+        app:layout_constraintTop_toTopOf="@+id/imageView13" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

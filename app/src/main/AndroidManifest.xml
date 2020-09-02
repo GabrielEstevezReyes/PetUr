@@ -157,7 +157,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".home.mascota.opciones.medico.MenuCuidados"
+            android:name=".home.mascota.opciones.casa.CasaActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />
@@ -194,7 +194,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" /> <!-- android:parentActivityName=".MainActivity" / Declarar activity anterior a esta -->
         <activity
-            android:name=".home.mascota.HistorialRecorridos"
+            android:name=".home.mascota.opciones.casa.recorridos.HistorialRecorridos"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />

@@ -98,20 +98,25 @@
     <string name="coment_dice">%s dice:</string>
     <string name="sin_comentarios">No hay comentarios.</string>
     <string name="nombre_comida">Comida: %a</string>
-    <string name="edicion_de">Edición de 5s</string>
+    <string name="edicion_de">Edición de %s Kg(s)</string>
     <string name="adquirido">Adquirido el %s</string>
     <string name="delete">Borrar</string>
     <string name="agregar_comida">Agregar comida</string>
     <string name="comida_instrucciones">Agrega los detalles de la última comida adquirida para tu mascota.</string>
     <string name="comida_hint_nombre">Nombre o marca</string>
     <string name="descripcion_nueva_comida">Descripción del alimento</string>
-    <string name="presentacion_comida">Tamaño de la presentación</string>
+    <string name="presentacion_comida">Tamaño de la presentación (en Kg)</string>
     <string name="comidas_titulo">Comidas</string>
     <string name="ultima_compra_titulo">Última compra</string>
     <string name="ultima_compra">Mi última compra fue %s el día %s.</string>
     <string name="descripcion_de_compra">Descripción de la compra %s</string>
-    <string name="ultima_compra_presentacion">Presentación de %s</string>
+    <string name="ultima_compra_presentacion">Presentación de %s Kg(s).</string>
     <string name="historial_comidas_titulo">Registro de compras</string>
+    <string name="cuidados">Cuidados</string>
+    <string name="vacunas">Vacunas</string>
+    <string name="alimentacion">Alimentación</string>
+    <string name="recorridos">Recorridos</string>
+    <string name="sin_ultima_compra">Aún sin registros de compra</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>

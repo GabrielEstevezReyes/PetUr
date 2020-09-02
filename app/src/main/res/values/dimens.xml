@@ -4,6 +4,7 @@
     <dimen name="big_titulos">25sp</dimen>
     <dimen name="cabeceras">30sp</dimen>
     <dimen name="subtitulos">17sp</dimen>
+    <dimen name="texto_mid">16sp</dimen>
     <dimen name="texto_default">14sp</dimen>
     <dimen name="texto_small">12sp</dimen>
 </resources>

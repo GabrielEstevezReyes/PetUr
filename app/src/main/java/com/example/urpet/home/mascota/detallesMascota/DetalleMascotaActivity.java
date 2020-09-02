@@ -18,7 +18,7 @@ import com.example.urpet.Utils.alert.SpinnerFechasDialogFragment;
 import com.example.urpet.connections.Pet;
 import com.example.urpet.home.mascota.opciones.grupos.listado.ListadoGruposActivity;
 import com.example.urpet.home.mascota.opciones.medico.Clinicas;
-import com.example.urpet.home.mascota.opciones.medico.MenuCuidados;
+import com.example.urpet.home.mascota.opciones.casa.CasaActivity;
 import com.google.firebase.storage.FirebaseStorage;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
@@ -104,7 +104,7 @@ public class DetalleMascotaActivity extends AppCompatActivity implements View.On
     }
 
     public void irACasa() {
-        Intent siguiente = new Intent(this, MenuCuidados.class);
+        Intent siguiente = new Intent(this, CasaActivity.class);
         startActivity (siguiente);
     }
 

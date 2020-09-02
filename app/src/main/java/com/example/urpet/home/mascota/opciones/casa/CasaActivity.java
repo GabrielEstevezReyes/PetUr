@@ -1,19 +1,16 @@
-package com.example.urpet.home.mascota.opciones.medico;
+package com.example.urpet.home.mascota.opciones.casa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
-import com.example.urpet.home.mascota.HistorialRecorridos;
-import com.example.urpet.home.mascota.detallesMascota.DetalleMascotaActivity;
+import com.example.urpet.home.mascota.opciones.casa.recorridos.HistorialRecorridos;
 import com.example.urpet.R;
 import com.example.urpet.home.mascota.opciones.casa.vacunas.Vacunas;
-import com.example.urpet.home.MainActivity;
 import com.example.urpet.home.mascota.opciones.casa.alimentacion.ListadoComidasActivity;
 
-public class MenuCuidados extends AppCompatActivity {
+public class CasaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,30 +22,18 @@ public class MenuCuidados extends AppCompatActivity {
     }
 
     public void irAVacunas(){
-        Intent siguiente = new Intent(MenuCuidados.this, Vacunas.class);
+        Intent siguiente = new Intent(CasaActivity.this, Vacunas.class);
         startActivity (siguiente);
     }
 
-    public void btn_atras(View view){
-        Intent siguiente = new Intent(MenuCuidados.this, MainActivity.class);
-        startActivity (siguiente);
-        finish();
-    }
-
-    @Override
-    public void onBackPressed() {
-        Intent siguiente = new Intent(MenuCuidados.this, DetalleMascotaActivity.class);
-        startActivity (siguiente);
-        finish();
-    }
 
     public void iraAlimentos(){
-        Intent siguiente = new Intent(MenuCuidados.this, ListadoComidasActivity.class);
+        Intent siguiente = new Intent(CasaActivity.this, ListadoComidasActivity.class);
         startActivity (siguiente);
     }
 
     public void irAHistorial(){
-        Intent siguiente = new Intent(MenuCuidados.this, HistorialRecorridos.class);
+        Intent siguiente = new Intent(CasaActivity.this, HistorialRecorridos.class);
         startActivity (siguiente);
     }
 }

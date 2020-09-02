@@ -10,7 +10,7 @@ class UltimaComidaRepository(private val comidaDAO: UltimaComidaDAO) {
 
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
-    val allComidas: LiveData<List<UltimaComidaEntity>> = comidaDAO.getAllComidas()
+    val allComidas: List<UltimaComidaEntity> = comidaDAO.getAllComidas()
 
     fun insertComida(comida: UltimaComidaEntity) {
         comidaDAO.insertUltimaComida(comida)

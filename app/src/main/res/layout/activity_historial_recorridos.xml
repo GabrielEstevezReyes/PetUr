@@ -7,7 +7,7 @@
     android:background="@drawable/ic_patron"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".home.mascota.HistorialRecorridos">
+    tools:context=".home.mascota.opciones.casa.recorridos.HistorialRecorridos">
 
     <TextView
         android:layout_width="match_parent"

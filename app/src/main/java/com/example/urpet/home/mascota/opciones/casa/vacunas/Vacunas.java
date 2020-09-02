@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.urpet.R;
-import com.example.urpet.home.mascota.opciones.medico.MenuCuidados;
+import com.example.urpet.home.mascota.opciones.casa.CasaActivity;
 import com.example.urpet.home.mascota.detallesMascota.DetalleMascotaActivity;
 
 public class Vacunas extends AppCompatActivity {
@@ -19,7 +19,7 @@ public class Vacunas extends AppCompatActivity {
 
     }
     public void btn_sig(View view){
-        Intent siguiente = new Intent(Vacunas.this, MenuCuidados.class);
+        Intent siguiente = new Intent(Vacunas.this, CasaActivity.class);
         startActivity (siguiente);
         finish();
     }
