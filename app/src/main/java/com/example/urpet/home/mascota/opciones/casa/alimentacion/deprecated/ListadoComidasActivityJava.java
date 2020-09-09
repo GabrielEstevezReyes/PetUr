@@ -1,4 +1,4 @@
-package com.example.urpet.home.mascota.opciones.casa.alimentacion;
+package com.example.urpet.home.mascota.opciones.casa.alimentacion.deprecated;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -24,7 +24,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-public class ListadoComidasActivity extends AppCompatActivity implements DialogFragmentAgregarComida.onAddComida, UtimaComidaAdapter.onReAddcomida {
+public class ListadoComidasActivityJava extends AppCompatActivity implements DialogFragmentAgregarComida.onAddComida, UtimaComidaAdapter.onReAddcomida {
 
     private FloatingActionButton mAddFoodFAB;
     private RecyclerView mListadoComidasRV;
@@ -102,11 +102,9 @@ public class ListadoComidasActivity extends AppCompatActivity implements DialogF
     }
 
     private void hideLoader(){
-        new CountDownTimer(1600, 800) {
+        new CountDownTimer(1000, 1000) {
             @Override
-            public void onTick(long l) {
-
-            }
+            public void onTick(long l) { }
 
             @Override
             public void onFinish() {

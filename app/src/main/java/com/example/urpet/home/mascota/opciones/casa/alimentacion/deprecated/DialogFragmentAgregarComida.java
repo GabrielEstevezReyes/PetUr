@@ -1,4 +1,4 @@
-package com.example.urpet.home.mascota.opciones.casa.alimentacion;
+package com.example.urpet.home.mascota.opciones.casa.alimentacion.deprecated;
 
 import android.graphics.Point;
 import android.os.Bundle;
@@ -71,7 +71,7 @@ public class DialogFragmentAgregarComida extends DialogFragment {
     private void bindviews(){
         mNombreEt = mView.findViewById(R.id.fragment_nueva_comida_nombre_et);
         mDescrEt = mView.findViewById(R.id.fragment_nueva_comida_descr_et);
-        mPresenEt = mView.findViewById(R.id.fragment_comida_inicio_et);
+        //mPresenEt = mView.findViewById(R.id.fragment_comida_inicio_et);
         Button mEnviar = mView.findViewById(R.id.fragment_comida_aceptar_btn);
             mEnviar.setOnClickListener(v-> enviarData());
         mView.findViewById(R.id.fragment_comida_cerrar_iv).setOnClickListener(v-> dismiss());

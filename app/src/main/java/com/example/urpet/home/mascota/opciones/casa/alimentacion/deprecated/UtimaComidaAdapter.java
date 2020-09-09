@@ -1,4 +1,4 @@
-package com.example.urpet.home.mascota.opciones.casa.alimentacion;
+package com.example.urpet.home.mascota.opciones.casa.alimentacion.deprecated;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -70,7 +70,7 @@ public class UtimaComidaAdapter extends RecyclerView.Adapter<UtimaComidaAdapter.
         public UltimaComidaViewHolder(@NonNull View itemView) {
             super(itemView);
             mTitulo = itemView.findViewById(R.id.item_comida_titulo);
-            presentacion = itemView.findViewById(R.id.item_comida_tamaño);
+            presentacion = itemView.findViewById(R.id.item_comida_tamano);
             fecha = itemView.findViewById(R.id.item_comida_fecha);
             mDescripcion = itemView.findViewById(R.id.item_comida_descripcion);
             mButtonAddcomida = itemView.findViewById(R.id.item_comida_add_elemento);

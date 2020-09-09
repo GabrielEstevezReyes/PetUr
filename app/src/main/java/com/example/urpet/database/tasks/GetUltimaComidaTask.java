@@ -27,13 +27,13 @@ public class GetUltimaComidaTask extends AsyncTask<String, String, String> {
     protected String doInBackground(String... strings) {
         UrPetDatabase db = UrPetDatabase.Companion.getInstance(UrPetApplication.getApplication());
         assert db != null;
-        mData = Objects.requireNonNull(db.mUltimaComidaDao()).getUltimaComida();
+        //mData = Objects.requireNonNull(db.mUltimaComidaDao()).getUltimaComida();
         return null;
     }
 
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        listener.onGetUltima(mData);
+        //listener.onGetUltima(mData);
     }
 }

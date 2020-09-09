@@ -24,7 +24,7 @@ public class InsertComidaAsync extends AsyncTask<UltimaComidaEntity, String, Str
     protected String doInBackground(UltimaComidaEntity... ultimaComidaEntities) {
         UrPetDatabase db = UrPetDatabase.Companion.getInstance(UrPetApplication.getApplication());
         assert db != null;
-        Objects.requireNonNull(db.mUltimaComidaDao()).insertUltimaComida(ultimaComidaEntities[0]);
+     //   Objects.requireNonNull(db.mUltimaComidaDao()).insertUltimaComida(ultimaComidaEntities[0]);
         return null;
     }
 

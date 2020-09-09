@@ -28,7 +28,7 @@ public class GetAllComidaTask extends AsyncTask<String, String, String> {
     protected String doInBackground(String... strings) {
         UrPetDatabase db = UrPetDatabase.Companion.getInstance(UrPetApplication.getApplication());
         assert db != null;
-        mData.addAll(Objects.requireNonNull(db.mUltimaComidaDao()).getAllComidas());
+//        mData.addAll(Objects.requireNonNull(db.mUltimaComidaDao()).getAllComidas());
         return null;
     }
 
