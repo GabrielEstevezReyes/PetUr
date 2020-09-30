@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.urpet.R;
 import com.example.urpet.Utils.LoaderFragment;
-import com.example.urpet.database.entity.UltimaComidaEntity;
-import com.example.urpet.database.tasks.GetAllComidaTask;
-import com.example.urpet.database.tasks.GetUltimaComidaTask;
-import com.example.urpet.database.tasks.InsertComidaAsync;
+import com.example.urpet.data.local.database.entity.UltimaComidaEntity;
+import com.example.urpet.data.local.database.tasks.GetAllComidaTask;
+import com.example.urpet.data.local.database.tasks.GetUltimaComidaTask;
+import com.example.urpet.data.local.database.tasks.InsertComidaAsync;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.SimpleDateFormat;

@@ -7,9 +7,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import com.example.urpet.R
 import com.example.urpet.Utils.Utils
-import com.example.urpet.database.entity.UltimaComidaEntity
+import com.example.urpet.data.local.database.entity.UltimaComidaEntity
 import com.example.urpet.databinding.DialogFragmentRegistrarComidaBinding
-import java.util.*
 
 /**
  * Created by Carlos Elliot Frias Mercado (Maku) on 09/09/2020.

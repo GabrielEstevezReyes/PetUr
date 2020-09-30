@@ -2,7 +2,7 @@ package com.example.urpet.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.urpet.database.entity.UltimaComidaEntity
+import com.example.urpet.data.local.database.entity.UltimaComidaEntity
 import com.example.urpet.repository.UltimaComidaRepository
 import kotlinx.coroutines.launch
 

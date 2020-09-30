@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.urpet.R;
-import com.example.urpet.database.entity.UltimaComidaEntity;
+import com.example.urpet.data.local.database.entity.UltimaComidaEntity;
 
 import java.util.ArrayList;
 

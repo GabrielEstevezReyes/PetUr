@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.urpet.login.LoginActivity;
+import com.example.urpet.login.LoginActivityJava;
 import com.example.urpet.PersonalInfo;
 import com.example.urpet.R;
 import com.example.urpet.SMS;
@@ -78,7 +78,7 @@ public class RegistroUsuario extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onBackPressed() {
-        Intent siguiente = new Intent(RegistroUsuario.this, LoginActivity.class);
+        Intent siguiente = new Intent(RegistroUsuario.this, LoginActivityJava.class);
         startActivity (siguiente);
         finish();
     }

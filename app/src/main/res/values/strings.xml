@@ -117,6 +117,14 @@
     <string name="alimentacion">Alimentación</string>
     <string name="recorridos">Recorridos</string>
     <string name="sin_ultima_compra">Aún sin registros de compra</string>
+    <string name="inicia_sesion">Inicia sesión o regístrate</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="datos_incorrectos">Datos de usuario incorrectos</string>
+    <string name="crea_cuenta">O crea tu cuenta ingresando con:</string>
+    <string name="google_login">Entrar con Google</string>
+    <string name="registro_pregunta">¿Nunca has usado Urpet?</string>
+    <string name="crea_cuenta_aqui">Crea tu cuenta aquí</string>
+    <string name="empty_fields">Por favor llene los campos.</string>
 
     <string-array name="catmascotas">
         <item>Perro</item>

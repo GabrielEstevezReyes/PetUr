@@ -53,7 +53,7 @@ import org.json.JSONException;
 
 import java.util.concurrent.Executor;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivityJava extends AppCompatActivity implements View.OnClickListener {
 
     private int selectedLogin = 0;
     private static final int RC_SIGN_IN = 0;
@@ -77,8 +77,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         configureViews();
         configureBiometrics();
         try {
-            if (ActivityCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(LoginActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            if (ActivityCompat.checkSelfPermission(LoginActivityJava.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(LoginActivityJava.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -123,21 +123,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mFingerPrintBtn.setVisibility(SharedPreferencesUtil.getInstance().isBiometricenabled() ? View.VISIBLE : View.GONE);
     }
 
-    public void btn_sig(View view) {
-        error.setVisibility(View.INVISIBLE);
-        String mail = mCorreoET.getText().toString();
-        String pass = mPasswordET.getText().toString();
-        if(!mail.isEmpty() && !pass.isEmpty()) {
-            iniciarSesionClasico(mail, pass);
-        }
-        else {
-            error.setText("Por favor ingresa un usuario y contraseña");
-            error.setVisibility(View.VISIBLE);
-        }
-    }
 
     public void btn_ccuenta(View view){
-        Intent siguiente = new Intent(LoginActivity.this, RegistroUsuario.class);
+        Intent siguiente = new Intent(LoginActivityJava.this, RegistroUsuario.class);
         startActivity (siguiente);
         finish();
     }
@@ -154,7 +142,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Log.println(Log.DEBUG, "login", current.toString());
         PersonalInfo.currentUser = current;
         error.setVisibility(View.INVISIBLE);
-        Intent siguiente = new Intent(LoginActivity.this, MainActivity.class);
+        Intent siguiente = new Intent(LoginActivityJava.this, MainActivity.class);
         startActivity(siguiente);
         finish();
     }
@@ -171,7 +159,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         PersonalInfo.currentUser = current;
         error.setVisibility(View.INVISIBLE);
         SharedPreferencesUtil.getInstance().createLogin(mCorreoET.getText().toString(), "", SharedPreferencesUtil.EnumTipoLogin.FACEBOOK);
-        Intent siguiente = new Intent(LoginActivity.this, MainActivity.class);
+        Intent siguiente = new Intent(LoginActivityJava.this, MainActivity.class);
         startActivity(siguiente);
         finish();
     }
@@ -186,7 +174,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         current.getFromMail();
                         PersonalInfo.currentUser = current;
                         error.setVisibility(View.INVISIBLE);
-                        Intent siguiente = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent siguiente = new Intent(LoginActivityJava.this, MainActivity.class);
                         SharedPreferencesUtil.getInstance().createLogin(mCorreoET.getText().toString(), mPasswordET.getText().toString(), SharedPreferencesUtil.EnumTipoLogin.PASSWORD);
                         startActivity(siguiente);
                         finish();
@@ -194,7 +182,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         Log.println(Log.DEBUG, "login", task.getException().toString());
                         error.setText("Datos de usuario incorrectos");
                         error.setVisibility(View.VISIBLE);
-                        Toast.makeText(LoginActivity.this, "Authentication failed.",
+                        Toast.makeText(LoginActivityJava.this, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -216,7 +204,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         selectedLogin = 2;
         Log.println(Log.DEBUG, "login", "Facebook pressed");
         mCallbackManager = CallbackManager.Factory.create();
-        LoginButton loginButton = findViewById(R.id.buttonFacebookLogin);
+        LoginButton loginButton = findViewById(R.id.login_activity_facebook_btn);
         loginButton.setReadPermissions("email", "public_profile", "user_friends");
         loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -258,7 +246,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("login", "signInWithCredential:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                            Toast.makeText(LoginActivityJava.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                             error.setText("Datos de usuario incorrectos");
                             error.setVisibility(View.VISIBLE);
@@ -316,7 +304,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.println(Log.DEBUG, "login", "signInWithCredential:failure" + task.getException());
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                            Toast.makeText(LoginActivityJava.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                             error.setText("Datos de usuario incorrectos");
                             error.setVisibility(View.VISIBLE);
@@ -360,7 +348,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void configureBiometrics() {
         // Biometric
         Executor executor = ContextCompat.getMainExecutor(this);
-        biometricPrompt = new BiometricPrompt(LoginActivity.this,
+        biometricPrompt = new BiometricPrompt(LoginActivityJava.this,
                 executor, new BiometricPrompt.AuthenticationCallback() {
             @Override
             public void onAuthenticationSucceeded(

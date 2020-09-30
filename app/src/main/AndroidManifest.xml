@@ -173,7 +173,7 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".registro.RegistroUsuario"
-            android:parentActivityName=".login.LoginActivity"
+            android:parentActivityName=".login.LoginActivityJava"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             tools:ignore="LockedOrientationActivity" />

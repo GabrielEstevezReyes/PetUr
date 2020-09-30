@@ -1,7 +1,7 @@
 package com.example.urpet.repository
 
-import com.example.urpet.database.dao.UltimaComidaDAO
-import com.example.urpet.database.entity.UltimaComidaEntity
+import com.example.urpet.data.local.database.dao.UltimaComidaDAO
+import com.example.urpet.data.local.database.entity.UltimaComidaEntity
 
 /**
  * Created by Carlos Elliot Frias Mercado (Maku) on 08/09/2020.

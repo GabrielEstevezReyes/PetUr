@@ -1,11 +1,11 @@
-package com.example.urpet.database
+package com.example.urpet.data.local.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.urpet.database.dao.UltimaComidaDAO
-import com.example.urpet.database.entity.UltimaComidaEntity
+import com.example.urpet.data.local.database.dao.UltimaComidaDAO
+import com.example.urpet.data.local.database.entity.UltimaComidaEntity
 
 
 @Database(entities = [UltimaComidaEntity::class], version = 1, exportSchema = false)

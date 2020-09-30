@@ -1,12 +1,10 @@
-package com.example.urpet.database.tasks;
+package com.example.urpet.data.local.database.tasks;
 
 import android.os.AsyncTask;
 
 import com.example.urpet.Utils.UrPetApplication;
-import com.example.urpet.database.UrPetDatabase;
-import com.example.urpet.database.entity.UltimaComidaEntity;
-
-import java.util.Objects;
+import com.example.urpet.data.local.database.UrPetDatabase;
+import com.example.urpet.data.local.database.entity.UltimaComidaEntity;
 
 public class InsertComidaAsync extends AsyncTask<UltimaComidaEntity, String, String> {
 

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.urpet.login.LoginActivity;
+import com.example.urpet.login.LoginActivityJava;
 
 public class Splash extends AppCompatActivity {
 

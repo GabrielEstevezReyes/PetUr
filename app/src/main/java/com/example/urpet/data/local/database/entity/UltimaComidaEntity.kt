@@ -1,4 +1,4 @@
-package com.example.urpet.database.entity
+package com.example.urpet.data.local.database.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

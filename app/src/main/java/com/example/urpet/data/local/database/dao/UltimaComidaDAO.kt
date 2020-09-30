@@ -1,10 +1,10 @@
-package com.example.urpet.database.dao
+package com.example.urpet.data.local.database.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.urpet.database.entity.UltimaComidaEntity
+import com.example.urpet.data.local.database.entity.UltimaComidaEntity
 
 @Dao
 interface UltimaComidaDAO{

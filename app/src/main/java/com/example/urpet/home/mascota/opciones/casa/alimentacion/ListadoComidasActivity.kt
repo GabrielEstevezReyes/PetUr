@@ -1,23 +1,18 @@
 package com.example.urpet.home.mascota.opciones.casa.alimentacion
 
-import android.app.Dialog
-import android.graphics.Point
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.urpet.R
-import com.example.urpet.database.UrPetDatabase
-import com.example.urpet.database.entity.UltimaComidaEntity
+import com.example.urpet.data.local.database.UrPetDatabase
+import com.example.urpet.data.local.database.entity.UltimaComidaEntity
 import com.example.urpet.databinding.ActivityAnadirAlimentoBinding
 import com.example.urpet.repository.UltimaComidaRepository
 import com.example.urpet.viewModel.UltimaComidaViewModel
 import com.example.urpet.viewModel.UltimaComidaViewModelFactory
-import java.util.*
 
 /**
  * Created by Carlos Elliot Frias Mercado (Maku) on 08/09/2020.
