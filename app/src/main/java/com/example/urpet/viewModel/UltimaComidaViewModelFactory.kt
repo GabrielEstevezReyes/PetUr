@@ -15,5 +15,4 @@ class UltimaComidaViewModelFactory(private val repository: UltimaComidaRepositor
         }
         throw IllegalArgumentException("View Model Desconocido")
     }
-
 }
