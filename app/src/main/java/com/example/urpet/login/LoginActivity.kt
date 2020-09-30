@@ -132,7 +132,7 @@ class LoginActivity: AppCompatActivity() {
     private fun loginClasico(isBiometric : Boolean){
         val email = if(isBiometric) EncryptedSharedPreferencesUtils.getMail() else binding.loginActivityCorreoEt.text.toString()
         val password = if(isBiometric) EncryptedSharedPreferencesUtils.getPass() else binding.loginActivityPasswordEt.text.toString()
-        
+
         if(email.isNotEmpty() && password.isNotEmpty()){
             showLoader()
             mAuth!!.signInWithEmailAndPassword(email, password)
